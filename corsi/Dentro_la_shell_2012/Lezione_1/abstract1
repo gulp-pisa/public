@@ -1,0 +1,12 @@
+21/03/2012 - Lezione 1 Slide prima lezione
+
+Relatore: Gianmarco Brocchi.
+
+    -La command line interface (CLI).
+    -Imparare a "navigare" fra i files: concetti di working 
+	 directory e di percorso assoluto e relativo.
+    -Comandi basilari: cd, ls, ecc.
+    -History e scorciatoie.
+    -Struttura del file system (FHS).
+    -Chi può fare cosa: diritti utenti e gruppi, comandi chmod e chown.
+    -Come trovare aiuto: man apropos. 

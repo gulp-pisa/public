@@ -1,0 +1,11 @@
+4/04/2012 - Lezione 2 files per esercitazioni - slide seconda lezione
+
+Relatore: Alberto Maria Fiaschi.
+
+    -Coreutils e altri programmi: less, cat, echo, pico, ps,
+	 top, free, kill, killall, du, grep, find, screen.
+    -I programmi "sono a T": concetti di standar output,
+	 standar error e standard input.
+    -Ridirezione dell'output.
+    -Mettiamo i programmi in catena di montaggio: "le pipeline".
+    -Vari esempi ed esercitazioni. 

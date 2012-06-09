@@ -1,0 +1,60 @@
+Relatori: Salvatore Balestrino e Massimo Pisani. 
+
+Il corso rivolto a tutti gli appassionati smanettoni, non solo esperti ma anche volenterosi apprendisti :-) Oltre al cervello useremo le mani per montare piccoli circuiti su breadboard, imparare le basi per riconoscere i componenti elettronici, saldare ecc. ecc. 
+16/5/2012 - Lezione 1 - Pillole di elettronica (slide pdf Uso della Breadboard) 
+
+I componenti
+
+Descrizione dei principali componenti elettronici:
+
+    resistenze;
+    condensatori;
+    diodi;
+    led;
+    transistor;
+    circuiti integrati;
+    sensori;
+    attuatori. 
+
+Strumenti di lavoro e cablaggio
+
+Nozioni teoriche e pratiche:
+
+    sull'uso degli strumenti di lavoro:
+        saldatore;
+        multimetro;
+        alimentatore;
+        oscilloscopio. 
+    sul cablaggio:
+        breadboard;
+        schede millefiori;
+        circuiti stampati. 
+
+23/5/2012 - Lezione 2 - Arduino e parenti! Mettiamoci il cervello! 
+
+Come in tutte le cose ci vuole il cervello, anche per dare vita a componenti elettronici. Per questo impareremo ad usare: le motherboard, gli shield e Arduino.
+
+In particolare:
+
+    Arduino (lato hardware):
+        Architettura della scheda
+        descrizione dei pin disponibili ed utilizzo.
+        collegamento di Arduino con il computer 
+    Arduino e gli sketch (lato software):
+        scrivere un programma, caricarlo sul chip Atmel e fare il test con il Serial Monitor 
+
+
+30/05/2012 - Lezione 3 - Esperimenti in laboratorio - Happy Hacking! n.1 
+
+…… per ogni esperimento sono necessari: componenti, cablaggio, scrittura del codice ed esecuzione. Abbiamo tutto a disposizione per poter allestire il nostro piccolo laboratorio, non resta che iniziare a sperimentare :-)
+
+    Progettini:
+        pilotare un led;
+        acquisire un segnale analogico;
+        pilotare un servo;
+        scrivere su un display alfanumerico
+        ecc. ecc. 
+
+6/6/2012 - Lezione 4 - Esperimenti in laboratorio - Happy Hacking! n.2 
+
+...ancora esperimenti in proseguo del precedente incontro. 

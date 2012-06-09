@@ -1,0 +1,9 @@
+11/04/2012 - Lezione 3 - slide, testo
+
+Relatore: Lorenzo Losa.
+
+    -Gerarchia dei processi e job control: 
+	 jobs, bg/fg, nohup, disown, screen;
+    -Installare da shell nella famiglia Debian: 
+	 dpkg, apt-get, apt-cache;
+    -Lavorare in remoto: ssh, scp. 
