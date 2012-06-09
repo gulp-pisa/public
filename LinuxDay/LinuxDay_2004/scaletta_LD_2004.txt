@@ -1,0 +1,32 @@
+MATTINA (10:30 - 13:00)
+
+    Linux help desk 
+
+POMERIGGIO (15:00 - 19:00)
+Seminari
+
+Track 1)
+
+    Maria Chiara Pievatolo - "I commons: non facciamone una tragedia" (Proprieta' intellettuale e ricerca scientifica)
+    Francesco Potorti` - Introduzione al Free Software
+    Leonardo Lami - "freeGIS" (Sistemi informativi territoriali liberi)
+    Emilia Venturato - OpenOffice 
+
+Track 2)
+
+    Perl Monger Italia - Introduzione a Perl
+    Gruppo Utilizzatori Italiani di Tex e LaTeX - introduzione a LaTeX
+    Marco Bodrato - TOR e anonimato in rete
+    Giuseppe Ottaviano - Linux eye-candy
+    Riccardo Lemmi - Test Driven Programming 
+
+SERA (dalle 19:00 in poi)
+
+Wireless Network Event
+
+    Ipv6 e nuove tecnologie - G.Augiero,C.Roatta,A.Parrella
+    Introduzione alla crittografia e Key Signing Party - Marco Bodrato
+    X Server in rete - Valter Ballantini
+    Divertimento !! 
+
+

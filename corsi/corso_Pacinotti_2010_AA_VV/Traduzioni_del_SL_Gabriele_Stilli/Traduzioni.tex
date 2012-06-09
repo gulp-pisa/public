@@ -1,0 +1,289 @@
+\documentclass{beamer}
+
+\beamertemplateshadingbackground{red!10}{blue!10} %10 10
+
+\usetheme{Warsaw}
+
+\beamertemplatetransparentcovereddynamic
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[italian]{babel}
+
+\title{Traduzioni di Software Libero}
+\subtitle{Contribuire alla comunità del Software Libero senza essere
+programmatori}
+\author{Gabriele ``LightKnight'' Stilli}
+\institute{G.U.L.P. -- Gruppo Utenti Linux Pisa}
+\date{Pisa, 24/10/2009}
+
+\begin{document}
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\section{Perché tradurre?}
+
+\begin{frame}\frametitle{Perché NON tradurre?}
+\begin{itemize}
+\item Le traduzioni sono brutte/sbagliate
+\item Le traduzioni sono incomplete/vecchie
+\item Tutti usano i programmi in inglese
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Perché tradurre?}
+\begin{itemize}
+\item È utile alla comunità
+\item Non c'è bisogno di essere programmatori
+\item Abbassa una barriera d'ingresso al Software Libero
+\item Può essere piacevole
+\end{itemize}
+\pause
+Il dibattito è ancora in corso{\ldots} e mai finirà.
+\end{frame}
+
+\section{Tradurre un programma}
+
+\begin{frame}\frametitle{Una lingua una copia?}
+In passato i programmi erano monolingua; le traduzioni erano inglobate
+nel programma.
+
+Questo implicava che per avere il programma tradotto in un'altra
+lingua se ne doveva acquisire un'altra copia.
+\end{frame}
+
+\begin{frame}\frametitle{Si può fare di meglio}
+Oggi la traduzione di un programma viene posta in un file esterno,
+fornito insieme al programma, che contiene le corrispondenze fra
+stringhe originali e stringhe tradotte e a cui il programma stesso
+accede tramite funzioni di libreria speciali.
+
+Ciò implica che un programma per essere tradotto ha bisogno di essere
+opportunamente preparato.
+\end{frame}
+
+\begin{frame}\frametitle{I18n e l10n}
+\begin{center}
+\textbf{I18n? L10n?}
+\end{center}
+\pause
+
+\begin{description}
+\item[Internationalization] È il procedimento con cui si inseriscono
+nel programma le funzioni e i segnalibri necessari a tradurlo.
+\pause
+\item[Localization] È il procedimento di traduzione vero e proprio.
+\end{description}
+\pause
+
+\begin{center}
+\textbf{Non c'è l10n senza i18n!}
+\end{center}
+\end{frame}
+
+\section{La suite gettext}
+
+\begin{frame}\frametitle{Introduzione a gettext}
+La suite gettext è un insieme di programmi che permettono a un
+programma di essere traducibile.
+
+Ciò si ottiene tramite funzioni che permettono la creazione di un
+database di stringhe traducibili e delle loro controparti tradotte.
+\end{frame}
+
+\begin{frame}[containsverbatim]
+\frametitle{Preparazione del sorgente (1)}
+Prima della cura{\ldots} 
+
+\begin{verbatim}
+
+#include <stdio.h>
+int main ()
+{
+    printf ("Hello world\n");
+}
+
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{Preparazione del sorgente (2)}
+{\ldots} dopo la cura!
+\begin{verbatim}
+#include <stdio.h>
+#include <libintl.h>
+#include <locale.h>
+#define PACKAGE "ciao"
+#define LOCALEDIR "/var/tmp"
+
+int main ()
+{
+    setlocale (LC_ALL, "");
+    bindtextdomain (PACKAGE, LOCALEDIR);
+    textdomain (PACKAGE);
+    printf (gettext ("Hello world\n"));
+}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}\frametitle{Dal sorgente alle stringhe}
+
+Dal sorgente siffatto tramite xgettext viene creato il file .po
+(Portable Object), che contiene l'elenco delle stringhe traducibili.
+
+Dopo la traduzione, msgfmt si occuperà di compilare il file .po,
+ottenendo un file .mo (Machine Object) che verrà utilizzato dal
+programma.
+\end{frame}
+
+\begin{frame}\frametitle{Struttura di un file .po}
+\begin{description}
+\item [L'header] in cui sono scritti i dati del programma e della
+traduzione;
+\item [Le stringhe] il cuore della traduzione
+\begin{itemize}
+\item Stringhe tradotte, fuzzy, non tradotte, obsolete
+\item Commenti alle stringhe
+\item Gestione dei plurali e delle inversioni
+\end{itemize}
+\end{description}
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{L'header}
+\begin{verbatim}
+"Project-Id-Version: ciao-0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-24 17:45+0200\n"
+"PO-Revision-Date: 2009-06-24 17:58+0200\n"
+"Last-Translator: Full Name <email@address>\n"
+"Language-Team: My Language <LL@Li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{Le stringhe: tradotte, fuzzy, obsolete}
+\begin{verbatim}
+#: pippo.c:14
+#, c-format
+msgid "Hello world\n"
+msgstr "Ciao mondo\n"
+
+#: mattricks/wxgui/matchstats/teamgrade.py:104
+#, fuzzy
+msgid "Grade"
+msgstr "Partite"
+
+#~ msgid "The match will begin in %s."
+#~ msgstr "La partita inizierà fra %s."
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{La gestione dei plurali}
+\begin{verbatim}
+#: mattricks/Commandline.py:742
+#, python-format
+msgid "There are %d element in the database."
+msgid_plural "There are %d elements in the database."
+msgstr[0] "C'è %d elemento nel database."
+msgstr[1] "Ci sono %d elementi nel database."
+\end{verbatim}
+\end{frame}
+
+\begin{frame}\frametitle{Cosa ci vuole per tradurre}
+
+\begin{itemize}
+\item Discreta conoscenza dell'inglese
+\item Buona conoscenza dell'italiano
+\item Una certa competenza della materia
+\item Tempo libero e dedizione
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Regole di buona traduzione}
+\begin{itemize}
+\item Rispetto dell'ortografia (accenti, maiuscole/minuscole,
+spaziature{\ldots})
+\item Forma impersonale
+\item Tradurre, non spiegare
+\item Eleganza
+\item Coerenza
+\item Autosufficienza
+\item Riconoscibilità
+\item [{\ldots}]
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Strumenti di traduzione}
+\begin{itemize}
+\item po-mode (vari editor)
+\item poedit
+\item lokalize
+\item freespeak
+\item Rosetta
+\item OmegaT
+\item [{\ldots}]
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{E dopo la traduzione?}
+Una volta tradotto il programma, è opportuno sottoporre il lavoro alla
+comunità per la revisione. In questa fase si correggono gli errori e
+si discutono le scelte stilistiche o di glossario da applicare.
+
+Per i programmi, generalmente la comunità di riferimento è il
+Translation Project: tp@lists.linux.it. Programmi o suite particolari
+possono però avere le proprie comunità (GNOME, KDE,
+distribuzioni{\ldots}).
+
+Dopo la revisione, la traduzione può essere inviata allo sviluppatore
+per la sua inclusione nel programma.
+\end{frame}
+
+\begin{frame}\frametitle{Programmi e non solo}
+L'universo della traduzione è multiforme e sono tante le cose in cui
+c'è bisogno d'aiuto:
+
+\begin{itemize}
+\item Programmi
+\item Documentazione
+\item Siti web
+\item Descrizioni di pacchetti
+\item po-debconf
+\item [{\ldots}]
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Link utili}
+Italian Translation Project: http://tp.linux.it/
+
+Gettext: http://www.gnu.org/software/gettext/
+
+GNOME: http://www.it.gnome.org/index.php/Traduzioni
+
+KDE: http://kde.gulp.linux.it/
+
+Rosetta: https://launchpad.net/rosetta
+
+OmegaT: http://www.omegat.org/it/omegat.html
+
+Open-Tran: http://open-tran.eu/
+\end{frame}
+
+\begin{frame}\frametitle{Copyright (o Copyleft)}
+Quest'opera è stata rilasciata sotto la licenza Creative Commons
+Attribuzione-Condividi allo stesso modo 3.0 Unported. Per leggere una
+copia della licenza visita il sito web
+http://creativecommons.org/licenses/by-sa/3.0/ o spedisci una lettera
+a Creative Commons, 171 Second Street, Suite 300, San Francisco,
+California, 94105, USA.
+\end{frame}
+
+\end{document}

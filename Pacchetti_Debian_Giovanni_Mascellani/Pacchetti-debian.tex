@@ -1,0 +1,305 @@
+
+\documentclass{beamer}
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\usetheme{Frankfurt}
+
+\title{Costruire pacchetti Debian}
+\author{Giovanni Mascellani}
+\date{giovedì 10 aprile 2008}
+\institute{GULP - Gruppo Utenti Linux di Pisa}
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Panoramica sui pacchetti Debian}
+
+\begin{frame}
+\tableofcontents[currentsection]
+\end{frame}
+
+\subsection{Di pacchetti ce n'è di tanti tipi\dots}
+
+\begin{frame}{Di pacchetti ce n'è di tanti tipi\dots}
+	\begin{itemize}
+	\item Pacchetti binari:
+		\begin{itemize}
+		\item I classici file con estensione {\tt.deb};
+		\item Sono quelli usati direttamente dagli utenti (generalmente tramite APT);
+		\item ``Binari'' non vuol dire necessariamente che contengono eseguibili compilati o altri file binari.
+		\end{itemize}
+	\pause
+	\item Pacchetti sorgente
+		\begin{itemize}
+		\item Sono quelli su cui gli sviluppatori (oggi noi!) mettono le mani;
+		\item Vengono compilati per generare i pacchetti binari;
+		\item Un pacchetto sorgente può generare anche più di un pacchetto binario.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Pacchetti binari}
+
+\begin{frame}{Pacchetti binari}
+	Il nome del file: {\tt pacchetto\_vers\_arch.deb}.
+		\begin{itemize}
+		\item {\tt pacchetto}: piuttosto facile, è semplicemente il nome del pacchetto!
+		\pause
+		\item {\tt vers}: versione del pacchetto, che deve seguire determinati schermi di cui parleremo più tardi.
+		\pause
+		\item {\tt arch}: l'architettura per cui è compilato questo pacchetto ({\tt all}~se è installabile su qualsiasi architettura).
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{Breve dissezione di un pacchetto binario}
+	I pacchetti binari non sono altro che file {\tt ar}!
+		\begin{itemize}
+		\pause
+		\item {\tt debian-binary}: contiene semplicemente la versione del formato del pacchetto (attualmente 2.0);
+		\pause
+		\item {\tt data.tar.gz}: i file contenuti nel pacchetto. Durante l'installazione del pacchetto sono copiati al loro posto nel filesystem;
+		\pause
+		\item {\tt control.tar.gz}: un po' di file di controllo, come descrizione del pacchetto, dipendenze, script di installazione e disinstallazione, hash MD5 dei file contenuti nel pacchetto. Impareremo il loro significato più tardi.
+		\end{itemize}
+\end{frame}
+
+\subsection{Pacchetti sorgente}
+
+\begin{frame}{Pacchetti sorgente}
+	Sono composti da ben tre file separati (a volte due, nel caso di pacchetti nativi per Debian, ma noi non ce ne preoccuperemo):
+		\begin{itemize}
+		\item {\tt pacchetto\_vers.orig.tar.gz}: il codice sorgente originario, generalmente la copia esatta del file distribuito dall'autore del software.
+		\pause
+		\item {\tt pacchetto\_vers.diff.gz}: una patch che viene applicata al sorgente originario, e che lo modifica in modo da renderlo compilabile alla {\itshape Debian way}. Questo file non esiste nei pacchetti nativi per Debian.
+		\pause
+		\item {\tt pacchetto\_vers.dsc}: un file, firmato da chi ha generato il pacchetto sorgente, che contiene gli hash MD5 degli altri due file insieme ad altre informazioni generali sul pacchetto.
+		\end{itemize}
+\end{frame}
+
+\subsection{Compilazione}
+
+\begin{frame}[fragile]{Compilazione di un pacchetto}
+	\begin{itemize}
+	\item Possiamo procurarci un pacchetto sorgente con il comando:
+	\begin{verbatim}
+	$ apt-get source pacchetto
+	\end{verbatim}
+	Il pacchetto verrà scaricato, decompresso e gli verrà applicata la patch.
+	\pause
+	\item Poi lo compiliamo con
+	\begin{verbatim}
+	$ cd pacchetto-vers/
+	$ dpkg-buildpackage -us -uc
+	\end{verbatim}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{File creati durante la compilazione}
+	Dopo la compilazione saranno comparsi nuovi file:
+		\begin{itemize}
+		\item I pacchetti binari, ovviamente!
+		\pause
+		\item Un file {\tt .changes}, che viene passato ad un programma ({\tt dput} o {\tt dupload}) che si preoccupa di caricare i file necessari sul server dell'archivio che li dovrà ospitare. A noi stasera non interessa.
+		\end{itemize}
+\end{frame}
+
+\section{Creazione di un nuovo pacchetto}
+
+\begin{frame}
+\tableofcontents[currentsection]
+\end{frame}
+
+\subsection{Una piccola premessa: la versione}
+
+\begin{frame}[fragile]{Una piccola premessa: la versione}
+	\begin{verbatim}
+	[epoch:]upstream_version[-debian_revision]
+	\end{verbatim}
+	\begin{itemize}
+	\item<4-> {\tt epoch} {\itshape (opzionale)}: un numero che serve per ovviare a problemi di upload con versioni sbagliate o di cambiamento di schema delle versioni. Se manca si considera pari a zero.
+	\item<2-> {\tt upstream\_version}: la parte principale, ossia la versione del software originale che si sta pacchettizzando.
+	\item<3-> {\tt debian\_revision} {\itshape (quasi opzionale)}: il numero di revisione Debian, che viene incrementato ogni volta che si produce una nuova versione del pacchetto e viene riportato a 1 quando si pacchettizza una nuova versione upstream. Questa parte non esiste solo per i pacchetti nativi per Debian.
+	\end{itemize}
+\end{frame}
+
+\subsection{Debianizzazione iniziale}
+
+\begin{frame}[fragile]{Debianizzazione iniziale}
+	\begin{itemize}
+	\item Decomprimere la tarball originale. Tutti i suoi file devono stare in una directory che si chiama {\tt pacchetto-vers/}.
+	\pause
+	\item Entrare nella directory ed eseguire:
+	\begin{verbatim}
+	$ cd pacchetto-vers/
+	$ dh_make -f ../original.tar.gz
+	\end{verbatim}
+	\pause
+	\item {\tt dh\_make} chiederà che tipo di pacchetto si vuole costruire e provvederà a creare uno schema base seconda la scelta fatta.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Effetti della debianizzazione}
+	In particolare, {\tt dh\_make} si preoccupa di:
+	\begin{itemize}
+		\item Creare una copia della tarball originale con il nome impostato opportunamente.
+		\pause
+		\item Creare una sottodirectory {\tt debian/} con tanti file che descrivono il pacchetto. In generale molti servono solo per determinati tipi di pacchetti, alcuni invece valgono per tutti e devono essere opportunamente modificati.
+
+		\pause
+		Gli altri file del pacchetto sorgente verranno creati automaticamente alla prima compilazione.
+	\end{itemize}
+\end{frame}
+
+\subsection{Principali file di {\tt debian/}}
+
+\subsubsection{{\tt debian/control}}
+
+\begin{frame}[fragile]{Principali file del sorgente}{{\tt debian/control}}
+	\begin{itemize}
+	\item Contiene i parametri principali del pacchetto sorgente e di tutti i pacchetti binari che questo genera.
+	\pause
+	\item È strutturato in campi, divisi in vari paragrafi separati da linee vuote (o con soli spazi e tabulazioni). Ciascun campo ha la forma
+	\begin{verbatim}
+	Chiave: valore
+	\end{verbatim}
+	\pause
+	\item Alcuni campi possono estendersi su più linee, nel qual caso le linee dopo la prima devono iniziare con uno spazio o una tabulazione.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Principali file del sorgente}{{\tt debian/control} (campi principali)}
+	I  più importanti campi di {\tt debian/control} contengono informazioni a proposito di:
+	\begin{itemize}
+	\pause
+	\item Per il pacchetto sorgente:
+		\begin{itemize}
+		\pause
+		\item Nome del mantenitore e dei suoi collaboratori;
+		\pause
+		\item Sezione ({\tt main}, {\tt contrib} o {\tt non-free}; {\tt admin}, {\tt devel}, \dots);
+		\pause
+		\item Priorità ({\tt required}, {\tt important}, {\tt standard}, {\tt optional}, {\tt extra});
+		\pause
+		\item Dipendenze e conflitti di compilazione
+		\end{itemize}
+	\pause
+	\item Per i pacchetti binari:
+		\begin{itemize}
+		\pause
+		\item Nome del pacchetto;
+		\pause
+		\item Descrizioni: una breve (che stia in circa 60 caratteri) ed una corta (più righe);
+		\pause
+		\item Relazioni con altri pacchetti (dipendenze, raccomandazioni, suggerimenti, conflitti, \dots);
+		\pause
+		\item Architetture su cui il pacchetto può essere compilato ({\tt all} se lo stesso pacchetto va bene per tutte le architetture, {\tt any} se può essere compilato su qualsiasi architettura).
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsubsection{{\tt debian/rules}}
+
+\begin{frame}[fragile]{Principali file del sorgente}{{\tt debian/rules}}
+	\begin{itemize}
+	\item Si preoccupa della compilazione effettiva del pacchetto
+	\pause
+	\item Si tratta di un Makefile sotto mentite spoglie.
+	\pause
+	\item Deve essere eseguibile ed iniziare con la riga
+	\begin{verbatim}
+	#!/usr/bin/make -f
+	\end{verbatim}
+	(che permette di eseguirlo direttamente senza chiamare {\tt make}).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Principali file del sorgente}{{\tt debian/rules} (regole necessarie)}
+	Oltre a quelle elencate qui, {\tt debian/rules} può contenerne altre a discrezione del mantenitore. In ogni caso, però, quelle qui riportate devono funzionare senza necessità di interazione con l'utente.
+	\begin{itemize}
+		\pause
+		\item {\tt build}: si preoccupa di compilare effettivamente il software contenuto nel pacchetto. Non può richiedere i privilegi di root.
+		\pause
+		\item {\tt binary}, {\tt binary-arch} e {\tt binary-indep}: si preoccupano di costruire i pacchetti binari associati a questo sorgente. In particolare, {\tt binary-arch} deve costruire i pacchetti dipendenti dall'architettura e {\tt binary-indep} quelli indipendenti. {\tt binary} tipicamente dipende dagli altri due. Devono essere invocati come root (o tramite programmi come fakeroot).
+		\pause
+		\item {\tt clean}: deve semplicemente riportare lo stato del pacchetto a com'era prima di ogni {\tt build} o {\tt binary}. Deve essere invocato come root.
+	\end{itemize}
+\end{frame}
+
+\subsubsection{{\tt debian/changelog}}
+
+\begin{frame}[fragile]{Principali file del sorgente}{{\tt debian/changelog}}
+	\begin{itemize}
+	\item Non si limita a contenere informazioni sulla storia del pacchetto, ma indica anche la versione, la distribuzione e l'urgenza del caricamento (che ha senso soltanto per i pacchetti che entreranno in una distribuzione complessa).
+	\pause
+	\item È formato da tante stanze, ciascuna delle quali ha la seguente forma:
+	\scriptsize
+	\begin{verbatim}
+	pacchetto (versione) distribuzione; urgency=urgenza
+	
+	  * Una modifica. (closes: #numero_bug)
+	  * Altra modifica.
+	    + Una sottomodifica.
+	    + Altra sottomodifica.
+	
+	 -- Nome Cognome <email>  data
+	\end{verbatim}
+	\normalsize
+	\pause
+	\item La data è formattata come riportata da {\tt date -R}:
+
+	{\tt Tue, 01 Apr 2008 12:45:50 +0200}.
+	\end{itemize}
+\end{frame}
+
+\subsubsection{{\tt debian/copyright}}
+
+\begin{frame}{Principali file del sorgente}{{\tt debian/copyright}}
+	\begin{itemize}
+	\item Contiene informazione sullo stato legale del pacchetto: copyright e licenza.
+	\pause
+	\item Se intendete mettere il vostro pacchetto su Debian, deve essere fatto molto accuratamente, possibilmente controllando tutti i file del pacchetto (ci si può aiutare con {\tt licensecheck}).
+	\pause
+	\item Altrmenti ve lo potete gestire come volete voi, anche lasciarlo come il modello di {\tt dh\_make} o bianco. La responsabilità in merito alla distribuzione del pacchetto è tutta vostra!
+	\end{itemize}
+\end{frame}
+
+\subsubsection{Il resto...}
+
+\begin{frame}{Principali file del sorgente}{Il resto...}
+	Il resto dei file contenuti in {\tt debian/} non hanno direttamente a che fare con il pacchetto, ma sono usati dalla collezione di programmi {\tt debhelper}.
+	\pause
+
+	Vediamoli direttamente in azione!
+\end{frame}
+
+\section{Riferimenti generali}
+
+\begin{frame}
+\tableofcontents[currentsection]
+\end{frame}
+
+\subsection{Link utili}
+
+\begin{frame}{Link utili}
+	\small
+	\begin{description}
+	\item[http://www.debian.org/doc/maint-guide/] La Debian New Maintainer's Guide, il punto di partenza per iniziare a costruire pacchetti Debian e collaborare con il progetto.
+	\item[http://www.debian.org/doc/debian-policy/] La Debian Policy, ossia le regole che i pacchetti devono seguire per poter essere inclusi in Debian. Esistono anche altre policy più piccole che riguardano specifiche categorie di pacchetti (Java, Python, Perl, \dots).
+	\item[http://www.debian.org/doc/developers-reference/] La Developer's Reference, ossia il manuale dello sviluppatore Debian per tutto ciò che non riguarda strettamente la pacchettizzazione: struttura del progetto, votazioni, best practices, gestione dei bug, tool utili, \dots).
+	\item[http://www.debian.org/devel/] L'angolo degli sviluppatori di Debian: il punto di partenza per cercare documentazione relativa al collaborare con Debian.
+	\end{description}
+\end{frame}
+
+\end{document}
+
