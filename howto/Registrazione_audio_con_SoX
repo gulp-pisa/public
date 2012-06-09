@@ -1,0 +1,112 @@
+Registrazione audio con SoX
+===========================
+
+In questa guida viene descritto come è possibile registrare
+audio (per esempio i nostri seminari) usando la scheda 
+audio del nostro computer, un microfono (preferibilmente esterno) 
+	e SoX.
+
+Registrazione
+=============
+Da terminale usare rec.
+
+Si ottiene un giusto compromesso qualità/dimensione impostando 
+la registrazione a 16k e comprimendo in un formato come Ogg Vorbis 
+(elaborazioni realizzabili anche successivamente sul file salvato).
+
+Ipotizzando di voler salvare un file chiamato registrazione.ogg, 
+si lancia da terminale:
+
+	$ rec -r 16000 registrazione.ogg
+
+al termine si interrompe premendo contemporaneamente i tasti crtl+c
+Elaborazione
+
+Riascoltando la registrazione è possibile udire un noioso 
+rumore di sottofondo, il volume basso ecc. ecc. SoX ci aiuta anche 
+nella rielaborazione del file, sempre dentro un terminale.
+Eliminazione rumore sottofondo
+
+Si può eliminare il sottofondo con una operazione di filtraggio.
+
+Serve un campione di rumore, per generare un profilo di rumore.
+Quest'ultimo verrà dato in pasto a SoX per la sottrazione del sottofondo.
+Descriviamo le singole fasi:
+
+Generazione campione rumore di sottofondo 
+=========================================
+Seguono tre possibili alternative per realizzare un campione di 
+rumore di sottofondo:
+
+1) preparare un campione di sottofondo:
+
+Lanciare una breve registrazione prima del seminario. 
+L'operazione è facile, basta registrare pochi secondi nella 
+stanza dove si trova il microfono. Per esempio con il comando:
+
+	$ rec -r 16000 sottofondo.ogg
+
+2) recuperare una porzione di sottofondo nella parte iniziale della registrazione:
+
+Lanciare la registrazione prima che inizi a parlare il Relatore, 
+in modo da creare un campione iniziale.
+
+Quest'ultimo potrà essere selezionato e utilizzato per 
+la generazione del profilo.
+
+Per esempio dal file registrazione.ogg, si può selezionare i primi 2 secondi:
+
+	$ sox registrazione.ogg -n trim 0 2.0 noiseprof speech.noise-profile
+
+3) selezionare una porzione di sottofondo all'interno del file registrato:
+
+Con l'aiuto di Audacity si individua una parte dove è possibile 
+recuperare un campione (frammento non parlato).
+
+Selezionare e copiare su un nuovo file, esportare es. 
+in sottofondo.ogg
+
+Profilo rumore 
+==============
+Ad esclusione del punto sub 2) bisogna creare il profilo del rumore, 
+con il seguente (o analogo) comando:
+
+	$ sox sottofondo.ogg noisered speech.noise-profile1 0.1
+
+Filtraggio con sottrazione rumore di sottofondo 
+===============================================
+	$ sox -V registrazione.ogg registrazione_rumore_rimosso.ogg noisered speech.noise-profile1 0.1
+
+Altre elaborazioni 
+==================
+Conversione mono
+
+Per rendere la registrazione mono (vantaggio: si riduce la dimensione del file, 
+facilitando la portabilità e permettendo il risparmio di spazio sul server):
+
+	$ sox -c 1 registrazione_rumore_rimosso.ogg registrazione_mono.ogg
+
+Alzare volume
+
+Per aumentare il volume per esempio del doppio:
+
+se si è portato a mono:
+
+	$ sox -v 2 registrazione_mono.ogg registrazione_volume_doppio.ogg
+
+se è stato lasciato stereo:
+
+	$ sox -v 2 registrazione_rumore_rimosso.ogg registrazione_volume_doppio.ogg
+
+Filtrare passobasso
+
+Per filtrare passobasso e dare una migliore definizione della registrazione:
+
+	$ sox registrazione_volume_doppio.ogg  registrazione_ok.ogg lowpass 1000
+
+Spettogramma
+============
+Se per curiosità si vuole vedere il grafico:
+
+	$ sox registrazione_ok.ogg -n spectrogram
+

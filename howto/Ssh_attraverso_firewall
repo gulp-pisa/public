@@ -1,0 +1,56 @@
+Ssh attraverso firewall
+=======================
+
+Problema
+========
+Vuoi connetterti da un computer A (liberamente raggiungibile dall'esterno) ad un computer B, che però è dietro ad un firewall che blocca le connessioni ssh dall'esterno. 
+
+(in altre parole:
+
+tuo nonno ha un problema con l'installazione di Linux che gli hai appena fatto, ma è connesso dietro ad un firewall. Tu però sei comodamente seduto ad un computer senza firewall.) 
+
+Soluzione
+=========
+Su entrambi i computer deve ovviamente essere installato Linux.
+Su entrambi i computer deve essere installato il server openssh: sulle distribuzioni Debian-based come Ubuntu, per installarlo ed avviarlo è sufficiente dare il seguente comando: 
+
+	 sudo apt-get install ssh
+
+	 Da un terminale del computer B, dai (dì a tuo nonno di dare) il seguente comando: 
+
+	 ssh -R 1234:localhost:22 utentesulcomputerA@indirizzo.del.computer.A -X
+
+Ti (gli) verrà chiesta la password di utentesulcomputerA    
+Dal computer A, dai il seguente comando: 
+
+	 ssh localhost -p 1234 -X
+
+Ti verrà chiesta la password dell'utente sul computer B 
+
+Fatto!
+Problema 2: Prevenire è meglio che curare
+=========================================
+Tuo nonno ti odia per il solo fatto che ha dovuto scrivere un comando chilometrico.
+
+Soluzione
+=========
+Aggiungi nel suo file .bashrc la riga:
+
+ alias nipote='ssh -R 1234:localhost:22 utentesulcomputerA@indirizzo.del.computer.A -X'
+
+In tale modo la prossima volta avrà solo bisogno di scrivere "nipote".
+Problema 3: non voglio dirgli la mia password/non voglio che lui mi debba dire la sua
+
+Nella procedura descritta sopra, ogni utente deve conoscere una password per dargli accesso all'altra macchina.
+
+Soluzione
+=========
+Ssh con coppia di chiavi pubblica-privata, vedi qui.
+
+La comodità di questo sistema è anche che si può abilitare l'accesso solo quando necessario, mettendo la chiave pubblica in authorized_keys2 della propria macchina e togliendola alla fine della connessione (invece che cambiare ogni volta password).
+
+Lo stesso sistema si può utilizzare ovviamente per la connessione nell'altro senso: se si installa la chiave pubblica (di un'altra coppia, ovviamente) nel computer remoto, non è necessario conoscere la password di accesso
+
+Nota che, in entrambi i casi, per mettere le chiavi nel computer remoto per la prima connessione sarà necessaria la collaborazione del nonn... ehm, dell'assistito, oppure un accesso diretto momentaneo alla macchina. Ovviamente è fortemente sconsigliato inviare in chiaro via email la chiave privata, ma d'altronde non è necessario: lui dovrà solo ricevere la chiave pubblica, generata in locale, e salvarla al posto giusto.
+
+In conclusione, utilizzare le chiavi invece delle password è utile anche per impostare connessioni automatiche (ad esempio all'avvio, o periodicamente con cron, per essere sicuri che il computer sia sempre raggiungibile). 

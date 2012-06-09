@@ -1,0 +1,40 @@
+HD non si monta
+===============
+
+Fonte
+=====
+Questa Guida è tratta da una discussione sulla Mailing List del GULP.
+Problema
+
+Il non corretto smontaggio di un disco, al nuovo collegamento non si monta.
+Soluzione
+
+La sintassi generale del comando mount è la seguente per montare un device:
+
+	mount -t *filesystem_type*(etx2,ext3,nfs,vfat,smbfs) *device* *mount*_poin
+
+per vedere come si chiama il disco, lanciare:
+
+	sudo fdisk -l  
+
+se il disco è sdb1 montarlo con:
+
+	sudo mount /dev/sdb1 /mnt/disco 
+
+Se rilascia un messaggio di errore come questo:
+
+	$MFTMirr does not match $MFT (record 0).
+	Failed to mount '/dev/sdb1': Errore di I/O
+	NTFS is either inconsistent, or there is a hardware fault, or it's a
+	SoftRAID/FakeRAID hardware. In the first case run chkdsk /f on Windows
+	then reboot into Windows twice. The usage of the /f parameter is very
+	important! If the device is a SoftRAID/FakeRAID then first activate
+	it and mount a different device under the /dev/mapper/ directory, (e.g.
+	/dev/mapper/nvidia_eahaabcc1). Please see the 'dmraid' documentation
+	for more details.
+
+Provare a dare da terminale il comando:
+
+ 	sudo ntfsfix /dev/sdb1
+
+se il comando termina senza errori, staccare e riattaccare il disco. A questo punto lo dovrebbe montare automaticamente. 

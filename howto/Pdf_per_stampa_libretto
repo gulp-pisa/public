@@ -1,0 +1,28 @@
+Pdf per stampa libretto
+=======================
+
+Introduzione
+============
+Con i seguenti comandi sarà possibile trasformare un file 
+pdf in un altro pdf stampabile su dei fogli A4 fronte retro 
+e realizzare un libretto formato A5, piegando al centro le
+pagine.
+
+In pratica un libretto.
+
+Programmi necessari
+===================
+    pdftops (poppler-utils)
+    psbook (psutils)
+    psnup (psutils)
+    ps2pdf (ghostscript). 
+
+Procedura da terminale:
+======================
+
+	pdftops file_pdf_originale.pdf
+
+	psbook file_pdf_originale.ps | psnup -pa4 -2 > file_pdf_A5.ps
+
+	ps2pdf file_pdf_A5.ps file_pdf_A5.pdf
+

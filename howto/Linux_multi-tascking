@@ -1,0 +1,85 @@
+Linux multi-tasking micro-Howto
+===============================
+
+Visto che Linux, o meglio, la console di Linux al contrario del 
+DOS è multi-tasking, ovvero è possibile gestire più processi 
+contemporaneamente, vediamo quindi come gestire il tutto con 
+l’ausilio dei comandi messi a disposizione.
+
+Per prima cosa proviamo ad avviare un processo che bloccherà 
+la console come ad esempio updatedb.
+
+   $ sudo updatedb
+
+
+Questo comando renderà la console bloccata, quindi premiamo CTRL+Z 
+e vedremo comparire questo messaggio:
+
+   [1]+ Stopped sudo updatedb
+
+Questo messaggio ci indica che è stato assegnato il numero 1 
+(vedremo in seguito cosa è) al processo messo in attesa, 
+quindi bloccato ma non terminato. Infatti è possibile usare la console.
+
+Proviamo adesso a metterlo in background, ovvero sullo sfondo: 
+il processo continuerà a lavorare ma non bloccherà la console.
+
+Il comando da usare è il seguente:
+
+   $ bg %
+
+qui % sarà sostituito dal numero del processo, in questo caso 1.
+
+Per rimetterlo in primo piano sarà necessario usare:
+
+   $ fg %
+
+
+Questa tecnica è valida anche per più processi contemporanei, 
+e per fare ordine Linux ci offre un comodo comando: jobs.
+
+Vediamo il suo funzionamento:
+
+   $ jobs
+   
+   [1]- Running sudo updatedb &
+   [2]+ Running gedit &
+
+Il numero tra parentesi quadre ci indica il numero (Job number)
+assegnato al processo, mentre accanto c'è la scritta "Running" la quale
+ci indica lo stato del processo (in esecuzione), se avessimo dato questo 
+comando quando abbiamo fermato updatedb ci sarebbe stato scritto "Stopped" (in attesa).
+
+Con jobs -l dà la possibilità di avere anche il PID (Process IDentificator) 
+e la directory di lavoro.
+
+C'è anche la possibilità di avviare un processo direttamente in background, 
+basterà scrivere il nome del programma seguito da uno spazio e dal simbolo "&".
+
+Provate ad avviare una programma grafico con quel simbolo:
+
+   $ gedit &
+   
+   [1] 5968
+
+Verrà eseguito gedit e verrà restituita la console.
+
+Al solito, il numero tra parentesi quadre indica il numero assegnato
+al processo anche detto Job number, mentre il numero di seguito è il PID, 
+identificatore di processo e questo è visibile a livello di sistema.
+
+L’ultimo comando analizzato è kill. Kill serve per "ammazzare" i processi, 
+ovvero il corrispettivo di CTRL+C. Per terminare un processo occorre sapere il 
+job numeber o il PID, vediamo come fare una strage di processi...
+
+   kill %1
+
+Terminerà il processo eseguito nel terminale corrente con job numer 1
+
+   kill 5968
+
+Terminerà il processo con PID uguale a 5968.
+
+Non entro nel merito dei vari segnali ma vi basti che kill invia per
+default il segnale TERM, per una altre informazioni vi rimando
+al manuale di kill (man kill). 

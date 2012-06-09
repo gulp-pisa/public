@@ -1,0 +1,102 @@
+Aggiungere un nuovo indirizzo email ad una chiave GPG
+=====================================================
+
+Problema
+========
+A suo tempo, hai creato la tua bella chiave gpg 
+(con seahorse - ovvero "Password e chiavi di cifratura" 
+ - o con gpg, dal terminale, è indifferente), ma adesso hai un 
+nuovo indirizzo email da cui vorresti poter inviare email firmate, 
+con la stessa chiave. 
+
+Soluzione
+=========
+In un terminale, dai il comando 
+
+	 gpg --edit-key UID
+
+dove UID sarà parte della attuale uid (o di una delle attuali). 
+Ad esempio, se finora quella chiave aveva registrato solo 
+l'indirizzo "pietro@example.com", il comando potrà essere
+
+ gpg --edit-key pietro@example.com
+
+ma
+
+ gpg --edit-key pietro
+
+dovrebbe bastare.
+
+Dovrebbe comparire un messaggio "La chiave segreta è disponibile.", 
+nonché un menu testuale. Dare il comando "adduid".
+Viene richiesto il nome: non è richiesta grande fantasia - 
+"Nome Cognome" va benissimo.
+Viene quindi chiesto l'indirizzo email - il nuovo, 
+ovviamente, che si vuole abilitare.
+C'è infine un campo "Comments" che si può tranquillamente 
+lasciare vuoto. 
+
+Attenzione: per effettuare questa (e qualsiasi altra) modifica sulla 
+chiave, sarà richiesta la password. Inserirendola, non comparirà niente 
+a schermo, ma è perfettamente normale: basta scriverla comunque e dare "Invio".
+UID principale
+
+A questo punto l'indirizzo email sarà abilitato. Però potresti voler ancora:
+
+stabilire che è l'indirizzo principale per quella chiave. Quando dai il comando 
+
+	 gpg --edit-key UID
+
+viene stampata a schermo una lista delle UID, una per riga: guarda il numero 
+di quella che hai appena creato, che ad esempio potrebbe essere
+
+	 [unknown ] (2)  Nome Cognome <cognome@example.com>
+
+Per renderla principale, devi renderla "selezionata":
+
+	 uid 2
+
+e quindi renderla principale:
+
+ 	primary
+
+Fiducia nell'UID
+
+Infine, è il caso di stabilire che in questa chiave hai 
+una fiducia "sconfinata" ("ultimate") - per la semplice ragione 
+che è tua:
+come sopra, devi avere selezionato la chiave: 
+
+	 uid 2
+
+e a questo punto puoi impostare la fiducia:
+
+ 	trust
+
+potrai scegliere tra diversi livelli di fiducia:
+
+	1 = I don't know or won't say
+ 	2 = I do NOT trust
+ 	3 = fiducia marginale
+ 	4 = fiducia piena
+ 	5 = I trust ultimately
+ 	m = back to the main menu
+
+e sceglierai "5".
+
+Noterai che nella riga del nuovo indirizzo email non c'è più scritto 
+"[unknown ]", ma "[ultimate]". Ottimo lavoro.
+Pubblicare i cambiamenti
+
+Ogni volta che si fa delle modifiche alla propria chiave bisogna 
+ricordarsi di sincronizzarla con un server GPG. Questo si può fare 
+con Seahorse ("Sincronizza e pubblica le chiavi", dal menu "Remoto") 
+o da terminale, con il comando:
+
+ 	gpg --send-keys ID
+
+dove ID sarà l'id della tua chiave: qualcosa della forma 1024/ABCDEFAB 
+che compare nella terza riga dell'output del comando
+
+ 	gpg --list-secret-keys
+

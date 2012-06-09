@@ -1,0 +1,61 @@
+Access point con una scheda wireless Atheros
+============================================
+
+Come trasformare un portatile dotato di scheda wireless Atheros,
+connesso alla rete tramite scheda ethernet, in un Access Point e router IP.
+
+Stato di questo Howto
+=====================
+Questo Howto è ancora terribilmente incompleto. Ci stiamo lavorando...
+Hardware e software presi in esame
+
+Questo Howto è stato provato con una scheda che appare in lspci come:
+
+	06:02.0 Ethernet controller: Atheros Communications, Inc. AR5005G 802.11abg NIC (rev 01)
+
+ed utilizzando una distribuzione Debian lenny/sid, ma dovrebbe valere 
+per qualsiasi distribuzione di Linux e con qualsiasi scheda wireless
+supportata dal driver madwifi. Per maggiori informazioni riferirsi al sito 
+ufficiale dei driver.
+
+Operazioni
+==========
+Tutte le operazioni qui elencate andranno ovviamente eseguite come utente root.
+
+Installare, se non lo è già, il pacchetto madwifi-tools: 
+
+	# apt-get install madwifi-tools
+
+Eliminare l'interfaccia wireless virtuale creata automaticamente: 
+
+	# wlanconfig ath0 destroy
+
+Creare un'interfaccia wireless virtuale in modalità Access Point: 
+
+	# wlanconfig ath0 create wlandev wifi0 wlanmode ap
+
+Assegnare un ESSID ed un canale all'interfaccia appena creata: 
+
+	# iwconfig ath0 essid MyPersonalESSID channel 2 enc off
+
+In alternativa si può anche abilitare la crittografia WEP: 
+
+	# iwconfig ath0 essid MyPersonalESSID channel 2 enc s:wepPassword
+
+Assegnare un IP all'interfaccia ed attivarla: 
+
+	# ifconfig ath0 up 192.168.1.1 netmask 255.255.255.0
+
+A questo punto la scheda wireless ha iniziato a funzionare in modalità 
+Access Point ed ha ricevuto un suo indirizzo IP. Altri computer potranno 
+rilevare normalmente l'Access Point e associarvisi. Per utilizzare il
+computer anche come router sono necessari un paio di altri comandi.
+
+    Abilitare il Packet Forwarding. 
+
+	# echo "1" > /proc/sys/net/ipv4/ip_forward
+
+Impostare il NAT (Network Address Translation, traduzione degli indirizzi di rete). 
+
+	# iptables -t nat -A POSTROUTING -j MASQUERADE
+
