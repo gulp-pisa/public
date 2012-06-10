@@ -1,6 +1,7 @@
 Relatore: Giovanni Mascellani
 Dove: Stazione Leopolda di Pisa
 Orario: 21.00
+
 Abstract: Il Seminario tratta della creazione di pacchetti Debian (compatibili, quindi, con tutte le distribuzioni derivate da Debian, come Ubuntu), soprattutto dal punto di vista di chi ha bisogno di crearsi pacchetti per il proprio uso personale, quindi senza necessità di seguire strettamente particolari policy e regole.
 
     Struttura di pacchetti binari e pacchetti sorgente;
