@@ -1,0 +1,289 @@
+\documentclass[ignorenonframetext]{beamer}
+\usepackage{qtree}
+\usepackage{eso-pic}
+\usepackage{hyphenat}
+
+\usepackage[italian]{babel}
+\usepackage[all]{xy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{ctable}
+
+%\usepackage{listings}
+
+\usepackage{graphicx}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usetheme{Berlin}
+%\lstloadlanguages{Java}
+%\lstset{language=Java,tabsize=1,basicstyle=\small,breaklines=true,numbers=left,numberstyle=\tiny,frame=tlrb}
+%%% \lstinputlisting[title=Interval.java]{/home/the_nihilant/srcs/java/midterm_pa/Interval.java}
+
+
+\title{Il mondo della virtualizzazione}
+\date{\today}
+\author{Claudio Imbrenda}
+\institute{Linux Day 2008 PISA}
+
+%\newcommand{\mq}[1]{\langle#1\rangle}
+%\newcommand{\uberarrow}[1]{\xymatrix{\ar@{|->}[r]^{#1}&}}
+%\newcommand{\uberarrowex}[1]{\xymatrix@C=70pt{\ar@{|->}[r]^{#1}&}}
+
+%\newcommand{\seipt}{\fontsize{6}{0}\selectfont}
+
+%\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+
+%\newcommand{\EUR}{\textgreek{\euro}}
+
+\begin{document}
+
+  \begin{frame}
+  \titlepage
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Perché}
+  Può essere utile avere una macchina virtuale:
+  \begin{enumerate}
+  \item Software scritto per un altro tipo di processore
+  \item Software scritto per un altro sistema operativo
+  \item Necessità di eseguire più sistemi operativi sulla stessa macchina
+  \item Necessità di separare diverse istanze dello stesso sistema operativo
+  \item Debug del sistema
+  \end{enumerate}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Come}
+  Gli approcci esistenti:
+  \begin{itemize}
+  \item interpretazione
+  \item ricompilazione dinamica
+  \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Una domanda viene spontanea...}
+  Perché mai dovrei \textit{interpretare} o \textit{ricompilare al volo} un
+  se ho un processore che è capace di eseguire nativamente?
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Niente di nuovo, in realtà...}
+  
+  La \textbf{virtualizzazione} è esattamente questo: esecuzione nativa da parte del
+  processore del sistema virtuale. 
+  
+  Introdotta negli anni '70 dalla IBM!  
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Alcune proprietà interessanti}
+  Virtualizzazione significa quindi che:
+  
+  \begin{itemize}
+  \item Il sistema eseguito nell'ambiente virtuale si deve comportare
+  esattamente come se fosse eseguito su una macchina fisica eqivalente
+  \item L'ambiente di virtualizzazione deve avere il completo controllo delle risorse
+  virtualizzate
+  \item Una percentuale statisticamente grande di istruzioni devono essere
+  eseguite senza intervento dell'ambiente di virtualizzazione.
+  \end{itemize}
+  
+  L'ultima proprietà non è in realtà fondamentale, essa in fatti garantisce
+  solo l'\textit{efficienza} della macchina virtuale.
+  
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Requisiti hardware}
+  I requisiti di Popek e Goldberg sono i requisiti che una macchina deve
+  avere per poter essere virtualizzabile. Per definire i requisiti per la
+  virtualizzazione Popek e Goldberg introducono una classificazione delle
+  istruzioni in tre gruppi:
+  \begin{description}
+  \item[Istruzioni privilegiate] Sono quelle che generano una \textit{trap} o
+  un \textit{fault} quando sono eseguite in modalità utente e che invece
+  vengono eseguite correttamente in modalità supervisore.
+  \item[Istruzioni sensibili di controllo] Sono quelle che alterano lo stato
+  globale del sistema.
+  \item[Istruzioni sensibili di compotamento] Sono quelle il cui risultato
+  dipende dallo stato globale del sistema.
+  \end{description}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{I teoremi di Popek e Goldberg}
+  I risultati principali di Popek e Goldberg sono quindi:
+  
+  \begin{theorem}
+  È possibile virtualizzare un'architettura se tutte le istruzioni sensibili
+  sono privilegiate. 
+  \end{theorem}
+  
+  \begin{theorem}
+  Un'architettura è ricorsivamente virtualizzabile se:
+  \begin{enumerate}
+  \item è virtualizzabile
+  \item è possibile costruire per essa una macchina virtuale che non abbia
+  dipendenze di temporizzazione
+  \end{enumerate}
+  \end{theorem}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Che fine ha fatto la virtualizzazione?}
+  Dopo gli anni 70 i computer sono diventati molto più comuni, ed economici.
+  I principali motivi che spingevano la virtualizzazione sono venuti a
+  mancare, fino alla fine degli anni '90.
+  
+  \begin{enumerate}
+  \item Software scritto per un altro tipo di processore
+  \item Software scritto per un altro sistema operativo
+  \item Necessità di eseguire più sistemi operativi sulla stessa macchina
+  \item Necessità di separare diverse istanze dello stesso sistema operativo
+  \item Debug del sistema
+  \end{enumerate}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Ma c'è un piccolo particolare...}
+  L'architettura purtroppo più diffusa (x86) ..
+  
+  \textbf{non è virtualizzabile!}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Si trova sempre un modo..}
+  \begin{itemize}
+  \item Spesso i sistemi operativi non dipendono dalle istruzioni sensibili. 
+  \item Spesso si può prevedere quando verranno usate istruzioni sensibili.
+  \item Spesso si può barare!
+  \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Esecuzione in modo utente}
+  Una tecnica di virtualizzazione prevede che tutto il sistema virtualizzato
+  venga eseguito in modo utente, in modo che le istruzioni sensibili
+  privilegiate generino delle trap, sperando che non vengano usate le
+  istruzioni sensibili non privilegiate. L'ambiente di virtualizzazione si
+  occupa di gestire le trap per cercare di garantire la proprietà di equivalenza.
+  
+  Questo garantisce la massima velocità ma non certo la massima generalità.
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Esecuzione in modo utente con patching al volo}
+  Come nel caso precedente, con la differenza che il codice viene analizzato
+  e modificato prima di essere eseguito in modo da mantenere la proprietà di
+  equivalenza. 
+  
+  \begin{itemize}
+  \item Richiede di conoscere dove e quando effettuare il patching.
+  \item Ogni sistema da virtualizzare va trattato come caso a parte.
+  \item Permette di virtualizzare anche sistemi che normalmente non
+  sarebbero virtualizzabili.
+  \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Barare spudoratamente!}
+  Possiamo \textbf{modificare il set di istruzioni}, in modo che
+  tutte le istruzioni sensibili diventino privilegiate. Intel e AMD hanno
+  fatto esattamente questo con le loro estensioni di virtualizzazione.
+  
+  In questo modo si riesce a garantire sempre la proprietà di equivalenza.
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Barare ancora più spudoratamente!}
+  Infine possiamo modificare il sistema da virtualizzare in modo che si
+  adatti in modo specifico al sistema di virtualizzazione.
+  
+  \textbf{In questo modo si viola la proprietà di equivalenza!}
+  
+  {\scriptsize (ma si raggiungono ottime performance!)}
+  
+  In questo caso si parla di paravirtualizzazione.
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Qualche esempio concreto}
+  \begin{itemize}
+  \item Bochs (interprete)
+  \item BasiliskII (interprete/ricompilatore)
+  \item SheepShaver (interprete/ricompilatore)
+  \item PearPC (interprete/ricompilatore)
+  \item QEMU (ricompilatore/virtualizzatore)
+  \item KVM (virtualizzatore/ricompilatore)
+  \item VirtualBox (virtualizzatore/ricompilatore)
+  \item Xen (virtualizzatore/paravirtualizzatore)
+  \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Xen}
+  \begin{itemize}
+  \item necessita sempre di un sitema paravirtualizzato per accedere
+  all'hardware (domain0)
+  \item necessita delle estensioni di virtualizzazione per effettuare
+  virtualizzazione
+  \end{itemize} 
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{QEMU}
+  \begin{itemize}
+  \item inizialmente era solo un emulatore
+  \item aggiunta in seguito la possibilità di virtualizzare\\ (modulo KQEMU)
+  \item non fa uso di estensioni hardware per la virtualizzazione
+  \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{KVM}
+  \begin{itemize}
+  \item deriva da QEMU
+  \item necessita delle estensioni di virtualizzazione
+  \item la componente kernel-space è parte del kernel di linux
+  \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{VirtualBox}
+  \begin{itemize}
+  \item effettua esecuzione diretta quando possibile
+  \item effettua ricompilazione al volo
+  \item e modifica il codice durante le ricompilazioni, per non doverle
+  rieffettuare
+  \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+  \Huge Dimostrazione pratica\\
+  (VirtualBox)
+  \end{frame}
+
+  \begin{frame}
+  \Huge Dimostrazione pratica\\
+  (QEMU)  
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{Domande?}
+  
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{Fine}
+  Happy hacking!
+  \end{frame}
+
+\end{document}

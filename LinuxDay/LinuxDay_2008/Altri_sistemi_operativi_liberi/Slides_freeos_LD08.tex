@@ -1,0 +1,141 @@
+\documentclass{beamer}
+%\documentclass[ignorenonframetext]{beamer}
+\usepackage{qtree}
+\usepackage{eso-pic}
+\usepackage{hyphenat}
+
+\usepackage[greek,italian]{babel}
+\usepackage[all]{xy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{ctable}
+
+%\usepackage{listings}
+
+\usepackage{graphicx}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usetheme{Warsaw}
+%\lstloadlanguages{Java}
+%\lstset{language=Java,tabsize=1,basicstyle=\small,breaklines=true,numbers=left,numberstyle=\tiny,frame=tlrb}
+%%% \lstinputlisting[title=Interval.java]{/home/the_nihilant/srcs/java/midterm_pa/Interval.java}
+
+
+\title{Altri sistemi operativi liberi}
+\date{\today}
+\author{Claudio Imbrenda}
+\institute{Linux Day 2008 PISA}
+
+%\newcommand{\mq}[1]{\langle#1\rangle}
+%\newcommand{\uberarrow}[1]{\xymatrix{\ar@{|->}[r]^{#1}&}}
+%\newcommand{\uberarrowex}[1]{\xymatrix@C=70pt{\ar@{|->}[r]^{#1}&}}
+
+%\newcommand{\seipt}{\fontsize{6}{0}\selectfont}
+
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+
+%\newcommand{\EUR}{\textgreek{\euro}}
+
+\newcommand{\freeos}[7]{
+\begin{frame}
+\frametitle{#1 (dettagli)}
+\begin{tabular}{rp{8cm}}
+\includegraphics[width=3cm]{#1-logo.jpg}
+&\textbf{#1} (ultima versione: #2)\\
+\hline
+Licensa:&#3\\
+Tipo:&#4\\
+Kernel:&#5\\
+Architetture:&#6\\
+Sito di riferimento:&#7\\
+\end{tabular}
+\end{frame}
+\begin{frame}
+\frametitle{#1 (screenshot)}
+\includegraphics[width=9.5cm]{#1-screenshot.jpg}
+\end{frame}
+}
+
+\begin{document}
+  \begin{frame}
+  \titlepage
+  \end{frame}
+  
+  \begin{frame}
+  \frametitle{Alcuni concetti base}
+  
+  Qualche chiarimento sulla terminologia:
+  
+  \begin{description}
+  \item[Tipo] Interfaccia delle chiamate di sistema.
+  \item[Kernel] Tipo di kernel: generalmente monolitico o ibrido (vanno
+  tanto di moda!)
+  \item[Architetture] Le architetture hardware supportate dal sistema
+  operativo.
+  \end{description}
+  \end{frame}
+  
+  \freeos{Linux}{2.6.27}{GPL v.2}{Unix-like}{Monolitico modulare}
+  {alpha, arm, avr32, cris, h8/300, hp-pa, ia64, m32r, m68k, mips, powerpc,
+  s/390, system z, sparc, superH, v850, x86, xtensa}{www.kernel.org}
+  
+  \freeos{Minix}{3.1.3}{BSD}{Unix-like}{Microkernel}
+  {i386, \textit{arm}, \textit{powerpc}, \textit{mips}}{www.minix3.org}
+  
+  \freeos{OpenSolaris}{2008.05}{CDDL}{Unix-like}{Monolitico modulare}
+  {sparc, x86, system z, \textit{powerpc}}{www.opensolaris.com}
+  
+  \freeos{Haiku}{alpha-r28303}{MIT}{BeOS}{Ibrido}{i386}{www.haiku-os.org}
+  
+  \freeos{ReactOS}{0.3.6}{GPL, LGPL, BSD}{Windows}{Ibrido}{i386}{www.reactos.org}
+  
+  \freeos{FreeBSD}{7.0}{BSD}{Unix-like}{Monolitico modulare}
+  {x86, ia64, powerpc, sparc64}{www.freebsd.org}
+  
+  \freeos{OpenBSD}{4.3}{BSD}{Unix-like}{Monolitico modulare}
+  {alpha, arm, hp-pa, m68k, m88k, mips, powerpc, superH, sparc, vax, x86}
+  {www.openbsd.org}
+  
+  \freeos{NetBSD}{4.0.1}{BSD}{Unix-like}{Monolitico modulare}
+  {alpha, arm, hp-pa, m68k, mips, powerpc, superH, sparc, vax, x86, \textit{ia64}}
+  {www.netbsd.org}
+  
+  \freeos{DragonFlyBSD}{2.0.1}{BSD}{Unix-like}{Ibrido}{i386}{www.dragonflybsd.org}
+  
+  \freeos{DesktopBSD}{1.6}{BSD}{Unix-like}{Monolitico modulare}{x86}{www.desktopbsd.net}
+  
+  \freeos{PC-BSD}{7.0}{BSD}{Unix-like}{Monolitico modulare}{x86}{www.pcbsd.org}
+  
+  \freeos{Hurd}{CVS}{GPL}{Unix-like}{Microkernel}{x86}{www.gnu.org/software/hurd/}
+  
+  \freeos{FreeDOS}{1.0}{GPL}{DOS}{Monolitico}{i386}{www.freedos.org}
+  
+  \freeos{Plan9}{quarta edizione}{Lucent Public License}{POSIX}{Ibrido}
+  {alpha, arm, mips, powerpc, sparc, x86}{plan9.bell-labs.com/plan9/}
+  
+  \freeos{QNX}{6.3.2}{?}{POSIX}{Microkernel realtime}
+  {arm, mips, powerpc, superH, intel 8088, x86}{www.qnx.com}
+  
+  \freeos{Syllable}{0.6.5}{GPL}{POSIX}{Ibrido}{i386}{www.syllable.org}
+  
+  \freeos{JNode}{0.2.7}{LGPL}{Java}{Esotico}{x86}{www.jnode.org}
+  
+  \freeos{KolibriOS}{0.7.1.0}{GPL}{Esotico}{Monolitico}{i386}{www.kolibrios.org}
+  
+  \freeos{Darwin}{9.5.0}{Apple Public Source License}{Unix-like}{Ibrido}{arm, powerpc, x86}
+  {developer.apple.com/opensource/}
+ 
+ 
+  \begin{frame}
+  \frametitle{Fine}
+  Happy hacking!
+  \end{frame}
+  
+\end{document}
+
