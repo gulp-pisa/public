@@ -1,0 +1,314 @@
+\documentclass{beamer}
+\newcommand{\skipsignature}[1]{}
+\skipsignature{
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+% Questo sorgente LaTeX e` stato firmato con GnuPG,
+% ad esclusione di un breve preambolo.
+% Oltre alla parte firmata il documento originale contiene
+% solo tre righe iniziali, riportate (commentate) di seguito:
+
+% \documentclass{beamer}
+% \newcommand{\skipsignature}[1]{}
+% \skipsignature{
+
+% Tutto il resto di questo sorgente e` firmato.
+}
+%
+% Scritto da Marco Bodrato, ottobre 2007
+% Pubblicato con liceza Creative Common 3.0 BY-NC-SA, disponibile presso
+% http://creativecommons.org/licenses/by-nc-sa/3.0/
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{beamerthemesplit}
+
+%\usetheme{Ilmenau}
+%\usetheme{Berkley}
+\usetheme{Copenhagen}
+
+\newcommand{\grigio}[1]{\textcolor{white!60!black}{#1}}
+
+% \title[Crittografia e partecipazione]{Crittografia: potenzialit\`a e limiti nella partecipazione digitale}
+% \subtitle{Fiducia o trasparenza?}
+% \author{Marco Bodrato}
+% \institute[0xC1A000B0]{Universit\`a di Roma ``Tor Vergata''}
+\title{Verba volant scripta manent.}
+\subtitle{Quando, come e soprattutto {\bf quale} crittografia.}
+\author[\href{http://marco.bodrato.it/}{Marco Bodrato}\hspace{1cm}(0xC1A000B0)]{Marco Bodrato}
+%\institute[Tor-Vergata]{Universit\`a di Roma ``Tor Vergata''}
+\date[LD 2007]{Linux Day - Pisa - 27 ottobre 2007}
+
+\subject{Crittografia Off-the-Record}
+\keywords{crittografia,rinnegabilit\`a,firma,riservatezza}
+
+\begin{document}
+\frame{\titlepage}
+
+%\section*{Indice}
+\frame{\tableofcontents}
+\section{Modelli di sicurezza}
+\subsection{Cosa vuole dire sicurezza?}
+\frame{
+  \frametitle{Una citazione}
+  \framesubtitle{\ldots non prendiamoci sul serio \ldots}
+  \begin{block}{Mohamed el Baradei\hfill\small Nobel per la pace 2005}
+    Per molti popoli e nazioni la sicurezza resta una preoccupazione
+    prioritaria. Ma in cosa essa consista, e quali siano le strategie
+    per conseguirla, pu\`o variare molto.
+
+    Per miliardi di persone sicurezza \`e la speranza di vedere
+    ``garantiti'' i propri bisogni fondamentali: cibo, acqua, un tetto,
+    l'assistenza sanitaria.
+
+    Per altri, sicurezza \`e la speranza di vedere ``garantiti'' altri
+    diritti umani fondamentali, quali la libert\`a d'espressione e
+    dissenso, \ldots%% e in primo luogo la libert\`a dall'oppressione.
+%%
+%%    Per altri ancora, \`e la speranza di emanciparsi da un'occupazione
+%%    straniera.
+    \begin{center}
+      \href{http://ln.bodrato.it/Baradei-discorso}{$\cdots$}
+    \end{center}
+    
+    \grigio{\hfill Universit\`a di Firenze, 5 ottobre 2007}
+  \end{block}
+}
+\frame{
+  \frametitle{Sicurezza nella comunicazione}
+  \begin{block}{}
+    Per dire che un canale di comunicazione \`e sicuro ci aspettiamo
+    almeno alcune garanzie:
+    \begin{itemize}
+    \item l'identit\`a dell'interlocutore
+    \item che non ci siano altri ad ascoltare
+    \item messaggi non distorti
+    \end{itemize}
+  \end{block}
+  \vspace{1cm}
+
+  Per ogni forma di comunicazione tradizionale, {\it conosciamo il
+    livello di sicurezza} e adeguiamo il tono e i contenuti della
+  discussione.
+
+  Non tutti i canali devono essere sicuri, ma vogliamo saperlo.
+}
+\subsection{Quel che ci aspettiamo dalla posta}
+\frame{
+  \frametitle{Posta e posta elettronica}
+  \begin{block}{Busta chiusa}
+    {\it Nessuno} pu\`o leggere il contenuto senza manomettere
+    l'involucro. La grafia ci conforta sull'identit\`a del mittente.
+  \end{block}
+%%  \pause
+  \begin{block}{Posta elettronica}
+    \`E paragonabile alle cartoline\ldots\\
+    \ldots scritte a macchina
+  \end{block}
+
+  Falsificare messaggi di posta elettronica \`e tecnicamente banale,
+  solo una questione di volont\`a.
+
+  Servono firma elettronica e cifratura, per questo si usano
+  protocolli come OpenPGP o SSL.
+}
+\subsection{\ldots e da una chiacchierata tra amici}
+\frame{
+  \frametitle{Chiacchiere e chat}
+  \begin{block}{Discussione a casa di amici}
+    Vediamo i nostri interlocutori e possiamo immaginare che nessuno
+    abbia un registratore in funzione\ldots
+  \end{block}
+%%  \pause
+  \begin{block}{Chat via internet}
+    Identit\`a garantita in modo molto debole\ldots\\
+    \ldots quasi certezza che {\it il registratore} sia in funzione.
+  \end{block}
+
+  In ogni caso la trascrizione elettronica \`e un testo facilmente
+  falsificabile.
+
+  Qui serve la crittografia {\it Off-the-Record}, ``immune alla
+  registrazione''.
+}
+\section{Vari progammi/paradigmi per la crittografia}
+\subsection{HTTPS, SSL\ldots}
+\begin{frame}
+  \frametitle{Canali sicuri}
+  \framesubtitle{https://\ldots o SSL}
+  Esistono degli standard abbastanza consolidati per creare
+  connessioni {\it sicure}.
+
+  \begin{block}{Le domande da porsi\ldots}
+    \begin{itemize}
+    \item Chi garantisce questa sicurezza? (2x)
+    \item Che tipo di sicurezza \`e?
+    \item \`E adeguata ai {\it miei} bisogni di sicurezza?
+    \end{itemize}
+  \end{block}
+
+  Ad esempio l'uso di HTTPS o SSL per leggere/spedire posta o per
+  partecipare a chat. Sono protocolli adeguati?
+
+\end{frame}
+\subsection{GPG o OpenPGP}
+\frame{
+  \frametitle{Per la posta elettronica\ldots}
+
+  Per usare in modo sicuro la posta elettronica conviene crearsi una
+  chiave GPG. Ed imparare ad usare un poco di crittografia\ldots
+
+  \begin{block}{Vantaggi}
+    \begin{itemize}
+    \item Se usate la cifratura, solo i destinatari potranno decifrare
+      il messaggio.
+    \item<alert@2> Se usate la firma, chiunque, in ogni momento, potr\`a
+      verificare che siete stati voi a scrivere quello che avete
+      scritto.
+    \end{itemize}
+  \end{block}
+  \pause
+  \begin{alertblock}{Svantaggi}
+    \begin{itemize}
+    \item Se usate la firma, chiunque, in ogni momento, potr\`a
+      verificare che siete stati voi a scrivere quello che avete
+      scritto.
+    \end{itemize}
+  \end{alertblock}
+  
+  Ci son caratteristiche desiderabili in alcune occasioni e
+  {\bf non} in altre.
+
+}
+\subsection{E cosa succede su una chat?}
+\frame{
+  \frametitle{Cosa succede se uso i paradigmi precedenti su una chat?}
+  Si possono firmare e cifrare tutti i messaggi.
+
+  \begin{block}{Installazione su Debian di un plug-in per pidgin\ldots}
+    \tt \# \  apt-get install pidgin-encryption
+  \end{block}
+
+  In questo modo otterr\`o le garanzie di identit\`a e riservatezza di
+  prima, ma sono solo questi gli effetti?
+
+  \begin{alertblock}{Questo significa firmare ogni messaggio}
+    Siete davvero disposti a mettere per scritto e firmare ogni vostra
+    chiacchiera?
+  \end{alertblock}
+
+  Bisogna inventarsi qualcosa d'altro\ldots
+}
+\section{Crittografia Off-the-Record}
+\subsection{Cosa ci garantisce}
+\frame{
+  \frametitle{Cosa ci garantisce?}
+  \framesubtitle{Quello che ci aspettiamo da una chiacchierata privata\ldots}
+  \begin{itemize}[<+-| alert@+>]
+    \item Riservatezza: nessun'altro pu\`o leggere i nostri messaggi.
+    \item Autenticazione: garantita l'identit\`a del nostro
+      interlocutore e l'integrit\`a del messaggio.
+    \item {\it Perfect forward secrecy}: una compromissione della
+      chiave privata non fornisce informazioni sui messaggi passati.
+    \item Rinnegabilit\`a: i messaggi {\bf non} contengono una firma
+      digitale verificabile da terzi. \`E facile falsificare la
+      trascrizione della conversazione.
+  \end{itemize}
+}
+\subsection{Programmi che la implementano}
+\frame{
+  \frametitle{Programmi liberi}
+  Per ora solo alcuni programmi per chat via rete:
+  \begin{itemize}
+  \item climm (ex mICQ),
+  \item kopete (via plug-in),
+  \item<alert@1> pidgin (via plug-in).
+  \end{itemize}
+  
+  Quest'ultimo \`e l'implementazione migliore che potete sperare, visto
+  che \`e curata ed aggiornata degli inventori del protocollo.
+
+  \begin{block}{Installazione su Debian}
+    \tt \# \  apt-get install pidgin-otr
+  \end{block}
+}
+
+\frame{
+  \frametitle{Configurazione ed uso di pidgin-otr}
+  \begin{block}{La configurazione e l'uso in pochi passi\ldots}
+    \begin{enumerate}
+    \item Tools$\to$Plugins$\to$Off-the-Record attivate il plugin
+    \item Durante la chat a 2: il tasto ``OTR'' in basso inizia la sessione protetta
+    \item Mouse-destro sul tasto ``OTR''$\to$Authenticate per verificare l'identit\`a.
+    \end{enumerate}
+  \end{block}
+}
+\subsection*{Domande?}
+\frame{
+  \frametitle{Grazie}
+  \framesubtitle{Domande?}
+
+  \begin{center}
+    Grazie per l'attenzione!
+    
+    \vspace{8mm}
+
+    \alert{\Huge Domande?}
+
+    \vspace{8mm}
+
+    Per informazioni aggiornate:\\\url{http://www.cypherpunks.ca/otr/}
+
+    \vspace{8mm}
+
+    \footnotesize \grigio{La presentazione \`e disponibile via web:
+      \href{http://bodrato.it/presentazioni/\#LD2007}{http://bodrato.it/presentazioni/\#LD2007},\\
+      Rilasciata con
+      \href{http://creativecommons.org/licenses/by-nc-sa/3.0/}{licenza
+        CreativeCommons BY-NC-SA.
+        \includegraphics[width=1cm]{cc.png}}}
+  \end{center}
+}
+\frame{
+  \frametitle{E per la posta?}
+
+  \`E teoricamente possibile un protocollo del genere anche per la
+  posta, ma \`e pi\'u complicato. Per ora non esistono implementazioni.
+
+  Tra i problemi:
+  \begin{itemize}
+  \item la interattivit\`a necessaria per attivare il protocollo,
+  \item ritardo tra un messaggio e un altro.
+  \end{itemize}
+}
+\frame{
+  \frametitle{E per la voce?}
+
+  A parte il fatto che potrebbe essere illegale cifrare la voce, e a
+  quanto mi risulta in Italia lo \`e, tecnicamente \`e fattibile, ma\ldots
+
+  \begin{block}{La solita domanda:}
+    La sicurezza data dal protocollo OTR \`e adeguata al caso della
+    trasmissione vocale?
+  \end{block}
+
+  \begin{alertblock}{NO!}
+    Come possiamo garantire la rinnegabilit\`a della voce?
+
+    La registrazione analogica di una frase detta col nostro accento,
+    timbro, pronuncia, cadenza\ldots pu\`o risultare incontestabile.
+  \end{alertblock}
+
+  Le parole dette viaggiano in volo, incontrollabili; ci\`o che \`e
+  scritto rimane, passibile di correzione. Cio che \`e per l'uno non \`e
+  per l'altro.
+
+}
+\end{document}
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iEYEARECAAYFAkcl/nIACgkQ5MyCX967pLpn3ACdElecghpM5p197+29yCp69kqW
+FAQAmwZ4B4RFaKR9sojmTBN+tmQANcor
+=Kj3d
+-----END PGP SIGNATURE-----

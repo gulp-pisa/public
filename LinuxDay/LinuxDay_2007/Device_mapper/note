@@ -1,0 +1,153 @@
+
+[Gulp] Come criptare una partizione "in place" cioe' senza fare una copia del contenuto
+Massimiliano Ghilardi massimilianoghilardi a libero.it
+Dom 28 Ott 2007 19:43:04 CET
+
+    Messaggio precedente: [Gulp] Linux Day., the day after...
+    Prossimo messaggio: [Gulp] Come criptare una partizione "in place" 
+	cioe' senza fare una copia del contenuto
+    Messaggi ordinati per: [ Data ] [ Thread ] [ Oggetto ] [ Autore ]
+
+Ciao a tutti,
+
+qualcuno (Giovanni?) dopo il mio talk su device-mapper al Linux Day,
+mi aveva chiesto se era possibile, partendo da una partizione con un
+filesystem e dei files dentro, convertirla in una partizione criptata
+con un filesystem eventualmente diverso ma con gli STESSI files dentro,
+il tutto SENZA usare un'altro device per copiarci temporaneamente i files.
+
+Se non ci fosse di mezzo la trasformazione in partizione criptata,
+ma solo la conversione da un filesystem ad un altro, e' esattamente
+quello che fa "convertfs" - http://tzukanov.narod.ru/convertfs/
+
+Si tratta di uno strumento molto semplice ma molto potente, fatto da uno shell 
+script e i tre programmi "devclone", "prepindex" e "devremap", che opera
+come descritto piu' sotto.
+
+Esaminando la procedura eseguita da convertfs, ho provato a modificarla per
+inserire la trasformazione in device criptato, l'ho eseguita a mano...
+e funziona!
+
+In fondo all'email c'e' la procedura modificata.
+
+
+In bocca al lupo... e sperate che non manchi la corrente se ci provate!
+
+Un consiglio: prima di fare sul serio, provate ad eseguire la procedura
+su un loop device o su una partizione _piccola_ con _pochi_ dati e di cui 
+avete una copia.
+
+Una volta presa familiarita' con la procedura, potete usarla su dati "veri".
+
+P.S. ovviamente, declino ogni responsabilita' in caso di danni!
+     Oltretutto si tratta di una serie di operazioni delicate su dati
+     di cui si suppone _non_ abbiate un backup per mancanza di spazio!
+
+
+Ciao,
+
+Max
+
+
+****************************************************************************
+Come funziona convertfs: lo script "convertfs" esegue automaticamente un certo 
+numero di passaggi,
+ma per capirne il funzionamento e poterlo modificare, li esaminiamo uno per 
+uno in modo da poterli eseguire manualmente da una shell di root:
+
+1) crea un file "immagine" pieno di buchi dentro il filesystem da convertire
+
+$devclone $source_device $image_file
+
+2) formatta il file immagine nel formato desiderato e lo monta sfruttando il 
+loop device
+
+losetup /dev/loop0 $image_file
+mkfs.XXX /dev/loop0
+mount /dev/loop0 $image_mountpoint
+
+
+4) sposta con "mv" tutti i file dal filesystem da convertire all'interno
+   del loop device montato - TRANNE il file immagine!
+
+ls -1A $source_mountpoint | while read i; do
+  if [ "$i" != "$image_file" ]; then
+    mv -v "$i" "$image_mountpoint"
+  fi
+done
+
+5) smonta il loop device
+
+umount $image_mountpoint
+losetup -d /dev/loop0
+
+6) crea nel filesystem da convertire un file "indice", contenente la posizione
+delle varie parti del file immagine all'interno del block device originale.
+crea anche un "superblock" contenente la posizione delle varie parti del file
+"indice" all'interno del block device originale.
+
+$prepindex "$image_file" "$source_mountpoint/index.convertfs" /tmp/super.convertfs
+
+7) smonta il filesystem da convertire e scrive nel suo primo settore 
+il "superblock" generato sopra
+
+umount $source_device
+dd if=/tmp/super.convertfs of=$source_device
+
+8) riordina i blocchi del file immagine copiandoli al posto giusto sul block 
+device originale
+
+$devremap $source_device
+
+9) rimonta il device
+
+mount $source_device $source_mountpoint
+
+
+fatto!
+
+
+****************************************************************************
+Ed ecco finalmente la procedura modificata, contenente i passi per la 
+trasformazione in device criptato. le modifiche sono molto semplici:
+
+al posto del punto 2) bisogna anche criptare il loop device, cosi':
+-----------------------------------------------------------------
+2crypt) crea un loop device criptato a partire dal file immagine, lo formatta 
+nel formato desiderato e lo monta
+
+losetup /dev/loop0 $image_file
+cryptsetup create $image_cripted_device /dev/loop0
+[digitare la password]
+
+mkfs.XXX $image_cripted_device
+mount /dev/mapper/$image_cripted_device $image_mountpoint
+-----------------------------------------------------------------
+
+
+
+al posto del punto 5) bisogna anche rimuovere il device criptato, cosi':
+-----------------------------------------------------------------
+5crypt) smonta il loop device e rimuove il device criptato
+
+umount $image_mountpoint
+cryptsetup remove $image_cripted_device
+losetup -d /dev/loop0
+-----------------------------------------------------------------
+
+
+al posto del punto 9) bisogna anche ricreare il device criptato, cosi':
+-----------------------------------------------------------------
+9) rimonta il device, stavolta criptato
+
+cryptsetup create $image_cripted_device $source_device
+mount /dev/mapper/$image_cripted_device $source_mountpoint
+-----------------------------------------------------------------
+****************************************************************************
+
+    Messaggio precedente: [Gulp] Linux Day., the day after...
+    Prossimo messaggio: [Gulp] Come criptare una partizione "in place" cioe' senza fare una copia del contenuto
+    Messaggi ordinati per: [ Data ] [ Thread ] [ Oggetto ] [ Autore ]
+
+Maggiori informazioni sulla lista Gulp
+

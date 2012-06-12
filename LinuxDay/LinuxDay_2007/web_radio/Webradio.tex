@@ -1,0 +1,450 @@
+\documentclass{beamer}
+
+\beamertemplateshadingbackground{red!10}{blue!10} %10 10
+
+\usetheme{Warsaw}
+
+\beamertemplatetransparentcovereddynamic
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[italian]{babel}
+
+\title{Web Radio}
+\author{Gabriele ``LightKnight'' Stilli}
+\institute{G.U.L.P. -- Gruppo Utenti Linux Pisa}
+\date{Linux Day, Pisa, 27/10/2007}
+
+\begin{document}
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\section{Come mai si crea una Web Radio}
+
+\begin{frame}\frametitle{Web Radio: come mai?}
+\begin{itemize}
+\item Per condividere la propria musica con gli altri
+\item Per fare la cronaca in diretta di eventi
+\item Per scambiarsi file: alternativa Lo-Fi al P2P
+\item Per divertirsi a fare il DJ
+\item {\ldots}
+\end{itemize}
+\end{frame}
+
+\section{Struttura di una Web Radio}
+
+\subsection{La catena dei moduli}
+
+\begin{frame}\frametitle{Molti programmi, uno scopo}
+Una Web Radio è composta da più programmi disposti in sequenza;
+ciascuno ha per input l'output del programma precedente.
+
+Questo perché la struttura modulare si presta meglio ad essere
+adattata a diverse esigenze, ad esempio miscelare altri stream da
+fonti esterne.
+
+Ciò riflette anche una tipica tradizione Unix: è meglio avere più
+programmi separati che fanno ciascuno una cosa che un unico programma
+tuttofare.
+
+\end{frame}
+
+\begin{frame}\frametitle{Elenco dei moduli}
+Nello specifico, una semplice Web Radio è composta da:
+\begin{description}
+\item[Player] che riproduce i file audio e genera il flusso di dati
+grezzo
+\item[Encoder] che codifica il flusso grezzo oppure legge i file da
+una playlist e li riproduce
+\item[Server] che riceve il flusso codificato e lo invia in rete
+\end{description}
+
+Inoltre, il PC su cui opererà la Web Radio deve avere un sistema audio
+già funzionante, possibilmente utilizzando i moduli ALSA.
+\end{frame}
+
+\subsection{Il mixer e la sua configurazione}
+
+\begin{frame}\frametitle{Configurazione del mixer}
+Il mixer va configurato in modo da selezionare il canale corretto per
+la cattura audio. ``Mix'' dovrebbe essere una buona scelta, ma dipende
+anche dalla scheda audio specifica.
+
+Inoltre, è essenziale regolare con attenzione i volumi dei canali
+audio interessati e dell'eventuale microfono.
+\end{frame}
+
+\subsection{Il player}
+
+\begin{frame}\frametitle{Il player}
+È possibile utilizzare qualunque programma per riprodurre file audio;
+basta configurarlo in modo che il suo canale di output sia l'input
+dell'encoder.
+\end{frame}
+
+\subsection{L'encoder}
+
+\begin{frame}\frametitle{Funzione dell'encoder}
+L'encoder ha il compito di raccogliere lo stream audio generato dal
+player e codificarlo nel formato preferito, da inviare poi allo
+streaming server. È qui che si decide il formato (o i formati) da
+adottare per la Web Radio.
+
+Alcuni encoder possono generare lo stream audio anche leggendo dei
+file da una playlist. Ovviamente i file devono essere in un formato
+riconoscibile dall'encoder.
+
+Vediamo la configurazione di ices2, che permette di generare stream
+MP3 e Vorbis.
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{Configurazione di ices2: input da player}
+\begin{verbatim}
+<input>
+    <module>alsa</module>
+    <param name="rate">48000</param>
+    <param name="channels">2</param>
+    <param name="device">hw:0,0</param>
+    <param name="metadata">1</param>
+    <param name="metadatafilename">test</param>
+</input>
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{Configurazione di ices2: input da playlist}
+\begin{verbatim}
+<input>
+    <module>playlist</module>
+    <param name="type">basic</param>
+    <param name="file">playlist.txt</param>
+    <param name="random">0</param>
+    <param name="restart-after-reread">0</param>
+    <param name="once">0</param>
+</input>
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{Configurazione di ices2: output sul server}
+\footnotesize
+\begin{verbatim}
+<instance>
+    <hostname>localhost</hostname>
+    <port>8000</port>
+    <password>password</password>
+    <mount>/example1.ogg</mount>
+    <encode>
+        <quality>0</quality>
+        <samplerate>48000</samplerate>
+        <channels>2</channels>
+    </encode>
+    <resample>
+        <in-rate>48000</in-rate>
+        <out-rate>24000</out-rate>
+    </resample>
+</instance>
+\end{verbatim}
+\end{frame}
+
+\subsection{Lo streaming server}
+
+\begin{frame}\frametitle{Funzione dello streaming server}
+È la parte della catena esposta alla rete.
+
+Si occupa di ricevere gli stream audio, riunirli in uno solo ed
+inviare quest'ultimo verso l'esterno.
+
+Può gestire più stream audio facendoli uscire su porte differenti,
+nonché permettere il relay dei propri stream su altri server.
+
+Uno dei più diffusi è icecast2, che fra l'altro può anche essere
+controllato da remoto tramite interfaccia web.
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{Configurazione di icecast2}
+\footnotesize
+\begin{verbatim}
+<authentication>
+    <source-password>source-password</source-password>
+    <relay-password>relay-password</relay-password>
+
+    <admin-user>admin</admin-user>
+    <admin-password>admin-password</admin-password>
+</authentication>
+
+<relay>
+    <server>127.0.0.1</server>
+    <port>8001</port>
+    <mount>/example.ogg</mount>
+    <local-mount>/different.ogg</local-mount>
+</relay>
+\end{verbatim}
+\end{frame}
+
+\subsection{Firewall e port forwarding}
+
+\begin{frame}\frametitle{Firewall e port forwarding}
+Per poter trasmettere lo stream, occorre che la porta su cui esce lo
+streaming server sia visibile alla rete. Ciò vuol dire che, nel caso
+sia presente un firewall fra la macchina e la rete, la suddetta porta
+deve essere aperta.
+
+Se inoltre la macchina è in LAN o comunque accede alla rete tramite un
+router, è necessario effettuare il forwarding della porta dal router
+alla macchina server.
+\end{frame}
+
+\subsection{Cenni sui formati}
+
+\begin{frame}\frametitle{Cenni sui formati}
+Una Web Radio può trasmettere in svariati formati. I principali sono
+Ogg Vorbis, MP3, WMA, AAC.
+
+Ogg Vorbis è un formato aperto, con specifiche pubbliche, non gravato
+da brevetti e di qualità confrontabile con gli altri, quando non
+leggermente superiore.
+\end{frame}
+
+\section{Il client}
+
+\begin{frame}\frametitle{Il client}
+Per ascoltare una web radio che utilizzi Icecast, si può usare un
+qualunque riproduttore software che supporti il protocollo HTTP oltre,
+ovviamente, al formato audio scelto per lo stream.
+
+Alcuni esempi: XMMS (e derivati, ad es. Audacious), Mplayer, Amarok,
+VLC, Xine, Totem, Rhythmbox, Kaffeine, Exaile, Somaplayer{\ldots}
+\end{frame}
+
+\section{Programmi di gestione}
+
+\begin{frame}\frametitle{Introduzione}
+Quanto abbiamo visto finora è sufficiente per configurare una Web
+Radio a livello base.
+
+Ma se vogliamo cambiare il palinsesto, dobbiamo riavviare il player o
+modificare a mano la playlist; questo, a lungo andare, diventa
+meccanico e noioso.
+
+Qui di seguito, vediamo alcuni programmi che ci aiutano a gestire il
+palinsesto della nostra radio.
+\end{frame}
+
+\begin{frame}\frametitle{Presentazione di SomaSuite}
+SomaSuite è una suite di programmi per gestire la programmazione di
+una radio. Grazie ad essa è possibile creare palinsesti, programmare
+l'esecuzione di determinati brani ad una certa ora, inserire jingle o
+spot fra un brano e l'altro e, in generale, avere un buon controllo su
+cosa e quando si trasmette.
+
+Fornisce inoltre librerie per sviluppare programmi di controllo in
+vari linguaggi (C/C++, PHP, Python{\ldots}).
+\end{frame}
+
+\begin{frame}\frametitle{Somad}
+Somad è il programma principale della SomaSuite. È un demone che si
+occupa di gestire i file di palinsesto e di spot.
+
+A seconda delle direttive scritte in questi file, può lanciare il
+player audio per riprodurre il brano indicato, o una serie di brani in
+modalità random, o ritrasmettere programmazioni precedenti; può
+trasmettere spot a orari prestabiliti o a cadenze predefinite.
+
+Può essere controllato tramite librerie (LibSoma, PySoma, PhpSoma),
+programmi grafici (SomaX) o testuali (SomaClient).
+\end{frame}
+
+\begin{frame}[containsverbatim,squeeze]
+\frametitle{Configurazione di somad}
+\begin{verbatim}
+User = soma 
+Group = users
+Background = false
+ServerName = 127.0.0.1
+Port = 12521
+Password = ``passwd''
+ProgramItem = ``mplayer''
+OptionsItem = ``-ao alsa''
+Palinsesto = ``/etc/somad/palinsesto.cfg''
+Spot = ``/etc/somad/spot.cfg''
+\end{verbatim}
+\end{frame}
+
+\begin{frame}\frametitle{Somax}
+SomaX è un client grafico completo per il controllo di Somad. Permette
+di creare graficamente o in modo testuale i file di palinsesto,
+modificarli dinamicamente e in tempo reale e salvarli, nonché di
+visualizzare la cronologia della radio, sia passata che futura, ed
+agire su di essa.
+\end{frame}
+
+\begin{frame}\frametitle{Altri componenti della SomaSuite (1)}
+\begin{description}
+\item[SomaPlayer] È il player audio della SomaSuite, che funge anche
+da encoder. Può ricevere in input una qualunque sorgente audio (file,
+stream, microfono, line in) e restituire in output lo stream già
+formato.
+\item[SomaMDD] Legge i metadati dai file audio e li passa allo
+streaming server; in questo modo i player compatibili possono mostrare
+le informazioni sul brano e sullo stream.
+\item[SdS] È il mixer della SomaSuite, che serve a mixare più sorgenti
+audio differenti ed inviarle allo streaming server.
+\end{description}
+\end{frame}
+
+\begin{frame}\frametitle{Altri componenti della SomaSuite (2)}
+\begin{description}
+\item[SomaMysql] Modulo per supportare interrogazioni MySQL per la
+selezione dei brani da mandare in onda.
+\item[SomaRss] Modulo che interroga pagine RSS 0.91 e esegue il
+contenuto dei tag link.
+\item[SomaRun] Modulo che esegue un comando.
+\item[SomaHttp] Modulo per mandare in onda il contenuto di directory
+list su http (Index Of).
+\end{description}
+\end{frame}
+
+\section{Problemi di banda}
+
+\begin{frame}\frametitle{La banda in upstream}
+Uno dei problemi più grandi del gestire una Web Radio da casa propria
+è la banda in upstream, senza la quale qualunque trasmissione è
+impossibile.
+
+Purtroppo, per una ADSL casalinga, la banda in upstream a disposizione
+è veramente mediocre: di solito 256kbps (32 Kb/s), con punte di 1 Mbps
+per pochi fortunati.
+
+Occorre quindi trovare un espediente per alleggerire il carico sul
+server, senza pregiudicare qualità e accessibilità.
+\end{frame}
+
+\begin{frame}\frametitle{Peer to peer e Web Radio}
+È possibile applicare i concetti di base del peer to peer alle Web
+Radio.
+
+Anziché prelevare lo stream da un unico server, ogni client si fa
+carico di una parte di banda in uscita, ritrasmettendo lo stream
+ricevuto e così diventando server a sua volta.
+
+In questo modo, il server deve sopportare il carico di un numero
+minore di client.
+
+Possibili problemi:
+\begin{itemize}
+\item protocollo più complicato rispetto al normale HTTP
+\item necessità di gestire lo stream in tempo reale
+\item in particolare, gestire la connessione/disconnessione dei client
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{PeerCast}
+PeerCast è un sistema client-server che sfrutta le proprietà del peer
+to peer per trasmettere il proprio stream minimizzando l'utilizzo di
+banda.
+
+È possibile farsi pubblicare su un apposito servizio di Yellow Pages;
+in questo modo sarà più facile farsi trovare, ma è anche possibile
+generare i link peercast necessari per sfruttare la modalità peer to
+peer.
+
+È possibile inoltre configurarlo per accettare un certo numero di
+client che si connettano in modalità ``normale''.
+\end{frame}
+
+\begin{frame}\frametitle{Configurazione server e client}
+Il server PeerCast ha una configurazione molto simile ad uno streaming
+server tradizionale, con poche opzioni peculiari (indirizzo del server
+Yellow Pages, limitazioni alle connessioni dirette, ecc.).
+
+I client che volessero sfruttare la modalità peer to peer necessitano
+di un client che riceva un URL in formato peercast e, consultando il
+servizio di Yellow Pages, permettano ad un player audio di collegarsi
+ad uno dei peer.
+
+Altrimenti, per le stazioni che lo permettano, è possibile collegarsi
+direttamente al server, come con una radio basata su Icecast.
+\end{frame}
+
+\section{Cenni normativi}
+
+\begin{frame}\frametitle{Cosa dice la legge(?)}
+Per poter trasmettere in rete bisogna anche essere in regola con la
+legge sul Diritto d'Autore e le normative sulle trasmissioni, che
+coprono le radio e televisioni tradizionali, ma anche le Web Radio.
+
+In particolare, è necessario stabilire se e quali autorizzazioni si
+debbano ottenere dalla SIAE e quali tariffe vanno ad essa pagate.
+
+(Quanto segue non costituisce parere legale, ma è esclusivamente
+l'opinione di chi scrive, al meglio delle sue conoscenze)
+\end{frame}
+
+\begin{frame}\frametitle{Normative SIAE}
+In caso si vogliano trasmettere brani musicali registrati alla SIAE o
+altri enti di raccolta diritti analoghi operanti all'estero, è
+necessario compilare un apposito modulo di Autorizzazione per la Web
+Radio (AWR) e pagare la rispettiva tariffa.
+
+La normativa è complessa e restrittiva: non è possibile far salvare su
+disco lo stream audio, né far scegliere all'ascoltatore quali brani
+ascoltare. Inoltre, non è possibile ritrasmettere lo stream (questo
+include sistemi quali PeerCast).
+
+La tariffa è differenziata a seconda che la radio sia personale,
+istituzionale o commerciale e a seconda della quantità di ascoltatori
+(più o meno di 30). L'importo varia dai 240 euro all’anno per radio
+personali, a cifre molto più alte per radio commerciali.
+\end{frame}
+
+\begin{frame}\frametitle{Musica libera}
+Se invece si trasmette solo musica non registrata alla SIAE, allora
+non c'è bisogno di alcuna autorizzazione. In particolare, la musica
+rilasciata sotto licenze libere (Creative Commons, LAL, GPL, altre)
+non necessita di autorizzazioni SIAE.
+
+\begin{itemize}
+\item Jamendo;
+\item The Internet Archive;
+\item Siti nazionali di Creative Commons;
+\item {\ldots} e centinaia di netlabel sparse per la rete.
+\end{itemize}
+
+Consiglio della casa: \bf{trasmettete musica libera! :-)}
+\end{frame}
+
+\section{Note finali}
+
+\begin{frame}\frametitle{Link utili}
+Icecast: http://icecast.org/
+
+Peercast: http://peercast.org/
+
+SomaSuite: http://somasuite.org/
+
+Jamendo: http://jamendo.com/
+
+The Internet Archive: http://archive.org/
+
+Creative Commons: http://creativecommons.org/
+
+Elenco di netlabel: http://netlabels.org/
+
+Fabry Mondo: http://fabrymondo.wordpress.com/
+\end{frame}
+
+\begin{frame}\frametitle{Copyright (o Copyleft)}
+Quest'opera è stata rilasciata sotto la licenza Creative Commons
+Attribuzione-Condividi allo stesso modo 3.0 Unported. Per leggere una
+copia della licenza visita il sito web
+http://creativecommons.org/licenses/by-sa/3.0/ o spedisci una lettera
+a Creative Commons, 171 Second Street, Suite 300, San Francisco,
+California, 94105, USA.
+\end{frame}
+
+\end{document}

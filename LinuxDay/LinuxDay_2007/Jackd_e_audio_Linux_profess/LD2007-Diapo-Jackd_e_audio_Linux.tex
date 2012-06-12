@@ -1,0 +1,51 @@
+\documentclass{beamer}
+    \usepackage[utf8]{inputenc} % così possiamo usare le lettere accentate
+    \usepackage[italian]{babel}
+
+\usepackage{beamerthemesplit}
+
+\title{Jackd - Audio Linux professionale}
+\author{Pietro Battiston}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section[Outline]{}
+\frame{
+\tableofcontents}
+
+\section{Uno studio di registrazione con Linux: gli ingredienti}
+\subsection{Kernel a bassa latenza}
+\frame{Sono kernel ottimizzati per le applicazioni in \emph{real time}, in cui non ci interessa solo \emph{cosa} un programma fa, ma \emph{quando} lo fa.\\
+Per garantire che i programmi real time riescano ad ottenere il controllo della CPU nei momenti esatti in cui ne hanno bisogno, si modifica le procedure di scheduling (\emph{preemption}).}
+
+\frame{
+  \frametitle{Pacchetti}
+Pacchetti:
+\begin{itemize}
+ \item Debian: pacchetto \emph{rtlinux}
+ \item Ubuntu: pacchetto \emph{linux-image-rt}
+\end{itemize}
+}
+\subsection{Jack e accessori}
+\frame{Jack (\emph{JACK Audio Connection Kit}) è un server audio versatile ed efficiente.\\
+Si interfaccia con ALSA e vari altri sistemi audio.\\
+Gira come demone: \emph{jackd}.\\
+Per avviarlo e configurarlo, esiste \emph{qjackctl}.\\}
+
+\subsection{Ardour}
+\frame{Ardour (www.ardour.org) è un potente registratore ed editor multitraccia, basato su jack.\\
+È indirizzato (anche) ad un utilizzo professionale, come uno studio di registrazione.\\
+È importante quindi la buona integrazione con schede audio, consolle...}
+\subsection{Gadget}
+\frame{
+\frametitle{I gadget}
+Sono moltissimi i programmi che si appoggiano su Jack: vedremo \emph{JACK rack}, \emph{Hydrogen}, \emph{Meterbridge}...}
+
+\frame{
+\frametitle{JACK rack}
+Utilizza i plugin \emph{LADSPA} per fornire effetti in tempo reale.
+}
+\end{document}

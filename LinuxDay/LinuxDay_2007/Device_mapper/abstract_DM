@@ -1,0 +1,6 @@
+Device mapper e dm-crypt
+
+Device mapper e dm-crypt con la trascrizione dei comandi di shell usati da root: dmsetup.sh.
+Il relatore ha poi spiegato in un email alla mailing list del GULP come utilizzare convertfs 
+per crittare con dm-crypt "in place" un filesystem (prima o poi l'email sarà trasformata in un HowTo, 
+probabilmente...). 

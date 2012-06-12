@@ -1,0 +1,79 @@
+Key-Signing Party Howto
+
+Questo HowTo è stato creato da Marco per aiutare i partecipanti di
+uno specifico keysigning party, ma può essere utilizzato come guida
+per chi vuole organizzarne uno.
+
+Indice
+    1 Cosa è un Key Signing Party
+    2 Come partecipare
+    3 Informazioni in rete
+    4 Se avete dubbi o richieste...
+    5 Note
+
+1 Cosa è un Key Signing Party
+=============================
+È un ritrovo di persone che utilizzano crittografia GPG (o qualunque
+programma compatibile con OpenPGP, come PGP) e che hanno desiderio 
+di verificare le rispettive chiavi crittografiche e reali identità 
+in modo da poter "firmare" l'altrui chiave, certificando cosí il 
+legame tra l'identità reale della persona e la chiave digitale.
+
+2 Come partecipare
+==================
+Cosa fare prima del party:
+- Generare una chiave crittografica
+- Salvare la versione ascii-armored della propria chiave pubblica.
+  In particolare l'output del comando: 
+
+	gpg --armor --export  id_chiave > nome_file.asc
+
+Comunicare al coordinatore del party la propria chiave, inserendola
+nel keyring di biglumber relativo all'evento (per il Linux Day 2007 questo),
+oppure spedendola via e-mail. Se per qualunque ragione non si vuole che 
+la propria chiave venga inserita su un keyserver pubblico, usare 
+in ogni caso la seconda strada. 
+
+Cosa portare al party:
+Un foglio contenente tutti i dati inerenti la propria chiave, inclusa 
+l'impronta (fingerprint). In pratica l'output del comando: 
+
+	gpg --fingerprint id_chiave 
+
+Un documento valido per poter dimostrare ai partecipanti la vostra identità.
+Una matita o una biro per scrivere su carta.
+NON portare il computer, NON è necessario per verificare l'identità delle
+persone. NON è opportuno firmare le chiavi in pubblico, perché digitare 
+in pubblico la propria passphrase ne può compromettere la sicurezza. 
+
+Cosa fare durante il party:
+- Ogni partecipante riceverà dal coordinatore un foglio con 
+  i dati di tutti i partecipanti.
+- Cercare gli altri partecipanti e verificare assieme che 
+  entrambe le fingerprint stampate siano corrette e che gli
+  uid (nomi e indirizzi e-mail) siano giusti.
+- Segnare sul proprio foglio le informazioni verificate. 
+ 
+Cosa fare dopo il party:
+Ogni partecipante riceverà via e-mail dal coordinatore le chiavi 
+pubbliche di tutti i partecipanti. Assieme verranno spedite tutte 
+le informazioni e gli script per le operazioni seguenti.
+
+A questo punto si potranno firmare tutte le chiavi verificate. 
+Durante la procedura di firma GPG mostrerà sullo schermo nomi
+indirizzi e impronta (fingerprint) di ogni chiave, da confrontare 
+con quanto stampato.
+
+Le chiavi firmate vanno rispedite al coordinatore, che si occuperà 
+di inserirle sui keyserver o di rispedirle ai partecipanti.
+
+3 Informazioni in rete
+======================
+* Manuale GNU sulla privacy - tradotto da Lorenzo Cappelletti
+* GnuPG Keysigning Party HOWTO - tradotto da Cristian Rigamonti
+* Perché hai bisogno di PGP? - di Phil Zimmermann, tradotto da Igor Bacchilega
+* GnuPG FAQ - di David D. Scribner 
+
+4 Se avete dubbi o richieste...
+===============================
+Potete contattare il coordinatore del Key Signing Party, chiunque esso sia! ;) 
