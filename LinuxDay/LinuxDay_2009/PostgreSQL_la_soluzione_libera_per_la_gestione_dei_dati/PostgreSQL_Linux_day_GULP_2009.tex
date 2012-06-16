@@ -1,0 +1,168 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Warsaw}
+\usepackage{hyperref}
+\pgfdeclareimage[height=15mm]{logo}{./images/logo_gulp.png}
+\logo{\pgfuseimage{logo}}
+\title[PostgreSQL Italia]{PostgreSQL\newline la soluzione libera per la gestione dei dati}
+\author{Federico Campoli - federico@postgresqlit.org}
+\institute{Linux Day 2009, Gruppo Utenti Linux Pisa (GULP)}
+\date{24 ottobre 2009}
+\begin{document}
+
+\begin{frame}
+\titlepage 
+
+\end{frame}
+
+\begin{frame}{Indice dei contenuti}
+\tableofcontents
+
+\end{frame}
+
+
+\section{Introduzione}
+\subsection{Storia di PostgreSQL}
+\begin{frame}{Cenni storici su PostgreSQL}
+ \begin{itemize}
+\pause \item Nasce nel 1986 come The Berkeley POSTGRES Project
+\pause \item Leader del progetto e' il Professor Michael Stonebraker
+\pause \item Nel 1994 Andrew Yu and Jolly Chen integrano un interprete SQL al progetto che viene rilasciato col nome Postgres95
+\pause \item Il motore di Postgres95 viene scritto interamente in ANSI C
+\pause \item Postgres95 1.0.x e' il 30-50\% piu veloce di POSTGRES 4,2
+\pause \item Postgres95 viene rilasciato come progetto open source
+\pause \item Dal 1996 viene adottato il nome PostgreSQL
+\pause \item L'8 luglio si festeggia l'anniversario della nascita di PostgreSQL
+\pause \item Allo stato attuale vengono supportate le versioni 8.4,8.3,8.2,8.1 e 8.0
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Caratteristiche salienti}
+ \begin{itemize}
+\pause \item Catalogo di sistema
+\pause \item Transazionale con MVCC 
+\pause \item Windows port
+\pause \item Point In Time Recovery
+\pause \item Contraint Exclusion (Table Partitioning)
+\pause \item Tablespaces
+\pause \item Struttura a oggetti
+\pause \item Ottimizzazione delle query a costi
+\end{itemize}
+\end{frame}
+
+\section{PostgreSQL in dettaglio}
+
+\begin{frame}{Numeri limite}
+ PostgreSQL fa della gestione di grandi volumi di dati il suo punto di forza. Di seguito l'elenco dei numeri limite relativi alla versione 8.4.
+
+\begin{itemize}
+\pause \item Dimensione massima per un database illimitata 
+\pause \item Dimensione massima per una tabella 32 TB 
+\pause \item Dimensione massima per una riga 1.6 TB 
+\pause \item Dimensione massima per un campo 1 GB 
+\pause \item Numero massimo di righe per tabella illimitate 
+\pause \item Numero massimo di colonne per tabella da 250 a 1600 
+\pause \item Numero massimo di tabelle illimitate
+\pause \item Numero massimo di indici per tabella illimitati
+\end{itemize}
+\end{frame}
+
+\subsection{PostgreSQL ORDBMS enterprise}
+
+\begin{frame}{Tablespaces}
+Una tablespace è un raggruppamento logico interno al database cui corrisponde una locazione fisica.
+\newline
+\pause Introdotte a partire dalla versione 8.0 permettono di posizionare gli oggetti, come indici e tabelle, in aree specifiche del filesystem.
+\end{frame}
+
+\begin{frame}{Point In Time Recovery}
+Per point in time recovery si intende la capacità di recuperare la base dati sottoposta a backup specificando
+il momento esatto che si vuole ripristinare.
+
+\pause In questo modo è possibile fermare il recupero con estrema precisione prima di eventuali corruzioni o cancellazioni accidentali dei dati. \newline
+
+\pause Con questa funzionalità attiva l'operatività del database non viene minimamente limitata essendo totalmente trasparente all'utente e al sistema.
+
+\end{frame}
+
+
+\begin{frame}{Two phase commit}
+ Il two phase commit permette di aprire una transazione svincolandola dalla sessione lasciandola, in caso di perdita della connessione, in attesa di commit o rollback.
+\newline
+\pause In questo modo è possibile aprire una transazione, avviare delle procedure remote, come ad esempio un pagamento on  line, attenderne il completamento e, una volta andato a buon fine, completare il commit senza rischi di rollback accidentali prodotti da una linea dati malfunzionante.
+\end{frame}
+
+\begin{frame}{Partizionamento tabella}
+ Una delle più potenti caratteristiche di PostgreSQL è quella di poter
+avere tabelle ereditate.
+\newline
+\pause Normalmente l'ereditarietà si trova nella programmazione a oggetti
+in cui un oggetto eredita i vari componenti dell'oggetto padre.
+\newline
+\pause Nel caso di una tabella questa eredita gli stessi campi della tabella
+padre. Se viene fatta una insert nella tabella figlia il record apparirà
+sia nella tabella figlia che nella tabella padre ma lo storage sarà
+gestito dalla tabella figlia.
+\newline
+\pause In questo modo è possibile distribuire l'allocazione disco in maniera
+ancora più fine di quanto permesso dalle tablespace.
+\end{frame}
+
+
+
+\section{PostgreSQL in Italia}
+
+\subsection{PostgreSQL Italia}
+\begin{frame}{PostgreSQL Italia}
+PostgreSQL Italia è un portale di informazione e supporto tecnico per il database relazionale PostgreSQL.
+
+PostgreSQL Italia è stato creato dell'autore di PostgreSQL Book che, terminata la sua esperienza in ITPUG per una sostanziale divergenza di intenti, ha deciso di portare al pubblico un progetto di documentazione in italiano fatto di articoli originali derivati dalla lettura e dalla rielaborazione della documentazione in lingua originale e dei sorgenti del DBMS.
+Il progetto oltre alla parte documentale offre una serie di canali di supporto comunitario di alto livello.
+
+Per informazioni e contatti è possibile consultare il sito web http://www.postgresqlit.org/
+\end{frame}
+
+\subsection{PostgreSQL Book}
+\begin{frame}{PostgreSQL Book}
+Il primo manuale mai scritto in lingua italiana su PostgreSQL copre la maggior parte delle argomentazioni di PostgreSQL in lingua italiana è realizzato dall'autore di questa presentazione.
+
+Il documento che in questa versione raggiunge le 200 pagine è liberamente scaricabile dal sito lulu.com dove verrà distribuito anche in formato cartaceo una volta completato.
+
+Per scaricarlo collegarsi all'indirizzo http://www.lulu.com/content/1076107
+
+
+\end{frame}
+
+\subsection{ITPUG}
+\begin{frame}{Italian PostgreSQL Users Group}
+ L'associazione di promozione sociale Italian PostgreSQL Users Group Italian PostgreSQL Users Group si è formalmente costituita il giorno sabato 17 novembre 2007, con la firma congiunta dei 12 soci fondatori.
+
+L'associazione, fortemente voluta dall'autore di PostgreSQL Book, è nata per favorire lo sviluppo, la diffusione e la tutela del software database Open-Source PostgreSQL.
+
+ITPUG è quindi un'associazione senza scopi di lucro aperta a tutti ed è fondata sulla democrazia. 
+
+Per informazioni e contatti consultare il sito web http://www.itpug.org/
+\end{frame}
+
+\subsection{Il portale psql.it}
+\begin{frame}{Il portale psql.it}
+ La storia di PostgreSQL in Italia inizia con la creazione di una mailing list in italiano nel 2003 e, successivamente nel 2006, di un sito basato su CMS collaborativo attestato sul dominio http://www.psql.it.
+
+Il portale si è costantemente evoluto fino alla forma attuale.
+
+Per maggiori informazioni e contatti visitare il sito http://www.psql.it
+\end{frame}
+
+\section{Chiusura}
+\begin{frame}
+\begin{center}
+\begin{huge}DOMANDE\end{huge}\end{center}
+
+\end{frame}
+
+\begin{frame}
+\titlepage 
+
+\end{frame}
+\end{document}
