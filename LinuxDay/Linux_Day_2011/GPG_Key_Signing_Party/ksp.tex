@@ -1,0 +1,158 @@
+
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric}
+
+\usetheme{Boadilla}
+
+\title{Key Signing Party}
+\subtitle{Cos'è, a cosa serve e come funziona}
+\author{Giovanni Mascellani}
+\date[Linux Day 2011]{sabato 22 ottobre 2011 -- Linux Day 2011}
+\institute[GULP]{Gruppo Utenti Linux -- Pisa}
+
+\begin{document}
+
+\begin{frame}
+ \maketitle
+\end{frame}
+
+\begin{frame}{Gli scopi}
+ \begin{description}
+  \item[Crittografia] Alterare un documento in modo che solo determinate persone
+   siano in grado di leggerlo.
+  \item[Firma digitale] Aggiungere ad un documento alcuni dati che certificano
+   con certezza chi è il suo autore e garantiscono che il documento stesso non
+   è stato alterato durante il trasporto.
+  \end{description}
+
+  Oggi esistono tecnologie, ritenute sufficientemente sicure, che permettono di
+  raggiungere questi due obiettivi.
+
+  \pause
+
+  \begin{alertblock}{Una catena è resistente quanto il suo anello più debole}
+    Con la tecnologia di oggi gli anelli deboli non sono quelli centrali, ma
+    gli estremi, ossia gli utenti che utilizzano impropriamente le tecnologie.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Le chiavi}
+ Una chiave di un meccanismo di crittografia a chiave pubblica è
+ composta da due parti.
+
+ \begin{description}
+  \item[Chiave pubblica] Permette la cifratura di un documento e la verifica di
+   una firma digitale. Può essere liberamente divulgata, in quanto si ritiene
+   che non sia computazionalmente possibile ottenere la chiave privata a partire
+   da quella pubblica.
+  \item[Chiave privata] Permette la decifratura di un documento e la creazione
+   di una firma digitale. Deve essere mantenuta rigorosamente segreta. Ottenere
+   la chiave pubblica da quella privata è molto semplice.
+ \end{description}
+
+ \pause
+
+ \begin{alertblock}{Problema di sicurezza}
+   Chiunque può creare una chiave con un qualsiasi nome scritto sopra. Dunque
+   è necessario verificare che il nome scritto su una chiave sia quello giusto
+   prima di utilizzarla.
+ \end{alertblock}
+\end{frame}
+
+\begin{frame}{Come risolvere il problema?}
+
+  Per scrivere un messaggio segreto a Tizio devo verificare che la chiave con
+  scritto Tizio sia veramente di Tizio.
+
+  \only<1>{\begin{block}{Idea!\uncover<2->{?!?? (ma è fattibile? Se Tizio sta in Australia?)}}}
+  \only<2->{\begin{alertblock}{Idea?!?? (ma è fattibile? Se Tizio sta in Australia?)}}
+    Posso incontrare Tizio di persona e controllare se la copia della
+    chiave che ho io è giusta. Da quel punto in poi potrò scrivere
+    messaggi segreti a Tizio ogni volta che voglio.
+  \only<1>{\end{block}}
+  \only<2->{\end{alertblock}}
+
+  \uncover<3->{
+    \begin{block}{Ideona!}
+      Se un amico comune (Caio, \alert<4->{del quale mi fido}) verifica
+      la chiave di Tizio e la firma digitalmente, e io verifico la
+      chiave di Caio, allora so anche che la chiave di Tizio è quella
+      giusta.
+    \end{block}
+  }
+
+  \begin{center}
+    \input{catena.pgf}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}{Il Web of Trust}
+
+  Se ognuno firma digitalmente le chiavi che controllare essere
+  corrette si forma una rete di fiducia, il Web of Trust. Chi firma
+  una chiave asserisce di avere verificato che il nome scritto su di
+  essa è corretto. \textbf{È quello che faremo anche noi tra poco.}
+
+  \pause
+
+  \begin{block}{Validità e fiducia}
+    Una chiave può essere:
+    \begin{description}
+      \item [valida] \emph{``Sono sicuro che il proprietario
+        dichiarato è corretto''} (o perché l'ho verificato di persona
+        o perché mi fido di una firma sulla chiave)
+      \item [invalida] \emph{``Non ho garanzia che il proprietario
+        dichiarato sia corretto''}
+    \end{description}
+
+    Se la chiave è valida posso decidere di:
+    \begin{description}
+      \item [fidarmi] \emph{``Considero degne di fiducia le firme
+        fatte con questa chiave''}
+      \item [non fidarmi] \emph{``Non do fiducia alle firme di questa
+        chiave, perché ritengo che il proprietario sia inaffidabile''}
+    \end{description}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Verificare una chiave}
+
+  Ad ogni chiave è associato un fingerprint (``impronta digitale''):
+  se due chiavi hanno lo stesso fingerprint, allora sono (quasi)
+  sicuramente uguali.
+
+  {\scriptsize
+\begin{verbatim}
+$ gpg --fingerprint D9AB457E
+pub   4096R/D9AB457E 2010-02-24 [expires: 2012-04-22]
+      Key fingerprint = 82D1 19A8 40C6 EFCA 6F5A  F945 9EDC C991 D9AB 457E
+uid                  Giovanni Mascellani <mascellani@poisson.phc.unipi.it>
+[...]
+\end{verbatim}}
+
+\pause
+
+Chi vuole verificare questa chiave deve:
+\begin{itemize}
+\item Controllare che il mio vero nome sia Giovanni Mascellani (o
+  perché mi conosce o vedendo un mio documento di identità);
+\item Controllare che l'email \verb-mascellani@poisson.phc.unipi.it-
+  sia mia (lo stesso controllo va fatto anche per le altre email);
+\item Controllare che il fingerprint della mia chiave conincida con
+  quello che ha lui.
+\end{itemize}
+
+\textbf{Fatte queste verifiche può firmare la mia chiave.}
+
+\end{frame}
+
+\end{document}
+

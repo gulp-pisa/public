@@ -1,0 +1,116 @@
+\documentclass{beamer}
+
+\beamertemplateshadingbackground{red!10}{blue!10} %10 10
+
+\usetheme{Warsaw}
+
+\beamertemplatetransparentcovereddynamic
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[italian]{babel}
+
+\title{Scacco matto col Pinguino!}
+\author{Gabriele ``LightKnight'' Stilli}
+\institute{G.U.L.P. -- Gruppo Utenti Linux Pisa}
+\date{Linux Day, Pisa, 22/10/2011}
+
+\begin{document}
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+\section{Introduzione}
+
+\begin{frame}\frametitle{Com'eravamo, come siamo}
+Fino a poco tempo fa, l'informatica scacchistica era appannaggio di
+poche aziende proprietarie; le alternative libere erano poche e poco
+sviluppate.
+
+Recentemente sono nati alcuni nuovi programmi liberi che possono
+competere con gli equivalenti proprietari; inoltre, alcuni dei
+programmi esistenti sono migliorati.
+\end{frame}
+
+\section{Database}
+
+\begin{frame}\frametitle{SCID}
+
+SCID (Shane's Chess Information Database) è un database scacchistico
+con funzioni di:
+\begin{itemize}
+\item inserimento partite;
+\item ricerca per intestazione, posizione, struttura ecc.;
+\item esportazione grafica (\LaTeX, PDF, HTML) e PGN;
+\item produzione di rapporti di apertura;
+\item allenamento tattico;
+\item analisi con motori.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Derivati di SCID}
+
+Negli anni, sono nati alcuni fork di SCID volti a migliorare aspetti
+specifici del programma che alcuni ritenevano insoddisfacenti.
+
+I più promettenti, seppur recenti, sono SCIDvsPC e SCIDB.
+
+\end{frame}
+
+\section{Motori}
+
+\begin{frame}\frametitle{Panoramica}
+
+Negli ultimi anni, oltre ai motori tradizionali (es. GNUchess) sono
+nati alcuni motori di forza quasi pari alle alternative commerciali:
+
+\begin{itemize}
+\item Fruit (e il suo fork TogaII);
+\item Hoichess;
+\item Glaurung e il suo erede Stockfish, probabilmente il più forte
+motore libero esistente oggi.
+\end{itemize}
+
+\end{frame}
+
+\section{Interfacce}
+
+\begin{frame}\frametitle{Per server e motori}
+
+Le interfacce grafiche sono utili per interagire con i motori e
+giocare sui server online e contro altri giocatori.
+
+Le interfacce più diffuse e sviluppate sono:
+
+\begin{itemize}
+\item eboard;
+\item raptor;
+\item pychess;
+\item xboard.
+\end{itemize}
+
+\end{frame}
+
+\section{Varie}
+
+\begin{frame}\frametitle{Tornei, web e altro}
+
+\begin{itemize}
+\item pgn4web (pubblicazione partite sul web);
+\item JavaPairing (gestione tornei);
+\item dgtnix/dgtdrv (collegamento con scacchiere elettroniche).
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Copyright (o Copyleft)}
+Quest'opera è stata rilasciata sotto la licenza Creative Commons
+Attribuzione-Condividi allo stesso modo 3.0 Unported. Per leggere una
+copia della licenza visita il sito web
+http://creativecommons.org/licenses/by-sa/3.0/ o spedisci una lettera
+a Creative Commons, 171 Second Street, Suite 300, San Francisco,
+California, 94105, USA.
+\end{frame}
+
+\end{document}

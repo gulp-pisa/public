@@ -1,0 +1,28 @@
+
+\begin{tikzpicture}
+
+\tikzset{ampersand replacement=\&}
+\tikzstyle{key}=[ellipse,draw=black,minimum width=1.2cm,minimum height=0.7cm]
+
+\only<3-4>{\matrix[row sep=1cm,column sep=0.9cm] {
+\node [key] (io) {Io}; \& \node [key] (caio) {Caio}; \& \node [key]  (tizio) {Tizio}; \\};
+\draw [->,bend left] (io) to (caio);
+\draw [->,bend left] (caio) to (tizio);}
+
+\only<5>{\matrix[row sep=1cm,column sep=0.9cm] {
+\node [key] (io) {Io}; \& \node [key] (caio) {Caio}; \& \node [key]  (sempronio) {Sempronio}; \& \node [key]  (tizio) {Tizio}; \\};
+\draw [->,bend left] (io) to (caio);
+\draw [->,bend left] (caio) to (sempronio);
+\draw [->,bend left] (sempronio) to (tizio);}
+
+\only<6>{\matrix[row sep=1cm,column sep=0.9cm] {
+\node [key] (io) {Io}; \& \node [key] (caio) {Caio}; \& \node [key]  (sempronio) {Sempronio}; \& \node [key,draw=white]  (puntini) {...}; \& \node [key]  (tizio) {Tizio}; \\};
+\draw [->,bend left] (io) to (caio);
+\draw [->,bend left] (caio) to (sempronio);
+\draw [->,bend left] (sempronio) to (puntini);
+\draw [->,bend left] (puntini) to (tizio);}
+
+\pgfresetboundingbox
+\path [use as bounding box] (-6,-0.5) rectangle (6,0.7);
+
+\end{tikzpicture}
