@@ -29,20 +29,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.2"
-     inkscape:cx="751.39163"
-     inkscape:cy="631.01783"
+     inkscape:zoom="1"
+     inkscape:cx="345.52502"
+     inkscape:cy="561.01783"
      inkscape:document-units="px"
      inkscape:current-layer="layer5"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
      inkscape:snap-intersection-line-segments="false"
-     inkscape:window-width="1246"
-     inkscape:window-height="692"
-     inkscape:window-x="26"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="768"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true" />
   <defs
@@ -935,7 +935,7 @@
     </filter>
     <radialGradient
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.34098666,0,0,0.23980274,17.405326,2100.892)"
+       gradientTransform="matrix(0.34236824,0,0,0.24233564,11.452694,2091.6073)"
        r="2171.428"
        fy="1494.2069"
        fx="2137.1423"
@@ -5082,6 +5082,13 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4111"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <metadata
      id="metadata7">
@@ -5099,15 +5106,14 @@
      inkscape:label="Gradienti base"
      id="layer2"
      inkscape:groupmode="layer"
-     transform="translate(0,-1927.5589)"
-     sodipodi:insensitive="true">
+     transform="translate(0,-1927.5589)">
     <rect
-       ry="0.29012445"
-       rx="0.32605696"
-       y="1938.4927"
-       x="5.7143555"
-       height="1041.4287"
-       width="1480.856"
+       ry="0.29318887"
+       rx="0.32737803"
+       y="1927.4927"
+       x="-0.28564453"
+       height="1052.4287"
+       width="1486.856"
        id="rect5196"
        style="fill:url(#radialGradient5687);fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
     <path
@@ -5410,11 +5416,11 @@
            style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
            y="858.60071"
            x="1776.6058"
-           height="322.02579"
-           width="2145.2612"
+           height="330.57767"
+           width="2171.021"
            id="rect21373" /></flowRegion><flowPara
          style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
-         id="flowPara21381">Anche per chi non ha la possibilità di rinunciare a sistemi operativi non liberi esistono comunque programmi liberi e gratuiti, molto utili in molti ambiti di utilizzo quotidiano del computer..</flowPara></flowRoot>    <g
+         id="flowPara21381">Anche per chi non ha la possibilità di rinunciare a sistemi operativi non liberi esistono comunque programmi liberi e gratuiti, molto utili in molti ambiti di utilizzo quotidiano del computer.</flowPara></flowRoot>    <g
        id="g4898"
        inkscape:label="Layer 1"
        transform="matrix(2.8489227,0,0,3.0713761,723.3715,2799.7755)">
@@ -7533,7 +7539,7 @@
          d="m 12.121662,10.456104 0.0041,-0.0021 c -0.19069,0.299363 -0.352674,0.611028 -0.465447,0.945248 -0.559768,1.107231 -0.209144,2.780382 -0.07382,4.033194 0.116875,0.440842 0.254253,0.893987 0.502355,1.142088 l 0.303463,0.102523 c -0.0061,-0.699197 0.241951,-1.347133 0.211195,-2.05043 -0.04716,-0.852979 -0.270657,-1.708008 -0.09842,-2.563037 0.14148,-0.752507 0.588473,-1.404543 0.770961,-2.1508991 0.219396,-0.9288446 0.192741,-1.929454 0.323968,-2.8767522 -0.551565,0.9760042 -1.04982,2.1057906 -1.472207,3.4201163" />
     </g>
     <g
-       transform="matrix(0.31468744,0,0,0.36617841,679.4888,2586.0216)"
+       transform="matrix(0.31468744,0,0,0.36617841,679.4888,2602.0216)"
        id="g11249">
       <path
          sodipodi:type="arc"
@@ -7684,7 +7690,7 @@
          style="fill:#82508e;fill-opacity:1;stroke:#3b1941;stroke-width:1.00595677;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
          transform="matrix(0.977113,0,0,1.123653,-0.214066,-6.870732)"
-         d="m 24.727345,39.80859 a 9.7225161,7.119638 0 1 1 -19.4450326,0 9.7225161,7.119638 0 1 1 19.4450326,0 z"
+         d="m 24.727345,39.80859 c 0,3.932067 -4.352919,7.119638 -9.722517,7.119638 -5.3695969,0 -9.7225156,-3.187571 -9.7225156,-7.119638 0,-3.932068 4.3529187,-7.119638 9.7225156,-7.119638 5.369598,0 9.722517,3.18757 9.722517,7.119638 z"
          sodipodi:ry="7.119638"
          sodipodi:rx="9.7225161"
          sodipodi:cy="39.80859"
@@ -7724,7 +7730,7 @@
          transform="matrix(1.46245,0,0,1.378883,-5.440518,-10.80605)" />
       <path
          transform="matrix(1.208632,0,0,1.158617,-1.844007,-4.808565)"
-         d="m 11.410714,24.3125 a 1.2410715,1.2946428 0 1 1 -2.482143,0 1.2410715,1.2946428 0 1 1 2.482143,0 z"
+         d="m 11.410714,24.3125 c 0,0.715011 -0.555647,1.294643 -1.241072,1.294643 -0.6854244,0 -1.241071,-0.579632 -1.241071,-1.294643 0,-0.715011 0.5556466,-1.294643 1.241071,-1.294643 0.685425,0 1.241072,0.579632 1.241072,1.294643 z"
          sodipodi:ry="1.2946428"
          sodipodi:rx="1.2410715"
          sodipodi:cy="24.3125"
@@ -7734,7 +7740,7 @@
          sodipodi:type="arc" />
       <path
          transform="matrix(0.402878,0,0,0.386209,6.350228,13.9706)"
-         d="m 11.410714,24.3125 a 1.2410715,1.2946428 0 1 1 -2.482143,0 1.2410715,1.2946428 0 1 1 2.482143,0 z"
+         d="m 11.410714,24.3125 c 0,0.715011 -0.555647,1.294643 -1.241072,1.294643 -0.6854244,0 -1.241071,-0.579632 -1.241071,-1.294643 0,-0.715011 0.5556466,-1.294643 1.241071,-1.294643 0.685425,0 1.241072,0.579632 1.241072,1.294643 z"
          sodipodi:ry="1.2946428"
          sodipodi:rx="1.2410715"
          sodipodi:cy="24.3125"
@@ -7756,7 +7762,7 @@
          transform="matrix(0.726374,-0.813272,-0.684868,-0.766801,34.41717,50.34012)" />
       <path
          transform="matrix(1.208632,0,0,1.158617,13.15599,-4.808572)"
-         d="m 11.410714,24.3125 a 1.2410715,1.2946428 0 1 1 -2.482143,0 1.2410715,1.2946428 0 1 1 2.482143,0 z"
+         d="m 11.410714,24.3125 c 0,0.715011 -0.555647,1.294643 -1.241072,1.294643 -0.6854244,0 -1.241071,-0.579632 -1.241071,-1.294643 0,-0.715011 0.5556466,-1.294643 1.241071,-1.294643 0.685425,0 1.241072,0.579632 1.241072,1.294643 z"
          sodipodi:ry="1.2946428"
          sodipodi:rx="1.2410715"
          sodipodi:cy="24.3125"
@@ -7766,7 +7772,7 @@
          sodipodi:type="arc" />
       <path
          transform="matrix(0.402878,0,0,0.386209,21.35023,13.9706)"
-         d="m 11.410714,24.3125 a 1.2410715,1.2946428 0 1 1 -2.482143,0 1.2410715,1.2946428 0 1 1 2.482143,0 z"
+         d="m 11.410714,24.3125 c 0,0.715011 -0.555647,1.294643 -1.241072,1.294643 -0.6854244,0 -1.241071,-0.579632 -1.241071,-1.294643 0,-0.715011 0.5556466,-1.294643 1.241071,-1.294643 0.685425,0 1.241072,0.579632 1.241072,1.294643 z"
          sodipodi:ry="1.2946428"
          sodipodi:rx="1.2410715"
          sodipodi:cy="24.3125"
@@ -7888,7 +7894,7 @@
            id="rect6774" /></flowRegion><flowPara
          style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
          id="flowPara6776">Inkscape: grafica vettoriale (con il quale sono stati realizzati questi cartelloni)</flowPara></flowRoot>    <flowRoot
-       transform="matrix(0.68324714,0,0,0.73659735,-324.99424,2061.6236)"
+       transform="matrix(0.68324714,0,0,0.73659735,-324.99424,2075.6236)"
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowRoot6778"
        xml:space="preserve"><flowRegion
@@ -7914,18 +7920,11 @@
            id="rect6790" /></flowRegion><flowPara
          style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
          id="flowPara6792">VLC: riproduzione video</flowPara></flowRoot>    <image
-       y="2831.9033"
-       x="-700.6084"
-       id="image5176"
-       height="179"
-       width="164"
-       xlink:href="file:///home/alessandra/Scrivania/404px-LibreOffice-Box-DiskLabel.svg.png" />
-    <image
-       y="2806.9033"
-       x="131.8916"
-       id="image5250"
-       height="104"
-       width="94"
+       y="2807.9211"
+       x="125.5"
+       id="image4113"
+       height="114"
+       width="84"
        xlink:href="file:///home/alessandra/Scrivania/219px-Logo-libreoffice.svg.png" />
   </g>
 </svg>
