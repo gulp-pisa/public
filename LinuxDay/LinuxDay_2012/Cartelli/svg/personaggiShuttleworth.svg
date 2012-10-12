@@ -17,10 +17,10 @@
    sodipodi:version="0.32"
    inkscape:version="0.47 r22583"
    version="1.0"
-   inkscape:export-filename="/home/alessandra/Scrivania/personaggiStallman.png"
+   inkscape:export-filename="/home/alessandra/Scrivania/personaggiShuttleworth.png"
    inkscape:export-xdpi="300.01077"
    inkscape:export-ydpi="300.01077"
-   sodipodi:docname="personaggiStallman.svg"
+   sodipodi:docname="personaggiShuttleworth.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <sodipodi:namedview
      id="base"
@@ -29,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="259.69685"
-     inkscape:cy="1235.3693"
+     inkscape:zoom="1"
+     inkscape:cx="405.41626"
+     inkscape:cy="1290.3556"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
@@ -194,7 +194,7 @@
        spreadMethod="pad"
        gradientUnits="userSpaceOnUse"
        id="linearGradient5659"
-       xlink:href="#linearGradient4130"
+       xlink:href="#linearGradient2991"
        inkscape:collect="always" />
     <filter
        id="filter5661"
@@ -207,14 +207,14 @@
     </filter>
     <radialGradient
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.33958405,-0.00103275,0.00146784,0.48264776,-140.14919,1487.9319)"
+       gradientTransform="matrix(0.52901329,0.0047604,-0.00573465,0.63365699,-441.72376,652.58602)"
        r="2171.428"
-       fy="1935.2417"
-       fx="1670.6384"
-       cy="1935.2417"
-       cx="1670.6384"
+       fy="3414.6963"
+       fx="1662.55"
+       cy="3414.6963"
+       cx="1662.55"
        id="radialGradient5687"
-       xlink:href="#linearGradient4124"
+       xlink:href="#linearGradient2991"
        inkscape:collect="always" />
     <linearGradient
        gradientTransform="scale(1.289859,0.775278)"
@@ -478,8 +478,8 @@
        id="linearGradient2991">
       <stop
          id="stop2992"
-         offset="0.00000000"
-         style="stop-color:#fff700;stop-opacity:1.0000000;" />
+         offset="0"
+         style="stop-color:#f3f098;stop-opacity:1;" />
       <stop
          id="stop2993"
          offset="1.0000000"
@@ -1244,15 +1244,6 @@
        inkscape:vp_z="180 : 90 : 1"
        inkscape:persp3d-origin="90 : 60 : 1"
        id="perspective139" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="535.98322"
-       x2="1979.8984"
-       y1="-29.702208"
-       x1="1979.899"
-       id="linearGradient12030"
-       xlink:href="#linearGradient4130"
-       inkscape:collect="always" />
     <filter
        height="1.3776325"
        y="-0.18881626"
@@ -2371,6 +2362,69 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4236"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4250"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4264"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4278"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4292"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4306"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4320"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4334"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective5088"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <metadata
      id="metadata7">
@@ -2392,11 +2446,11 @@
      transform="translate(0,-1491.7321)">
     <rect
        ry="0.41342396"
-       rx="0.23136549"
-       y="1494.2349"
-       x="2.6161499"
+       rx="0.23202603"
+       y="1492.2349"
+       x="-0.3838501"
        height="1484.0238"
-       width="1050.7948"
+       width="1053.7948"
        id="rect5196"
        style="fill:url(#radialGradient5687);fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
     <path
@@ -2404,9 +2458,9 @@
        sodipodi:nodetypes="ccccs"
        id="path5657"
        d="m 1532.7162,-399.01679 c 211.3354,-226.67299 1031.5662,-166.85215 1031.5662,-166.85215 l -5.4937,906.60809 -1269.9876,-2.92205 c 10.5439,-405.017652 121.9131,-605.97764 243.9151,-736.83389 z"
-       style="fill:url(#linearGradient5659);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline;filter:url(#filter5661)" />
+       style="fill:url(#linearGradient5659);fill-opacity:1.0;fill-rule:evenodd;stroke:none;display:inline;filter:url(#filter5661)" />
     <rect
-       transform="matrix(0.24543382,0,0,0.22315394,15.501533,1501.8151)"
+       transform="matrix(0.24543382,0,0,0.19801386,15.501533,1492.6791)"
        ry="167.93787"
        rx="194.45438"
        y="36.58902"
@@ -2414,20 +2468,20 @@
        height="433.103"
        width="4110.0576"
        id="rect12022"
-       style="fill:url(#linearGradient12030);fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter12032)" />
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter12032)" />
     <text
        xml:space="preserve"
-       style="font-size:116.70261383px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
-       x="159.284"
-       y="2157.386"
+       style="font-size:94.61795044px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#d45500;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       x="271.28296"
+       y="2303.406"
        id="text5152"
        sodipodi:linespacing="125%"
-       transform="scale(0.87210846,1.1466464)"><tspan
+       transform="scale(0.93555366,1.0688858)"><tspan
          sodipodi:role="line"
          id="tspan5154"
-         x="159.284"
-         y="2157.386"
-         style="font-weight:bold;fill:#660080;-inkscape-font-specification:Bitstream Vera Sans Bold"> Richard Stallman</tspan></text>
+         x="271.28296"
+         y="2303.406"
+         style="font-weight:bold;fill:#d45500;-inkscape-font-specification:Bitstream Vera Sans Bold">Mark Shuttleworth</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot5160"
@@ -2439,97 +2493,93 @@
            height="493.65067"
            x="1670"
            y="294.36218" /></flowRegion><flowPara
-         id="flowPara5166"
-         style="text-align:justify;text-anchor:start">Stallman è nato nel 1953 a New York City, New York. Assunto dalla IBM New York Scientific Center, Stallman passò l'estate dopo il diploma di scuola superiore scrivendo il suo primo programma, un processore per il linguaggio di programmazione PL/I sull'IBM 360.</flowPara><flowPara
          style="text-align:justify;text-anchor:start"
-         id="flowPara4262">È uno dei principali esponenti del movimento del software libero. Nel settembre del 1983 diede avvio al progetto GNU con l'intento di creare un sistema operativo simile a Unix ma libero: da ciò prese vita il movimento del software libero. Nell'ottobre del 1985 fondò la Free Software Foundation (FSF). Fu il pioniere del concetto di copyleft ed è il principale autore di molte licenze copyleft compresa la GNU General Public License (GPL), la licenza per software libero più diffusa. Dalla metà degli anni novanta spese molto del suo tempo sostenendo il software libero e promuovendo campagne contro i software proprietari, e ciò che a lui sembrava una eccessiva estensione delle leggi su copyright. Stallman ha anche sviluppato molti software ampiamente usati: Emacs, la GNU Compiler Collection e lo GNU Debugger.</flowPara><flowPara
+         id="flowPara4262">Shuttleworth è stato il fondatore di Canonical Ltd, una delle principali società operanti nel mondo dell Open Source e produttrice tra l'altro della famosissima distribuzione GNU/Linux <flowSpan
+   style="font-weight:bold"
+   id="flowSpan5176">Ubuntu</flowSpan>.</flowPara><flowPara
          style="text-align:justify;text-anchor:start"
-         id="flowPara4080">(fonte: http://it.wikipedia.org/wiki/Richard_Stallman)</flowPara></flowRoot>    <flowRoot
+         id="flowPara4210">E' stato il primo astronauta sudafricano. In virtù della nazionalità al momento del lancio è considerato il primo cittadino africano ad essere stato nello spazio, sebbene sia stato preceduto da Patrick Baudry, astronauta nato in Camerun, quando questo era ancora una colonia francese, ma cittadino francese al momento del lancio. Shuttleworth vive oggi a Londra e, in quanto anglo-sudafricano, possiede la doppia cittadinanza, sudafricana e britannica.</flowPara><flowPara
+         style="text-align:justify;text-anchor:start"
+         id="flowPara4212">Nel corso dell'ultimo anno di università,  si specializzò in certificati digitali e Internet privacy. </flowPara><flowPara
+         style="text-align:justify;text-anchor:start"
+         id="flowPara4218">Nei primi anni novanta Shuttleworth partecipò al progetto Debian, un sistema operativo Open Source, che egli stesso considera, insieme a molti altri software Open Source, una delle chiavi del successo di Thawte e conseguentemente della sua fortuna personale.</flowPara><flowPara
+         style="text-align:justify;text-anchor:start"
+         id="flowPara4080">(fonte: http://it.wikipedia.org/wiki/Mark_Shuttleworth)</flowPara><flowPara
+         style="text-align:justify;text-anchor:start"
+         id="flowPara4220" /></flowRoot>    <image
+       y="2004.9211"
+       x="122"
+       id="image4280"
+       height="158"
+       width="229"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth3.jpg" />
+    <image
+       y="1574.921"
+       x="881"
+       id="image5090"
+       height="130"
+       width="130"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/dragon.png" />
+    <flowRoot
        xml:space="preserve"
        id="flowRoot5176"
        style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
-       transform="matrix(0.53773302,0,0,0.49173015,-379.70973,1446.5154)"><flowRegion
+       transform="matrix(0.53773302,0,0,0.49173015,-475.70973,1424.5154)"><flowRegion
          id="flowRegion5178"><rect
            id="rect5180"
-           width="1038.8661"
-           height="1467.1013"
+           width="1187.6389"
+           height="1519.9758"
            x="1576"
            y="436.36218"
            style="fill:#000000" /></flowRegion><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4078">From CSvax:pur-ee:inuxc!ixn5c!ihnp4!houxm!mhuxi!eagle!mit-vax!mit-eddie!RMS@MIT-OZ</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4368">From: RMS%MIT-OZ@mit-eddie</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4370">Newsgroups: net.unix-wizards,net.usoft</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4372">Subject: new Unix implementation</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4374">Date: Tue, 27-Sep-83 12:35:59 EST</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4376">Organization: MIT AI Lab, Cambridge, MA</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4378" /><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4380">Free Unix!</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4382" /><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4384">Starting this Thanksgiving I am going to write a complete</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4386">Unix-compatible software system called GNU (for Gnu's Not Unix), and</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4388">give it away free(1) to everyone who can use it.</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4390">Contributions of time, money, programs and equipment are greatly</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4392">needed.</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4394" /><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4396">To begin with, GNU will be a kernel plus all the utilities needed to</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4398">write and run C programs: editor, shell, C compiler, linker,</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4400">assembler, and a few other things.  After this we will add a text</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4402">formatter, a YACC, an Empire game, a spreadsheet, and hundreds of</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4404">other things.  We hope to supply, eventually, everything useful thatnormally comes with a Unix system, and anything else useful, includingon-line and hardcopy documentation.GNU will be able to run Unix programs, but will not be identicalto Unix.  We will make all improvements that are convenient, basedon our experience with other operating systems.  In particular,we plan to have longer filenames, file version numbers, a crashprooffile system, filename completion perhaps, terminal-independentdisplay support, and eventually a Lisp-based window system throughwhich several Lisp programs and ordinary Unix programs can share a screen.Both C and Lisp will be available as system programming languages.We will have network software based on MIT's chaosnet protocol,far superior to UUCP.  We may also have something compatiblewith UUCP.</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4582">Who Am I?</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4584">I am Richard Stallman, inventor of the original much-imitated EMACSeditor, now at the Artificial Intelligence Lab at MIT.  I have workedextensively on compilers, editors, debuggers, command interpreters, theIncompatible Timesharing System and the Lisp Machine operating system.I pioneered terminal-independent display support in ITS.  In addition Ihave implemented one crashproof file system and two window systems forLisp machines.</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4586">Why I Must Write GNU</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4588">I consider that the golden rule requires that if I like a program Imust share it with other people who like it.  I cannot in goodconscience sign a nondisclosure agreement or a software licenseagreement.So that I can continue to use computers without violating my principles,I have decided to put together a sufficient body of free software so thatI will be able to get along without any software that is not free.</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4590">How You Can Contribute</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4592">I am asking computer manufacturers for donations of machines and money.I'm asking individuals for donations of programs and work.One computer manufacturer has already offered to provide a machine.  Butwe could use more.  One consequence you can expect if you donatemachines is that GNU will run on them at an early date.  The machine hadbetter be able to operate in a residential area, and not requiresophisticated cooling or power.Individual programmers can contribute by writing a compatible duplicateof some Unix utility and giving it to me.  For most projects, suchpart-time distributed work would be very hard to coordinate; theindependently-written parts would not work together.  But for theparticular task of replacing Unix, this problem is absent.  Mostinterface specifications are fixed by Unix compatibility.  If eachcontribution works with the rest of Unix, it will probably workwith the rest of GNU.If I get donations of money, I may be able to hire a few people full orpart time.  The salary won't be high, but I'm looking for people forwhom knowing they are helping humanity is as important as money.  I viewthis as a way of enabling dedicated people to devote their full energies toworking on GNU by sparing them the need to make a living in another way.</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4564">For more information, contact me.</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4566">Arpanet mail:  </flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4568">RMS@MIT-MC.ARPA</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4570">Usenet:  ...!mit-eddie!RMS@OZ  </flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4572">...!mit-vax!RMS@OZUS </flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4574">Snail:  </flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4576">Richard Stallman  </flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4578">166 Prospect St  </flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4580">Cambridge, MA 02139</flowPara><flowPara
-         id="flowPara5215"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold" /><flowPara
          id="flowPara5217"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5044">Funding free software projects</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5046">Friday, November 21st, 2003</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5048" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5050">Successful open source projects are usually initiated by someone with a clear vision and also the knowledge to set about turning that vision into reality. But what happens when someone has an idea and also has the resources to hire programmers to execute that idea?My experience with SchoolTool v1</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5052">This note was inspired by Tom Hoffman’s blog entry which referenced SchoolTool and Chandler. I thought he was touching on a subject which has interested me for some time – how best to fund open source development. Trust me this is not easy. Most open source projects are led by the person who had the original vision. It’s much harder to HIRE people to work towards your own vision. But if philanthropists are to invest in open source software, then we have to figure out how to do just that.</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5054" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5056">First, some more history on the SchoolTool project, because I think it nicely illustrates the phenomenon.</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5058" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5060">I hired a talented and diverse team to build SchoolTool just as I was heading to Russia to see if I could get into the Russian space program. All of the team members were familiar with and fans of open source software and open source development. There was no one at the Foundation that had experience managing an IT project, but I figured the that the team would have no trouble managing itself. They should have the best of all worlds, with steady salaries to allow them to focus their time exclusively on an open source project. Most open source projects are part-time efforts, with the team members constantly constrained in the time they can devote to their “hobby”.</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5094" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5096">While I was in Russia, the team sent me a series of regular reports on their progress. They settled on Java, not an environment I like, and SQL database, a reasonable proposition. So far so good. But over the next few months I noticed that they were spending a lot of time solving problems that didn’t really need to be solved. For example, we wanted SchoolTool to be cross-platform. They invested a huge amount of effort designing an XML-based UI description system, which would then automatically generate a UI for each platform. Why reinvent XUL, I asked? It seemed as if, given free reign, the developers pursued their own personal interests rather than the goals of the project. Sure, they could always argue that the tools they were developing were ultimately going to be USED by SchoolTool, but I was always left thinking that if I were in their shoes I would want to start solving the unique problems of school administration FIRST, and leave some of the other niceties till later.</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5098" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5100">After a while it became clear to me that the team was not going to produce a functional tool. So I canned the project and shutdown the development office, letting the developers go. This was a very unpopular decision, quite a few educational groups had pinned their hopes on SchoolTool. Rather than keeping those hopes artificially alive I killed the project outright and said we would not develop SchoolTool further. But at the back of my mind was still the belief that SchoolTool is a project that is both feasible and worthwhile, and that it should work in an open source environment once it has critical mass.</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5102" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5104">The issue, as I see it, is leadership. Most open source projects are founded by one or two people who have a very clear idea of what they want to create and how they plan to do so. They have an itch to scratch. Once they have a basic framework together, other people start to use it and the stone soup effect kicks in… some of the users become developers, and the bazaar magic happens. But here’s what’s critical – the success of the project continues to depend on it’s leadership, usually by the founders but sometimes in a more institutional way (like the Debian project).</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5106" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5108">Contrast this with my experience of hiring developers who had great skills but no personal attachment to the idea of having a SchoolTool out in the wild. They did what all open source developers do – they scratched THEIR itch.</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5110" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5062">&lt;....&gt;</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5064">Lessons Learned</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5066">So the risk is that a well-funded open source team that is NOT led by someone with a personal interest in shipping the project will get distracted by other shiny tech toys and fail to actually ship something focused and constructive. How are we dealing with that in the current round of work on SchoolTool? First, I’m personally watching and asking the core team to focus on actual functionality. They assure me that their engine work is “done”, and that they are currently working on a usable tool that can be tested by schools. Time will tell. And second, we will shortly have a second, collaborating team, that will I hope also bring much of the engineering work into a more public forum.</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5068" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5070">Time will tell. These are expensive ways to learn, but I feel that the experiment is very much worth doing. There are lots of tools I would like to see developed in the open source world that developers have not yet done for themselves, and which I would be prepared to fund. Perhaps other philanthropists are in a similar position. We need to learn how to do this effectively, and the only way to learn is to try.</flowPara><flowPara
          id="flowPara5219"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold" /><flowPara
          id="flowPara5221"
@@ -2699,76 +2749,94 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
          id="flowPara4560" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-         id="flowPara4562" /></flowRoot>    <image
-       y="2352.9209"
-       x="10"
-       id="image4146"
-       height="146"
-       width="166"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/gnu_logo_trasparent_by_ilnanny.png" />
-    <image
-       y="1632.9211"
-       x="1.5"
-       id="image4174"
-       height="324"
-       width="387"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/stallman.jpeg" />
-    <image
-       y="2201.4209"
+         id="flowPara4562" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5114" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5116" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5118" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5120" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5122" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5124" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5126" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5128" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5130" /><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
+         id="flowPara5132" /></flowRoot>    <image
+       y="2179.9211"
        x="6"
-       id="image4188"
-       height="153"
-       width="242"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/stallman3.jpeg" />
+       id="image4238"
+       height="168"
+       width="300"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth1.jpg" />
     <image
-       y="2488.9209"
-       x="824.5"
-       id="image4202"
-       height="238"
-       width="183"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/stallman5.jpeg" />
+       y="2502.4211"
+       x="695"
+       id="image4252"
+       height="171"
+       width="294"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth4.jpg" />
     <image
-       y="1988.421"
+       y="2706.4211"
+       x="556"
+       id="image4266"
+       height="159"
+       width="140"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth5.jpg" />
+    <image
+       y="1608.4211"
+       x="4"
+       id="image4308"
+       height="190"
+       width="324"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth2.jpg" />
+    <image
+       y="2396.9211"
+       x="13"
+       id="image4336"
+       height="73"
+       width="234"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/600px-Former_Ubuntu_logo.svg.png" />
+    <image
+       y="1816.9211"
        x="1"
-       id="image4216"
-       height="175"
-       width="214"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/stallman4.jpeg" />
-    <image
-       y="2056.4209"
-       x="229"
-       id="image4230"
-       height="177"
-       width="222"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/stallman2.jpeg" />
-    <image
-       y="2523.9209"
-       x="512.5"
-       id="image4244"
-       height="192"
-       width="263"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/stallman7.jpeg" />
-    <image
-       y="2754.4209"
-       x="537"
-       id="image4258"
-       height="199"
-       width="190"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/stallman1.jpeg" />
-    <flowRoot
+       id="image4294"
+       height="178"
+       width="220"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth_NASA.jpg" />
+    <text
        xml:space="preserve"
-       id="flowRoot4594"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#22002b;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
-       transform="matrix(1.3451273,0,0,1,-1027.346,1578.7321)"><flowRegion
-         id="flowRegion4596"><rect
-           id="rect4598"
-           width="410"
-           height="46"
-           x="1110"
-           y="28.188965"
-           style="fill:#22002b" /></flowRegion><flowPara
-         id="flowPara4600"
-         style="font-weight:bold;fill:#22002b">Questo è l'annuncio ufficiale del progetto GNU, inviato da Richard Stallman il 27 settembre 1983.</flowPara></flowRoot>  </g>
+       style="font-size:9.64233017px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       x="361.92294"
+       y="1680.8961"
+       id="text5072"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0238741,0.9766826)"><tspan
+         sodipodi:role="line"
+         id="tspan5074"
+         x="361.92294"
+         y="1680.8961">http://www.markshuttleworth.com/archives/date/2003/11</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:27.47339439px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       x="398.34778"
+       y="1505.7773"
+       id="text5076"
+       sodipodi:linespacing="125%"
+       transform="scale(0.92757987,1.0780743)"><tspan
+         sodipodi:role="line"
+         id="tspan5078"
+         x="398.34778"
+         y="1505.7773"
+         style="font-weight:bold;fill:#552200">Mark Shuttleworth | here be dragons</tspan></text>
+  </g>
   <g
      style="display:inline"
      inkscape:label="Logo GULP"
@@ -2988,7 +3056,7 @@
            width="1559.6755"
            id="rect2746" /></flowRegion><flowPara
          id="flowPara2748" /></flowRoot>    <flowRoot
-       transform="matrix(0.40794053,0,0,0.26629176,71.640319,1559.0214)"
+       transform="matrix(0.40794053,0,0,0.26629176,71.640319,1545.0214)"
        style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.99504945;stroke:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowRoot5202"
        xml:space="preserve"><flowRegion
