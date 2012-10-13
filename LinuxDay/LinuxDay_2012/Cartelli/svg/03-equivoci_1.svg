@@ -17,10 +17,10 @@
    sodipodi:version="0.32"
    inkscape:version="0.47 r22583"
    version="1.0"
-   inkscape:export-filename="/home/giovanni/documenti/gulp/cartelloni/00-software-libero.png"
-   inkscape:export-xdpi="50.014748"
-   inkscape:export-ydpi="50.014748"
-   sodipodi:docname="03-equivoci.svg"
+   inkscape:export-filename="/home/alessandra/Scrivania/03-equivoci_1.png"
+   inkscape:export-xdpi="300.01077"
+   inkscape:export-ydpi="300.01077"
+   sodipodi:docname="03-equivoci_1.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <sodipodi:namedview
      id="base"
@@ -45,7 +45,8 @@
      showguides="true"
      inkscape:snap-global="false"
      inkscape:guide-bbox="true"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     units="cm">
     <inkscape:grid
        type="xygrid"
        id="grid24730"
@@ -2189,7 +2190,7 @@
      inkscape:label="Gradienti base"
      id="layer2"
      inkscape:groupmode="layer"
-     transform="translate(0,-1927.5589)">
+     transform="translate(0,-1927.5577)">
     <rect
        ry="0.29291028"
        rx="0.32649735"
@@ -2221,7 +2222,7 @@
      inkscape:label="Logo GULP"
      id="layer3"
      inkscape:groupmode="layer"
-     transform="translate(0,-1927.5589)">
+     transform="translate(0,-1927.5577)">
     <g
        id="g3485"
        transform="matrix(0.2923973,0,0,0.2958915,252.12642,2096.562)">
@@ -2403,7 +2404,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Titolo"
-     transform="translate(0,-1927.5589)">
+     transform="translate(0,-1927.5577)">
     <flowRoot
        style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        id="flowRoot2726"
@@ -2453,9 +2454,9 @@
      inkscape:label="Contenuto"
      id="layer5"
      inkscape:groupmode="layer"
-     transform="translate(0,-1927.5589)" />
+     transform="translate(0,-1927.5577)" />
   <flowRoot
-     transform="matrix(0.74068577,0,0,0.62192211,357.04184,260.91488)"
+     transform="matrix(0.74068577,0,0,0.62192211,357.04184,260.91631)"
      style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
      id="flowRoot17406"
      xml:space="preserve"><flowRegion
@@ -2470,9 +2471,9 @@
        style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowPara17412">&quot;Libero&quot; vuol dire &quot;gratuito&quot;?</flowPara></flowRoot>  <g
      id="g7033"
-     transform="matrix(0.61343978,0,0,0.62039559,1515.8796,-244.08669)" />
+     transform="matrix(0.61343978,0,0,0.62039559,1515.8796,-244.08569)" />
   <flowRoot
-     transform="matrix(1.1507249,0,0,1.1507249,5502.2847,-1161.4858)"
+     transform="matrix(1.1507249,0,0,1.1507249,5502.2847,-1161.4847)"
      style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
      id="flowRoot6989"
      xml:space="preserve"><flowRegion
@@ -2486,7 +2487,7 @@
          id="rect6993" /></flowRegion><flowPara
        style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowPara6995">Come posso contribuire?</flowPara></flowRoot>  <flowRoot
-     transform="translate(3141.8152,-2012.9181)"
+     transform="translate(3141.8152,-2012.9167)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7049"
      xml:space="preserve"><flowRegion
@@ -2499,7 +2500,7 @@
          id="rect7053" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7055">Chiunque voglia contribuire allo sviluppo del software libero è più che benvenuto! E la buona notizia è che non è necessario essere programmatori per poterlo fare: certamente, chi sa maneggiare debugger e compilatori sa già che lavoro fare, ma la comunità del software libero ha bisogno anche di...</flowPara></flowRoot>  <flowRoot
-     transform="translate(3141.4226,-1684.7214)"
+     transform="translate(3141.4226,-1684.7207)"
      style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7093"
      xml:space="preserve"><flowRegion
@@ -2512,7 +2513,7 @@
          id="rect7097" /></flowRegion><flowPara
        style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7099">Traduzioni</flowPara></flowRoot>  <flowRoot
-     transform="translate(3634.0259,-1718.4797)"
+     transform="translate(3634.0259,-1718.4787)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7157"
      xml:space="preserve"><flowRegion
@@ -2525,7 +2526,7 @@
          id="rect7161" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7163">Conosci abbastanza bene l'inglese? Tradurre programmi è molto facile, ma comodissimo per chi legge solo l'italiano.</flowPara></flowRoot>  <flowRoot
-     transform="translate(3140.4031,-1543.0076)"
+     transform="translate(3140.4031,-1543.0067)"
      style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7101"
      xml:space="preserve"><flowRegion
@@ -2538,7 +2539,7 @@
          id="rect7105" /></flowRegion><flowPara
        style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7107">Lavori creativi</flowPara></flowRoot>  <flowRoot
-     transform="translate(3633.5445,-1575.0334)"
+     transform="translate(3633.5445,-1575.0327)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7165"
      xml:space="preserve"><flowRegion
@@ -2551,7 +2552,7 @@
          id="rect7169" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7171">Sai disegnare loghi, icone, elementi grafici per siti Web o cose del genere? Ricordati che anche l'occhio vuole la sua parte.</flowPara></flowRoot>  <flowRoot
-     transform="translate(3139.5242,-1407.0242)"
+     transform="translate(3139.5242,-1407.0237)"
      style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7109"
      xml:space="preserve"><flowRegion
@@ -2564,7 +2565,7 @@
          id="rect7113" /></flowRegion><flowPara
        style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7115">Supporto</flowPara></flowRoot>  <flowRoot
-     transform="translate(3634.1392,-1431.3606)"
+     transform="translate(3634.1392,-1431.3597)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7173"
      xml:space="preserve"><flowRegion
@@ -2577,7 +2578,7 @@
          id="rect7177" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7179">Sei un grado di usare un programma a sufficienza da poter dare una mano ad altri? Sarebbe molto comodo per i nuovi utenti.</flowPara></flowRoot>  <flowRoot
-     transform="translate(3140.4031,-1262.4656)"
+     transform="translate(3140.4031,-1262.4647)"
      style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7117"
      xml:space="preserve"><flowRegion
@@ -2590,7 +2591,7 @@
          id="rect7121" /></flowRegion><flowPara
        style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7123">Documentazione</flowPara></flowRoot>  <flowRoot
-     transform="translate(3839.5678,-1287.9143)"
+     transform="translate(3839.5678,-1287.9137)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7181"
      xml:space="preserve"><flowRegion
@@ -2603,7 +2604,7 @@
          id="rect7185" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7187">Scrivere documentazione è noioso, ma un progetto mal documentato è come morto. Potresti dare una mano?</flowPara></flowRoot>  <flowRoot
-     transform="translate(3139.5242,-1123.489)"
+     transform="translate(3139.5242,-1123.4877)"
      style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7125"
      xml:space="preserve"><flowRegion
@@ -2616,7 +2617,7 @@
          id="rect7129" /></flowRegion><flowPara
        style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7131">Contributi economici</flowPara></flowRoot>  <flowRoot
-     transform="translate(3840.1625,-1157.3254)"
+     transform="translate(3840.1625,-1157.3247)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7189"
      xml:space="preserve"><flowRegion
@@ -2629,7 +2630,7 @@
          id="rect7193" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7195">Molte fondazioni che lavorano nel software libero si mantengono in buona parte grazie a donazioni...</flowPara></flowRoot>  <flowRoot
-     transform="translate(3140.4031,-979.81618)"
+     transform="translate(3140.4031,-979.81469)"
      style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7133"
      xml:space="preserve"><flowRegion
@@ -2642,7 +2643,7 @@
          id="rect7137" /></flowRegion><flowPara
        style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7139">Pubblicità</flowPara></flowRoot>  <flowRoot
-     transform="translate(3634.1392,-1013.6526)"
+     transform="translate(3634.1392,-1013.6517)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7197"
      xml:space="preserve"><flowRegion
@@ -2655,7 +2656,7 @@
          id="rect7201" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7203">Conosci qualcuno che non sa ancora cosa sia il software libero? Prova a parlargliene, magari è interessato.</flowPara></flowRoot>  <flowRoot
-     transform="translate(3139.5242,-844.08854)"
+     transform="translate(3139.5242,-844.08769)"
      style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7141"
      xml:space="preserve"><flowRegion
@@ -2668,7 +2669,7 @@
          id="rect7145" /></flowRegion><flowPara
        style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7147">Qualità</flowPara></flowRoot>  <flowRoot
-     transform="translate(3634.2525,-869.97964)"
+     transform="translate(3634.2525,-869.97869)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7205"
      xml:space="preserve"><flowRegion
@@ -2681,7 +2682,7 @@
          id="rect7209" /></flowRegion><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7211">Hai la pazienza per provare programmi e indicare le cose che non funzionano agli sviluppatori? Sarebbe un contributo preziosissmo.</flowPara></flowRoot>  <flowRoot
-     transform="matrix(1.1507249,0,0,1.1507249,3082.3066,300.06396)"
+     transform="matrix(1.1507249,0,0,1.1507249,3082.3066,300.06531)"
      style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
      id="flowRoot7339"
      xml:space="preserve"><flowRegion
@@ -2695,7 +2696,7 @@
          id="rect7343" /></flowRegion><flowPara
        style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowPara7345">Perché ci piace il software libero?</flowPara></flowRoot>  <flowRoot
-     transform="translate(1251.3251,-543.76304)"
+     transform="translate(1251.3251,-543.76169)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot7361"
      xml:space="preserve"><flowRegion
@@ -2709,7 +2710,7 @@
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara7367">Questa è sicuramente la domanda più difficile, che richiederebbe una risposta molto più articolata di quello che si può dire in poco spazio. Ad ogni modo, principalmente a noi il software libero piace tanto perché esso offre all'utente la possibilità di essere, appunto, libero, senza obbligarlo ad adattarsi alle scelte fatte da chi ha scritto il software. Se un programma è libero, l'autore di un altro programma potrà sfruttarne le potenzialità per costruire altri programmi più complessi, evitando di dover riscrivere da capo ciò che già esiste e raccogliendo insieme le energie di programmatori che lavorano a progetti simili. Questo si traduce in un vantaggio per l'intera comunità, che dispone di programmi migliori dovendo impiegare meno forze. Spesso, inoltre, l'adozione di software libero favorisce la nascita di standard che facilitano lo scambio di informazioni. Le tante altre cose che si potrebbero aggiungere  sono trattate ampiamente su http://www.gnu.org/philosophy/philosophy.html. </flowPara></flowRoot>  <g
      id="g7033-2"
-     transform="matrix(0.61343978,0,0,0.62039559,1242.4541,-412.61755)">
+     transform="matrix(0.61343978,0,0,0.62039559,1242.4541,-412.61669)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot24688-3"
@@ -2766,5 +2767,5 @@
            height="80"
            x="1126.6666"
            y="959.02887" /></flowRegion><flowPara
-         id="flowPara3405"></flowPara></flowRoot>  </g>
+         id="flowPara3405" /></flowRoot>  </g>
 </svg>

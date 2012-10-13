@@ -11,8 +11,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448"
-   height="524.40942"
+   width="1488.189"
+   height="1052.3622"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.47 r22583"
@@ -29,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.8"
+     inkscape:zoom="0.2"
      inkscape:cx="466.40169"
-     inkscape:cy="220.49491"
+     inkscape:cy="620.49491"
      inkscape:document-units="px"
-     inkscape:current-layer="svg2"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
@@ -44,7 +44,9 @@
      inkscape:window-y="25"
      showguides="true"
      inkscape:snap-global="false"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     units="cm"
+     showborder="true">
     <inkscape:grid
        type="xygrid"
        id="grid24730"
@@ -201,7 +203,7 @@
     </filter>
     <radialGradient
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.17087311,0,0,0.12056033,7.472874,2539.6161)"
+       gradientTransform="matrix(0.34188387,0,0,0.23951342,21.338081,2098.0794)"
        r="2171.428"
        fy="1494.2069"
        fx="2137.1423"
@@ -1780,7 +1782,7 @@
        y2="-32.912609" />
     <pattern
        id="pattern2692"
-       patternTransform="matrix(3.2683777,0,0,3.4323256,7993.5142,2294.5222)"
+       patternTransform="matrix(1.6787575,0,0,1.7529578,3912.9333,813.48845)"
        height="77.628510"
        width="96.697266"
        patternUnits="userSpaceOnUse">
@@ -2325,24 +2327,24 @@
      inkscape:label="Gradienti base"
      id="layer2"
      inkscape:groupmode="layer"
-     transform="translate(0,-2455.5116)">
+     transform="translate(0,-1927.5583)">
     <rect
-       ry="0.14585945"
-       rx="0.16339163"
-       y="2457.9702"
-       x="1.6143742"
-       height="523.57611"
-       width="742.07727"
+       ry="0.28977442"
+       rx="0.32691491"
+       y="1935.8761"
+       x="9.6163616"
+       height="1040.1722"
+       width="1484.7523"
        id="rect5196"
        style="fill:url(#radialGradient5687);fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
     <path
-       transform="matrix(0.0986592,0,0,0.08791102,489.89928,2948.1296)"
+       transform="matrix(0.19207987,0,0,0.17213149,997.25961,2915.1425)"
        sodipodi:nodetypes="ccccs"
        id="path5657"
        d="m 1532.7162,-399.01679 c 211.3354,-226.67299 1031.5662,-166.85215 1031.5662,-166.85215 l -5.4937,906.60809 -1269.9876,-2.92205 c 10.5439,-405.017652 121.9131,-605.97764 243.9151,-736.83389 z"
        style="fill:url(#linearGradient5659);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline;filter:url(#filter5661)" />
     <rect
-       transform="matrix(0.17622569,0,0,0.12210732,10.206435,2467.2117)"
+       transform="matrix(0.34309429,0,0,0.23908852,43.344269,1943.4958)"
        ry="167.93787"
        rx="194.45438"
        y="36.58902"
@@ -2357,10 +2359,10 @@
      inkscape:label="Logo GULP"
      id="layer3"
      inkscape:groupmode="layer"
-     transform="translate(0,-2455.5116)">
+     transform="translate(0,-1927.5583)">
     <g
        id="g3485"
-       transform="matrix(0.09059304,0,0,0.07937109,346.02638,2733.3851)">
+       transform="matrix(0.17637584,0,0,0.15541014,717.15306,2494.6686)">
       <g
          transform="matrix(2.7493523,0,0,2.7493523,3103.6159,2793.2325)"
          inkscape:label="Layer 1"
@@ -2467,7 +2469,7 @@
            style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold">Creative Commons Attribution 3.0</flowPara></flowRoot>    </g>
     <g
        id="g6013"
-       transform="matrix(0.08366861,0,0,0.0773623,368.79358,2737.8074)">
+       transform="matrix(0.16289465,0,0,0.15147689,761.47859,2503.3275)">
       <flowRoot
          xml:space="preserve"
          id="flowRoot5665"
@@ -2538,7 +2540,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Titolo"
-     transform="translate(0,-2455.5116)">
+     transform="translate(0,-1927.5583)">
     <flowRoot
        style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        id="flowRoot2726"
@@ -2570,7 +2572,7 @@
            width="1559.6755"
            id="rect2746" /></flowRegion><flowPara
          id="flowPara2748" /></flowRoot>    <flowRoot
-       transform="matrix(0.26112993,0,0,0.19899177,50.43071,2498.4941)"
+       transform="matrix(0.50839459,0,0,0.38962977,121.65702,2004.7474)"
        style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowRoot5202"
        xml:space="preserve"><flowRegion
@@ -2588,9 +2590,9 @@
      inkscape:label="Contenuto"
      id="layer5"
      inkscape:groupmode="layer"
-     transform="translate(0,-2455.5116)" />
+     transform="translate(0,-1927.5583)" />
   <flowRoot
-     transform="matrix(0.24830498,0,0,0.2644836,149.41794,118.18653)"
+     transform="matrix(0.48342566,0,0,0.51786405,314.37554,224.43971)"
      style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
      id="flowRoot12062"
      xml:space="preserve"><flowRegion
@@ -2604,7 +2606,7 @@
          id="rect12066" /></flowRegion><flowPara
        style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowPara12068">Libertà non solo del software</flowPara></flowRoot>  <flowRoot
-     transform="matrix(0.32340399,0,0,0.25048336,239.23438,162.64861)"
+     transform="matrix(0.62963614,0,0,0.49045131,489.23942,311.49718)"
      style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
      id="flowRoot17406"
      xml:space="preserve"><flowRegion
@@ -2618,7 +2620,7 @@
          id="rect17410" /></flowRegion><flowPara
        style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowPara17412">Progetti liberi</flowPara></flowRoot>  <rect
-     transform="matrix(0.34033522,0,0,0.56712692,-718.64037,-541.63531)"
+     transform="matrix(0.66259959,0,0,1.1104456,-1375.6496,-1067.5046)"
      ry="0.4637768"
      rx="0.68758452"
      y="1318.9042"
@@ -2630,7 +2632,7 @@
   <g
      clip-path="url(#clip0)"
      id="surface0"
-     transform="matrix(0.08796412,0,0,0.08376246,77.405552,276.99157)">
+     transform="matrix(0.17125759,0,0,0.16400853,174.17441,535.383)">
     <path
        id="path2485"
        d="m 0,0 1000,0 0,1000 L 0,1000 0,0 z"
@@ -8920,7 +8922,7 @@
   </g>
   <g
      id="g23632"
-     transform="matrix(0.55338788,0,0,0.52695485,-65.754121,49.243448)">
+     transform="matrix(1.0773924,0,0,1.0317879,-104.54355,89.447973)">
     <path
        id="path22917"
        d="m 380.03125,673.875 c 10e-6,-3e-5 0,5.59375 0,5.59375 10e-6,-10e-6 -22.65625,0 -22.65625,0 0,-10e-6 0,5.6875 0,5.6875 0,0 -5.65625,0 -5.65625,0 0,0 0,5.6875 0,5.6875 0,2e-5 5.65625,0 5.65625,0 0,2e-5 0,5.6875 0,5.6875 0,10e-6 19.09375,0 19.09375,0 -10e-6,10e-6 9.25,0 9.25,0 -10e-6,10e-6 5.0625,0 5.0625,0 10e-6,10e-6 0,-5.6875 0,-5.6875 10e-6,-10e-6 -5.0625,0 -5.0625,0 l 0,-0.0312 0,-0.0312 0,-0.0625 0,-0.0625 0,-0.125 0,-0.125 0,-0.125 0,-0.1875 0,-0.1875 0,-0.1875 0,-0.21875 0,-0.21875 0,-0.28125 0,-0.25 0,-0.28125 0,-0.28125 0,-0.625 0,-0.65625 0,-0.6875 0,-0.75 0,-0.75 0,-0.78125 0,-1.59375 0,-1.5625 0,-0.78125 0,-0.75 0,-0.75 0,-0.6875 0,-0.65625 0,-0.625 0,-0.28125 0,-0.28125 0,-0.28125 0,-0.25 0,-0.21875 0,-0.21875 0,-0.21875 0,-0.1875 0,-0.15625 0,-0.15625 0,-0.0937 0,-0.125 0,-0.0625 0,-0.0937 0,-0.0312 c -10e-6,-3e-5 -5.6875,0 -5.6875,0 z m -22.09375,11.28125 c 0,0 22.09375,0 22.09375,0 10e-6,0 0,5.6875 0,5.6875 10e-6,-10e-6 -3.5625,0 -3.5625,0 -10e-6,2e-5 -18.53125,0 -18.53125,0 l 0,-0.0312 0,-0.0312 0,-0.0312 0,-0.0312 0,-0.0625 0,-0.0625 0,-0.0625 0,-0.0625 0,-0.0625 0,-0.0937 0,-0.0625 0,-0.0937 0,-0.0937 0,-0.0937 0,-0.21875 0,-0.21875 0,-0.25 0,-0.25 0,-0.25 0,-0.25 0,-0.53125 0,-0.53125 0,-0.25 0,-0.25 0,-0.25 0,-0.25 0,-0.21875 0,-0.1875 0,-0.125 0,-0.0625 0,-0.0937 0,-0.0937 0,-0.0937 0,-0.0625 0,-0.0625 0,-0.0625 0,-0.0625 0,-0.0312 0,-0.0625 0,-0.0312 0,-0.0312 0,-0.0312 z"
@@ -9052,7 +9054,7 @@
   </g>
   <g
      id="g17680"
-     transform="matrix(0.26010894,0,0,0.24768463,75.523609,188.69305)">
+     transform="matrix(0.50640682,0,0,0.48497134,170.51046,362.49184)">
     <g
        style="display:block"
        inkscape:label="Map"
@@ -9237,7 +9239,7 @@
     </g>
   </g>
   <flowRoot
-     transform="matrix(0.30596219,0,0,0.29134767,-366.71195,-61.190713)"
+     transform="matrix(0.59567865,0,0,0.57046443,-690.47919,-126.78395)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot24688"
      xml:space="preserve"><flowRegion
@@ -9252,7 +9254,7 @@
        id="flowPara24694">OpenStreetMap: creazione di una mappa stradale di tutto il mondo. Utilizza una licenza Creative Commons Attribution ShareAlike, ma è in via di definizione una nuova licenza specifica per database.</flowPara><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara24712">Sito: http://www.openstreetmap.org.</flowPara></flowRoot>  <flowRoot
-     transform="matrix(0.30596219,0,0,0.29134767,-366.59061,34.927679)"
+     transform="matrix(0.59567865,0,0,0.57046443,-690.24295,61.416966)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot24696"
      xml:space="preserve"><flowRegion
@@ -9267,7 +9269,7 @@
        id="flowPara24702">Wikipedia: la celeberrima enciclopedia libera. Utilizza una licenza GNU Free Documentation License (FDL).</flowPara><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara24714">Sito: www.wikipedia.org.</flowPara></flowRoot>  <flowRoot
-     transform="matrix(0.30596219,0,0,0.29134767,-295.52656,106.41758)"
+     transform="matrix(0.59567865,0,0,0.57046443,-551.88816,201.39578)"
      style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot24704"
      xml:space="preserve"><flowRegion
@@ -9282,7 +9284,7 @@
        id="flowPara24710">Magnatune: un negozio di musica on-line. Utilizza una licenza Creative Commons Attribution NonCommercial ShareAlike, ma permette l'acquisto di licenze per l'uso commerciale, dividendo a metà i profitti con gli autori.</flowPara><flowPara
        style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
        id="flowPara24716">Sito: http://www.magnatune.com.</flowPara></flowRoot>  <flowRoot
-     transform="matrix(0.49007679,0,0,0.443787,-524.03048,87.378506)"
+     transform="matrix(0.95413188,0,0,0.86894361,-996.76308,164.11705)"
      style="font-size:77.35076141px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold"
      id="flowRoot24718"
      xml:space="preserve"><flowRegion
