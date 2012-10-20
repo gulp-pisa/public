@@ -15,7 +15,7 @@
    height="1488.189"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.3.1 r9886"
    version="1.0"
    inkscape:export-filename="/home/alessandra/Scrivania/personaggiTorvalds.png"
    inkscape:export-xdpi="300.01077"
@@ -29,19 +29,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="833.64175"
-     inkscape:cy="233.9979"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="905.31093"
+     inkscape:cy="1033.3619"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="g3485"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
      inkscape:snap-intersection-line-segments="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="694"
+     inkscape:window-width="1920"
+     inkscape:window-height="1021"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="27"
      showguides="true"
      inkscape:snap-global="false"
      inkscape:guide-bbox="true"
@@ -2295,7 +2295,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2321,12 +2321,13 @@
        d="m 1532.7162,-399.01679 c 211.3354,-226.67299 1031.5662,-166.85215 1031.5662,-166.85215 l -5.4937,906.60809 -1269.9876,-2.92205 c 10.5439,-405.017652 121.9131,-605.97764 243.9151,-736.83389 z"
        style="fill:url(#linearGradient5659);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline;filter:url(#filter5661)" />
     <image
-       y="1636.921"
-       x="623"
-       id="image4190"
-       height="336"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds4.jpeg"
+       xlink:href="images/torvalds4.jpeg"
        width="428"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds4.jpeg" />
+       height="336"
+       id="image4190"
+       x="623"
+       y="1636.921" />
     <rect
        transform="matrix(0.24543382,0,0,0.24997003,15.501533,1503.0269)"
        ry="167.93787"
@@ -2338,13 +2339,14 @@
        id="rect12022"
        style="fill:url(#linearGradient12030);fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter12032)" />
     <image
-       y="1753.7949"
-       x="-17.887325"
-       id="image5134"
-       height="518.76086"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds.jpeg"
+       xlink:href="images/torvalds.jpeg"
+       transform="matrix(0.99991591,-0.01296834,0.011678,0.99993181,0,0)"
        width="338.08347"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds.jpeg"
-       transform="matrix(0.99991591,-0.01296834,0.011678,0.99993181,0,0)" />
+       height="518.76086"
+       id="image5134"
+       x="-17.887325"
+       y="1753.7949" />
     <text
        xml:space="preserve"
        style="font-size:135.51182556px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
@@ -2377,12 +2379,13 @@
    id="flowSpan5269">kernel Linux</flowSpan>. Il sistema operativo GNU/Linux, ottenuto unendo Linux con il sistema GNU, creato da Richard Stallman, è entrato nella storia come valida alternativa ai sistemi operativi commerciali a licenza chiusa (come per esempio Microsoft Windows, Mac OS X, Unix); a differenza di questi ultimi sistemi, infatti, Linux è software libero rilasciato sotto licenza GPL (tale licenza è ritenuta attualmente dall'OSI conforme alle norme che regolano l'open source), ovvero chiunque può accedere al codice sorgente del sistema operativo, modificarlo a proprio piacimento, usare l'eseguibile per ogni scopo e copiare legalmente tale software, come previsto dalla licenza GPL. </flowPara><flowPara
          style="text-align:justify;text-anchor:start"
          id="flowPara4080">(fonte: http://it.wikipedia.org/wiki/Linus_Torvalds)</flowPara></flowRoot>    <image
-       y="2031.421"
-       x="828"
-       id="image4120"
-       height="225"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds3.jpeg"
+       xlink:href="images/torvalds3.jpeg"
        width="224"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds3.jpeg" />
+       height="225"
+       id="image4120"
+       x="828"
+       y="2031.421" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot5176"
@@ -2439,26 +2442,29 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold" /><flowPara
          id="flowPara5229"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold" /></flowRoot>    <image
-       y="2441.9211"
-       x="858"
-       id="image4148"
-       height="268"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds5.jpeg"
+       xlink:href="images/torvalds5.jpeg"
        width="176"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds5.jpeg" />
+       height="268"
+       id="image4148"
+       x="858"
+       y="2441.9211" />
     <image
-       y="2720.9211"
-       x="498.5"
-       id="image4162"
-       height="194"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds6.jpeg"
+       xlink:href="images/torvalds6.jpeg"
        width="259"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds6.jpeg" />
+       height="194"
+       id="image4162"
+       x="498.5"
+       y="2720.9211" />
     <image
-       y="2455.9211"
-       x="514.5"
-       id="image4176"
-       height="174"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds1.jpeg"
+       xlink:href="images/torvalds1.jpeg"
        width="295"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/torvalds1.jpeg" />
+       height="174"
+       id="image4176"
+       x="514.5"
+       y="2455.9211" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot5168"
@@ -2577,15 +2583,15 @@
          transform="matrix(0.666171,0,0,0.666171,2272.3468,2231.2013)"><flowRegion
            id="flowRegion5766"><rect
              id="rect5768"
-             width="1001.7585"
-             height="149.2641"
+             width="1047.8361"
+             height="175.85567"
              x="1776.6058"
              y="858.60071"
              style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold" /></flowRegion><flowPara
            id="flowPara5770"
-           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold">Distribuito sotto i termini della licenza</flowPara><flowPara
+           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O">Distribuito sotto i termini della licenza</flowPara><flowPara
            id="flowPara5780"
-           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold">Creative Commons Attribution 3.0</flowPara></flowRoot>    </g>
+           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O">Creative Commons Attribution 3.0</flowPara></flowRoot>    </g>
     <g
        id="g6013"
        transform="matrix(0.78783524,0,0,0.60354254,2151.722,1153.4477)">
@@ -2706,12 +2712,13 @@
            id="rect5206" /></flowRegion><flowPara
          style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:0.99504945;stroke:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
          id="flowPara5208">Personaggi illustri</flowPara></flowRoot>    <image
-       y="2291.9209"
-       x="27"
-       id="image3315"
-       height="132"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/510px-Tux.svg.png"
+       xlink:href="images/510px-Tux.svg.png"
        width="124"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/510px-Tux.svg.png" />
+       height="132"
+       id="image3315"
+       x="27"
+       y="2291.9209" />
   </g>
   <g
      inkscape:label="Contenuto"

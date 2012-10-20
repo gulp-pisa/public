@@ -15,7 +15,7 @@
    height="1488.189"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.3.1 r9886"
    version="1.0"
    inkscape:export-filename="/home/alessandra/Scrivania/personaggiShuttleworth.png"
    inkscape:export-xdpi="300.01077"
@@ -30,18 +30,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="405.41626"
-     inkscape:cy="1290.3556"
+     inkscape:cx="407.41626"
+     inkscape:cy="370.3556"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g3485"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
      inkscape:snap-intersection-line-segments="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="694"
+     inkscape:window-width="1920"
+     inkscape:window-height="1021"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="27"
      showguides="true"
      inkscape:snap-global="false"
      inkscape:guide-bbox="true"
@@ -2434,7 +2434,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2507,19 +2507,21 @@
          id="flowPara4080">(fonte: http://it.wikipedia.org/wiki/Mark_Shuttleworth)</flowPara><flowPara
          style="text-align:justify;text-anchor:start"
          id="flowPara4220" /></flowRoot>    <image
-       y="2004.9211"
-       x="122"
-       id="image4280"
-       height="158"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth3.jpg"
+       xlink:href="images/Mark_Shuttleworth3.jpg"
        width="229"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth3.jpg" />
+       height="158"
+       id="image4280"
+       x="122"
+       y="2004.9211" />
     <image
-       y="1574.921"
-       x="881"
-       id="image5090"
-       height="130"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/dragon.png"
+       xlink:href="images/dragon.png"
        width="130"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/dragon.png" />
+       height="130"
+       id="image5090"
+       x="881"
+       y="1574.921" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot5176"
@@ -2770,47 +2772,53 @@
          id="flowPara5130" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
          id="flowPara5132" /></flowRoot>    <image
-       y="2179.9211"
-       x="6"
-       id="image4238"
-       height="168"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth1.jpg"
+       xlink:href="images/Mark_Shuttleworth1.jpg"
        width="300"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth1.jpg" />
+       height="168"
+       id="image4238"
+       x="6"
+       y="2179.9211" />
     <image
-       y="2502.4211"
-       x="695"
-       id="image4252"
-       height="171"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth4.jpg"
+       xlink:href="images/Mark_Shuttleworth4.jpg"
        width="294"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth4.jpg" />
+       height="171"
+       id="image4252"
+       x="695"
+       y="2502.4211" />
     <image
-       y="2706.4211"
-       x="556"
-       id="image4266"
-       height="159"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth5.jpg"
+       xlink:href="images/Mark_Shuttleworth5.jpg"
        width="140"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth5.jpg" />
+       height="159"
+       id="image4266"
+       x="556"
+       y="2706.4211" />
     <image
-       y="1608.4211"
-       x="4"
-       id="image4308"
-       height="190"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth2.jpg"
+       xlink:href="images/Mark_Shuttleworth2.jpg"
        width="324"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth2.jpg" />
+       height="190"
+       id="image4308"
+       x="4"
+       y="1608.4211" />
     <image
-       y="2396.9211"
-       x="13"
-       id="image4336"
-       height="73"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/600px-Former_Ubuntu_logo.svg.png"
+       xlink:href="images/600px-Former_Ubuntu_logo.svg.png"
        width="234"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/600px-Former_Ubuntu_logo.svg.png" />
+       height="73"
+       id="image4336"
+       x="13"
+       y="2396.9211" />
     <image
-       y="1816.9211"
-       x="1"
-       id="image4294"
-       height="178"
+       sodipodi:absref="/home/giovanni/Documenti/gulp/repo_gulp/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth_NASA.jpg"
+       xlink:href="images/Mark_Shuttleworth_NASA.jpg"
        width="220"
-       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/Mark_Shuttleworth_NASA.jpg" />
+       height="178"
+       id="image4294"
+       x="1"
+       y="1816.9211" />
     <text
        xml:space="preserve"
        style="font-size:9.64233017px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
@@ -2941,15 +2949,15 @@
          transform="matrix(0.666171,0,0,0.666171,2272.3468,2231.2013)"><flowRegion
            id="flowRegion5766"><rect
              id="rect5768"
-             width="1001.7585"
-             height="149.2641"
+             width="1119.053"
+             height="183.45151"
              x="1776.6058"
              y="858.60071"
              style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold" /></flowRegion><flowPara
            id="flowPara5770"
-           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold">Distribuito sotto i termini della licenza</flowPara><flowPara
+           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O">Distribuito sotto i termini della licenza</flowPara><flowPara
            id="flowPara5780"
-           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold">Creative Commons Attribution 3.0</flowPara></flowRoot>    </g>
+           style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine O;-inkscape-font-specification:Linux Libertine O">Creative Commons Attribution 3.0</flowPara></flowRoot>    </g>
     <g
        id="g6013"
        transform="matrix(0.78783524,0,0,0.60354254,2151.722,1153.4477)">
