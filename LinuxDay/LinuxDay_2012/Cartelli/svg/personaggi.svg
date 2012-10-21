@@ -20,7 +20,7 @@
    inkscape:export-filename="/home/alessandra/Scrivania/03-equivoci_3.png"
    inkscape:export-xdpi="50.014748"
    inkscape:export-ydpi="50.014748"
-   sodipodi:docname="03-equivoci_3.svg"
+   sodipodi:docname="personaggi.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <sodipodi:namedview
      id="base"
@@ -30,10 +30,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="738.61279"
-     inkscape:cy="421.65752"
+     inkscape:cx="848.16444"
+     inkscape:cy="632.63404"
      inkscape:document-units="px"
-     inkscape:current-layer="svg2"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
@@ -55,7 +55,7 @@
        snapvisiblegridlinesonly="true" />
     <sodipodi:guide
        orientation="1,0"
-       position="1436.6667,740"
+       position="1434,188"
        id="guide3383" />
     <sodipodi:guide
        orientation="1,0"
@@ -64,6 +64,45 @@
   </sodipodi:namedview>
   <defs
      id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path4742"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInL"
+       style="overflow:visible">
+      <path
+         id="path4870"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(-0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path4736"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
     <marker
        style="overflow:visible"
        id="Arrow2Lend"
@@ -157,36 +196,6 @@
        inkscape:vp_z="744.09448 : 526.18109 : 1"
        inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
        id="perspective5323" />
-    <linearGradient
-       y2="313.11346"
-       x2="2003.6135"
-       y1="-493.83859"
-       x1="1594.6559"
-       spreadMethod="pad"
-       gradientUnits="userSpaceOnUse"
-       id="linearGradient5659"
-       xlink:href="#linearGradient3578"
-       inkscape:collect="always" />
-    <filter
-       id="filter5661"
-       inkscape:collect="always"
-       color-interpolation-filters="sRGB">
-      <feGaussianBlur
-         id="feGaussianBlur5663"
-         stdDeviation="16.879654"
-         inkscape:collect="always" />
-    </filter>
-    <radialGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.34144718,0,0,0.24210538,14.254417,2092.4514)"
-       r="2171.428"
-       fy="1494.2069"
-       fx="2137.1423"
-       cy="1494.2069"
-       cx="2137.1423"
-       id="radialGradient5687"
-       xlink:href="#linearGradient5681"
-       inkscape:collect="always" />
     <linearGradient
        gradientTransform="scale(1.289859,0.775278)"
        gradientUnits="userSpaceOnUse"
@@ -1215,15 +1224,6 @@
        inkscape:vp_z="180 : 90 : 1"
        inkscape:persp3d-origin="90 : 60 : 1"
        id="perspective139" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="535.98322"
-       x2="1979.8984"
-       y1="-29.702208"
-       x1="1979.899"
-       id="linearGradient12030"
-       xlink:href="#linearGradient3578"
-       inkscape:collect="always" />
     <filter
        height="1.3776325"
        y="-0.18881626"
@@ -2160,6 +2160,86 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <filter
+       inkscape:collect="always"
+       id="filter4031"
+       x="-0.17296937"
+       width="1.3459387"
+       y="-0.24144432"
+       height="1.4828886">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="91.924667"
+         id="feGaussianBlur4033" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4035"
+       x="-0.16170304"
+       width="1.3234061"
+       y="-0.22805381"
+       height="1.4561076">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="99.909299"
+         id="feGaussianBlur4037" />
+    </filter>
+    <inkscape:perspective
+       id="perspective4047"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4061"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4075"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4089"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4103"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4121"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4135"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4149"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <metadata
      id="metadata7">
@@ -2169,7 +2249,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2178,8 +2258,7 @@
      inkscape:label="Gradienti base"
      id="layer2"
      inkscape:groupmode="layer"
-     transform="translate(0,-1927.5589)"
-     sodipodi:insensitive="true">
+     transform="translate(0,-1927.5589)">
     <rect
        ry="0.29291028"
        rx="0.32649735"
@@ -2188,15 +2267,22 @@
        height="1051.4287"
        width="1482.856"
        id="rect5196"
-       style="fill:url(#radialGradient5687);fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
+       style="opacity:0.421875;fill:#eae925;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline;filter:url(#filter4035)" />
+    <image
+       y="1875.9211"
+       x="-12"
+       id="image4091"
+       height="1172"
+       width="1532"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/perif_cavo.png" />
     <path
-       transform="matrix(0.31130246,0,0,0.35867812,691.1862,2858.6748)"
+       transform="matrix(0.24160529,0,0,0.2626831,905.46071,2945.5264)"
        sodipodi:nodetypes="ccccs"
        id="path5657"
        d="m 1532.7162,-399.01679 c 211.3354,-226.67299 1031.5662,-166.85215 1031.5662,-166.85215 l -5.4937,906.60809 -1269.9876,-2.92205 c 10.5439,-405.017652 121.9131,-605.97764 243.9151,-736.83389 z"
-       style="fill:url(#linearGradient5659);fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline;filter:url(#filter5661)" />
+       style="opacity:0.5390625;fill:#ffff00;fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline;filter:url(#filter4031)" />
     <rect
-       transform="matrix(0.33507788,0,0,0.25417758,44.658637,1953.2979)"
+       transform="matrix(0.33694983,0,0,0.39831405,50.72899,1917.811)"
        ry="167.93787"
        rx="194.45438"
        y="36.58902"
@@ -2204,7 +2290,353 @@
        height="433.103"
        width="4110.0576"
        id="rect12022"
-       style="fill:url(#linearGradient12030);fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter12032)" />
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter12032)" />
+    <image
+       y="-1631.4596"
+       x="1889.2924"
+       id="image4137"
+       height="325.21484"
+       width="311.23083"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/easyCAPtrasp.png"
+       transform="matrix(-0.27635875,0.96105455,-0.95729723,-0.28910554,0,0)" />
+    <image
+       y="764.1571"
+       x="-3076.1128"
+       id="image4151"
+       height="719.64844"
+       width="963.16205"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/perif_telecafronte.png"
+       transform="matrix(-0.02987693,-0.99955358,0.999557,-0.0297625,0,0)" />
+    <image
+       y="1218.517"
+       x="-2472.3625"
+       id="image4077"
+       height="216.67503"
+       width="291.64285"
+       xlink:href="file:///home/alessandra/Documenti/bitbucket/repoGULP/LinuxDay/LinuxDay_2012/Cartelli/svg/images/perif_telecalaterale.png"
+       transform="matrix(-0.02392402,-0.99971378,0.99961208,-0.02785111,0,0)" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4155"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Travelcons;-inkscape-font-specification:Travelcons"
+       transform="matrix(-0.00416213,-0.71555626,0.47200892,-0.00274551,-204.0214,2610.7896)"><flowRegion
+         id="flowRegion4157"><rect
+           id="rect4159"
+           width="588"
+           height="50"
+           x="-440"
+           y="556.36218" /></flowRegion><flowPara
+         id="flowPara4161"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:FreeSans;-inkscape-font-specification:FreeSans">Fonte: http://easycap.blogspot.it/</flowPara></flowRoot>    <g
+       id="g4559"
+       transform="matrix(1,0,0,1.048927,-1586,-367.00192)">
+      <text
+         transform="scale(0.9314802,1.0735601)"
+         sodipodi:linespacing="125%"
+         id="text4335"
+         y="2206.8257"
+         x="1835.7876"
+         style="font-size:11.64663792px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         xml:space="preserve"><tspan
+           y="2206.8257"
+           x="1835.7876"
+           id="tspan4337"
+           sodipodi:role="line" /><tspan
+           style="font-weight:bold;fill:#ff0000;-inkscape-font-specification:Bitstream Vera Sans Bold"
+           id="tspan4339"
+           y="2221.384"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           style="font-weight:bold;fill:#ff0000;-inkscape-font-specification:Bitstream Vera Sans Bold"
+           y="2235.9424"
+           x="1835.7876"
+           sodipodi:role="line"
+           id="tspan4705">Nuovo driver for the EasyCAP DC60 - stk1160</tspan><tspan
+           id="tspan4355"
+           y="2250.5005"
+           x="1835.7876"
+           sodipodi:role="line">(Ubuntu 12.04 and Bodhilinux 1.4.0 with kernel 3.2)</tspan><tspan
+           id="tspan4371"
+           y="2265.0588"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4375"
+           y="2279.6172"
+           x="1835.7876"
+           sodipodi:role="line">Installazione</tspan><tspan
+           id="tspan4379"
+           y="2294.1755"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4383"
+           y="2308.7339"
+           x="1835.7876"
+           sodipodi:role="line">Download <tspan
+   style="font-weight:bold"
+   id="tspan4618">https://github.com/ezequielgarcia/stk1160-standalone/zipball/for_v3.2</tspan></tspan><tspan
+           id="tspan4385"
+           y="2323.292"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4391"
+           y="2337.8503"
+           x="1835.7876"
+           sodipodi:role="line">Prima mettere in blacklist il modulo easycap (driver)</tspan><tspan
+           id="tspan4393"
+           y="2352.4087"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4401"
+           y="2366.2048"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">sudo modprobe easycap</tspan><tspan
+           id="tspan4403"
+           y="2380.7632"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">or delete the entry</tspan><tspan
+           id="tspan4405"
+           y="2395.3215"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">blacklist easycap </tspan><tspan
+           id="tspan4407"
+           y="2409.8796"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">/etc/modprobe.d/blacklist.conf</tspan><tspan
+           id="tspan4409"
+           y="2424.438"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono" /><tspan
+           id="tspan4411"
+           y="2439.7585"
+           x="1835.7876"
+           sodipodi:role="line">Installare il driver stk1160:</tspan><tspan
+           y="2454.3167"
+           x="1835.7876"
+           sodipodi:role="line"
+           id="tspan4630" /><tspan
+           id="tspan4413"
+           y="2468.113"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">cd ezequielgarcia-stk1160-standalone-...(the exact name)</tspan><tspan
+           id="tspan4415"
+           y="2482.6711"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">and run</tspan><tspan
+           id="tspan4417"
+           y="2497.2295"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">make</tspan><tspan
+           id="tspan4419"
+           y="2511.7878"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">sudo make install</tspan><tspan
+           id="tspan4421"
+           y="2526.3462"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">sudo depmod -a</tspan><tspan
+           id="tspan4429"
+           y="2540.9045"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           y="2556.2249"
+           x="1835.7876"
+           sodipodi:role="line"
+           id="tspan4639">EasyCAP test con mplayer:</tspan><tspan
+           id="tspan4431"
+           y="2570.021"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">mplayer tv://</tspan><tspan
+           id="tspan4433"
+           y="2584.5793"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4435"
+           y="2599.8997"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-weight:bold;fill:#800000">Configurare l'audio</tspan><tspan
+           id="tspan4437"
+           y="2614.458"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4439"
+           y="2629.0164"
+           x="1835.7876"
+           sodipodi:role="line">The stk1160 module registers a control-only alsa soundcard. This sound card is called 'stk1160-mixer'.</tspan><tspan
+           id="tspan4441"
+           y="2643.5747"
+           x="1835.7876"
+           sodipodi:role="line">The real sound capture is done through the 'Controlle' soundcard which is also created after plugging in the EasyCAP.</tspan><tspan
+           id="tspan4443"
+           y="2658.1328"
+           x="1835.7876"
+           sodipodi:role="line">To get a list of the registerd ALSA soundcards, run the following command:</tspan><tspan
+           id="tspan4445"
+           y="2671.9292"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono Bold">cat /proc/asound/cards</tspan><tspan
+           id="tspan4447"
+           y="2686.4873"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           y="2701.8079"
+           x="1835.7876"
+           sodipodi:role="line"
+           id="tspan4641">Sample output:</tspan><tspan
+           id="tspan4449"
+           y="2716.3662"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4451"
+           y="2730.9243"
+           x="1835.7876"
+           sodipodi:role="line">      0 [Intel          ]: HDA-Intel - HDA Intel</tspan><tspan
+           id="tspan4453"
+           y="2745.4827"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4455"
+           y="2760.041"
+           x="1835.7876"
+           sodipodi:role="line">                          HDA Intel at 0xf0580000 irq 43</tspan><tspan
+           id="tspan4457"
+           y="2774.5994"
+           x="1835.7876"
+           sodipodi:role="line">     1 [Controlle      ]: USB-Audio - USB 2.0 Video Capture Controlle</tspan><tspan
+           id="tspan4459"
+           y="2789.1575"
+           x="1835.7876"
+           sodipodi:role="line">                          Syntek Semiconductor USB 2.0 Video Capture Controlle at usb-0000:00:1d.7-2, hig</tspan><tspan
+           id="tspan4461"
+           y="2803.7158"
+           x="1835.7876"
+           sodipodi:role="line">     2 [stk1160mixer   ]: stk1160 - stk1160-mixer</tspan><tspan
+           id="tspan4463"
+           y="2818.2742"
+           x="1835.7876"
+           sodipodi:role="line">                          stk1160 ac97 codec mixer control</tspan><tspan
+           id="tspan4465"
+           y="2832.8325"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           id="tspan4467"
+           y="2847.3909"
+           x="1835.7876"
+           sodipodi:role="line">Aprire alsamixer quando l'EasyCAP è attaccata e selezionare  'Line' item sul capture menu per l'stk1160-mixer device:</tspan><tspan
+           id="tspan4469"
+           y="2861.949"
+           x="1835.7876"
+           sodipodi:role="line">1. lanciare alsamixer</tspan><tspan
+           id="tspan4471"
+           y="2876.5073"
+           x="1835.7876"
+           sodipodi:role="line">2. selezionare stk1160-mixer sound card (with F6)</tspan><tspan
+           id="tspan4473"
+           y="2891.0657"
+           x="1835.7876"
+           sodipodi:role="line">3. selezionare capture controls (with F4)</tspan><tspan
+           id="tspan4475"
+           y="2905.624"
+           x="1835.7876"
+           sodipodi:role="line">4. selezionare &quot;Line&quot; output (with space key) </tspan><tspan
+           id="tspan4479"
+           y="2920.1824"
+           x="1835.7876"
+           sodipodi:role="line" /><tspan
+           y="2934.7405"
+           x="1835.7876"
+           sodipodi:role="line"
+           id="tspan4645">Anche con questo comando:</tspan><tspan
+           id="tspan4481"
+           y="2948.5369"
+           x="1835.7876"
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">amixer -c stk1160mixer sset Line unmute cap  </tspan></text>
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot4707"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         transform="translate(1586,2139.5589)"><flowRegion
+           id="flowRegion4709"><rect
+             id="rect4711"
+             width="298"
+             height="42"
+             x="132"
+             y="240.36218" /></flowRegion><flowPara
+           id="flowPara4713">IssI</flowPara></flowRoot>    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:31.77841568px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       x="627.03009"
+       y="1912.995"
+       id="text4647"
+       sodipodi:linespacing="125%"
+       transform="scale(0.8886077,1.125356)"><tspan
+         sodipodi:role="line"
+         x="627.03009"
+         y="1912.995"
+         id="tspan4657"
+         style="font-weight:bold;fill:#d40000">L'Easycap DC60 è una economica scheda </tspan><tspan
+         sodipodi:role="line"
+         x="627.03009"
+         y="1952.718"
+         style="font-weight:bold;fill:#d40000"
+         id="tspan4701">di acqusizione video da collegare ad una </tspan><tspan
+         sodipodi:role="line"
+         x="627.03009"
+         y="1992.441"
+         style="font-weight:bold;fill:#d40000"
+         id="tspan4703">porta usb</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30.26356506px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+       x="915.02368"
+       y="2070.5691"
+       id="text4663"
+       sodipodi:linespacing="125%"
+       transform="scale(0.78343013,1.276438)"><tspan
+         sodipodi:role="line"
+         x="915.02368"
+         y="2070.5691"
+         id="tspan4667"
+         style="font-weight:bold;fill:#d40000">Collegando  una telecamera analogica</tspan><tspan
+         sodipodi:role="line"
+         x="915.02368"
+         y="2108.3984"
+         id="tspan4683"
+         style="font-weight:bold;fill:#d40000">con cavi coassiali intestato con </tspan><tspan
+         sodipodi:role="line"
+         x="915.02368"
+         y="2146.228"
+         id="tspan4679"
+         style="font-weight:bold;fill:#d40000">connettori RCA si può realizzare un </tspan><tspan
+         sodipodi:role="line"
+         x="915.02368"
+         y="2184.0574"
+         id="tspan4681"
+         style="font-weight:bold;fill:#d40000">sistema di registrazione video a costi </tspan><tspan
+         sodipodi:role="line"
+         x="915.02368"
+         y="2221.887"
+         id="tspan4699"
+         style="font-weight:bold;fill:#d40000">contenuti.</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow2Lend)"
+       d="m 1738,4531.48 166,-178"
+       id="path6541"
+       inkscape:connector-type="polyline" />
   </g>
   <g
      style="display:inline"
@@ -2214,7 +2646,7 @@
      transform="translate(0,-1927.5589)">
     <g
        id="g3485"
-       transform="matrix(0.2923973,0,0,0.2958915,252.12642,2096.562)">
+       transform="matrix(0.24005408,0,0,0.19974797,486.57962,2380.2152)">
       <g
          transform="matrix(2.7493523,0,0,2.7493523,3103.6159,2793.2325)"
          inkscape:label="Layer 1"
@@ -2321,7 +2753,7 @@
            style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold">Creative Commons Attribution 3.0</flowPara></flowRoot>    </g>
     <g
        id="g6013"
-       transform="matrix(1,0,0,0.81343399,2886,534.24294)">
+       transform="matrix(0.82098598,0,0,0.54912624,2648.9529,1325.5379)">
       <flowRoot
          xml:space="preserve"
          id="flowRoot5665"
@@ -2425,20 +2857,20 @@
            width="1559.6755"
            id="rect2746" /></flowRegion><flowPara
          id="flowPara2748" /></flowRoot>    <flowRoot
-       transform="matrix(0.48934726,0,0,0.37388576,116.42726,2014.4815)"
-       style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
+       transform="matrix(0.48934726,0,0,0.37388576,-61.57274,1988.4815)"
+       style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffff00;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowRoot5202"
        xml:space="preserve"><flowRegion
          style="fill:url(#linearGradient5228);fill-opacity:1"
          id="flowRegion5204"><rect
-           style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
+           style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffff00;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
            y="-128.65028"
            x="-45.714287"
            height="274.11215"
            width="3405.1777"
            id="rect5206" /></flowRegion><flowPara
-         style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
-         id="flowPara5208">Qualche chiarimento sparso...</flowPara></flowRoot>  </g>
+         style="font-size:260.70523071px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#ffff00;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
+         id="flowPara5208">Periferiche esterne</flowPara></flowRoot>  </g>
   <g
      inkscape:label="Contenuto"
      id="layer5"
@@ -2448,17 +2880,17 @@
      id="g7033"
      transform="matrix(0.61343978,0,0,0.62039559,1515.8796,-244.08669)" />
   <flowRoot
-     transform="matrix(0.62096037,0,0,0.37269587,255.19987,193.16774)"
-     style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
+     transform="matrix(0.62096037,0,0,0.37269587,259.19987,169.16774)"
+     style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffff00;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
      id="flowRoot6989"
      xml:space="preserve"><flowRegion
        style="fill:url(#linearGradient6997);fill-opacity:1"
        id="flowRegion6991"><rect
-         style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
+         style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffff00;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
          y="-128.65028"
          x="-45.714287"
-         height="126.40067"
-         width="1701.1844"
+         height="153.23221"
+         width="1891.2126"
          id="rect6993" /></flowRegion><flowPara
-       style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
-       id="flowPara6995">Come posso contribuire?</flowPara></flowRoot></svg>
+       style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ffff00;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
+       id="flowPara6995">Easycap C60 e telecamera</flowPara></flowRoot></svg>
