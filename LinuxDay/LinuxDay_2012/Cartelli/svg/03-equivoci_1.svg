@@ -31,9 +31,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
      inkscape:cx="780.8801"
-     inkscape:cy="421.65752"
+     inkscape:cy="581.65752"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="svg2"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
@@ -2181,7 +2181,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2456,7 +2456,7 @@
      inkscape:groupmode="layer"
      transform="translate(0,-1927.5577)" />
   <flowRoot
-     transform="matrix(0.74068577,0,0,0.62192211,357.04184,260.91631)"
+     transform="matrix(0.54602277,0,0,0.54559717,238.3972,245.28532)"
      style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
      id="flowRoot17406"
      xml:space="preserve"><flowRegion
@@ -2465,8 +2465,8 @@
          style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke:#000000;stroke-width:2.79509258;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
          y="-128.65028"
          x="-45.714287"
-         height="163.77776"
-         width="1514.299"
+         height="128.40355"
+         width="1900.4276"
          id="rect17410" /></flowRegion><flowPara
        style="font-size:130.35261536px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#09f508;fill-opacity:0.99504945;stroke-width:2.79509258;stroke-miterlimit:4;stroke-dasharray:none;font-family:MgOpen Modata;-inkscape-font-specification:MgOpen Modata"
        id="flowPara17412">&quot;Libero&quot; vuol dire &quot;gratuito&quot;?</flowPara></flowRoot>  <g

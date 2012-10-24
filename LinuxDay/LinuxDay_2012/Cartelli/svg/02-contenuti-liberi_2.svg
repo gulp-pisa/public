@@ -20,7 +20,7 @@
    inkscape:export-filename="/home/alessandra/Scrivania/02-contenuti_liberi_2.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
-   sodipodi:docname="02-contenuti-liberi.svg"
+   sodipodi:docname="02-contenuti-liberi_2.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <sodipodi:namedview
      id="base"
@@ -33,7 +33,7 @@
      inkscape:cx="466.40169"
      inkscape:cy="620.49491"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:snap-bbox="false"
      inkscape:snap-center="false"
@@ -2318,7 +2318,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2469,7 +2469,7 @@
            style="font-size:58px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Linux Libertine;-inkscape-font-specification:Linux Libertine Bold">Creative Commons Attribution 3.0</flowPara></flowRoot>    </g>
     <g
        id="g6013"
-       transform="matrix(0.16289465,0,0,0.15147689,761.47859,2503.3275)">
+       transform="matrix(0.16289465,0,0,0.15147689,769.47859,2509.3275)">
       <flowRoot
          xml:space="preserve"
          id="flowRoot5665"
