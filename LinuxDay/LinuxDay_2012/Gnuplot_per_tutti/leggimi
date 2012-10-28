@@ -1,0 +1,33 @@
+========================
+Titolo:Gnuplot per tutti
+========================
+Gnuplot è un programma per visualizzare ed analizzare i dati. 
+Generare grafici è un'operazione facile e veloce. Con un pò 
+di pratica se ne creano di qualità elevata, pronti per essere stampati. 
+Inoltre, può interagire in maniera dinamica con altri programmi ed essere
+usato in "batch mode", ovvero una modalità che permette di generare 
+in una volta sola numerose immagini, la cui sequenza permette di 
+visualizzare dei filmati. Lo scopo del seminario è quello di mostrare 
+le principali funzionalità di Gnuplot, mostrando alcuni 
+esempi di applicazioni. 
+
+=========================
+Relatore: Carlo Carminati
+=========================
+Lavora come ricercatore presso il Dipartimento di Matematica. 
+Si occupa della teoria dei Sistemi Dinamici, un campo di ricerca 
+che porta, in maniera abbastanza naturale, ad utilizzare delle 
+simulazioni numeriche come base per formulare (o confutare) congetture.
+
+
+=======
+N O T E
+=======
+Ho messo anche dei files di esempio; se visualizzi il pdf con xpdf gli
+esempi vengono lanciati da xpdf, ma ho appurato (ahime') che questa
+feature non funziona con altri readers (p.es. evince).
+
+Ad ogni modo ho anche incluso un breve readme.txt che dovrebbe spiegare
+come lanciare a mano questi script.
+
+Vedete poi un po' voi cosa ha senso mettere in rete.
