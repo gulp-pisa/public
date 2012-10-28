@@ -1,0 +1,36 @@
+=====================================
+Titolo:Viaggio simulato tra le stelle
+=====================================
+Esploreremo lo spazio viaggiando tra stelle e pianeti. 
+Inizieremo a vedere il cielo da terra con un planetario 3D, 
+per poi addentrarci con una navicella spaziale virtuale tra 
+i corpi celesti. Stellarium, Celestia ed altri programmi open 
+source, rappresentano degli ottimi strumenti per studiare il cielo, 
+non solo per gli esperti, ma anche per gli appassionati e 
+per i sognatori ad occhi aperti. 
+
+===========================
+Relatrice: Alessandra Santi
+===========================
+Laureata a Pisa in Economia e Commercio, esercita l'attività 
+di Dottore Commercialista e Revisore Contabile. E' appassionata da 
+sempre di Informatica. Ricopre la carica di Presidente del 
+GULP da due anni.
+
+
+=======
+N O T E
+=======
+Stellarium è un planetario e Celestia è un simulatore 3D per viaggiare
+tra le stelle.
+I programmi sono pacchettizzati sotto Ubuntu e facilmente installabili da 
+un installatore presente nel sistema. E' consigliato, per celestia, installare
+oltre al pacchetto celestia, anche celestia-common-nonfree per visualizzare
+molti corpi celesti.
+Tra questi file trovate dei .png del sito ufficiale di Celestia, oltre a
+altri siti collegati. 
+Esistono degli addons scaricabili da http://www.celestiamotherlode.net/
+Per usarli, scaricateli dal sito sopra e lanciateli da file->Open Script
+aprendo il file .celx nel percorso dove sono stati salvati.
+Due esempi, presentati durante il linuxday sono presenti in questa documentazione
+Buon viaggio nell'universo :-)

@@ -1,0 +1,34 @@
+==================================
+Titolo:Cloud Computing, in pratica
+==================================
+Nonostante il proliferare di soluzioni commerciali adatte 
+a fornire servire servizi di Cloud private e pubbliche, la 
+vera essenza del Cloud Computing può realizzarsi solo 
+adottando software libero che ci permetta di avere un'infrastruttura 
+slegata da uno specifico fornitore di software o hardware, interoperabile 
+sfruttando molteplici standard di settore, e anche di proteggere i 
+propri investimenti nel lungo periodo. Sarà presentato il toolkit 
+opensource OpenNebula, con lo scopo di realizzare una piccola 
+infrastruttura Cloud (Iaas), sfruttando un pool di server locali. 
+
+==========================
+Relatore: Giovanni Toraldo
+==========================
+Sistemista con i poter della Super Mucca, sviluppatore web con una 
+passione per Symfony e Drupal, entusiasta di qualsiasi cosa Open Source, 
+autore del libro su OpenNebula per Packt Publishing.
+Sito Internet: http://about.me/giovannitoraldo
+E-mail: giovanni@toraldo.net
+
+
+=======
+N O T E
+=======
+Alcuni links come riferimento delle cose che ho citato durante la presentazione:
+
+http://opennebula.org/
+http://opennebula.org/documentation:rel3.8
+http://opennebula.org/cloud:tryout
+http://marketplace.c12g.com/appliance
+http://www.packtpub.com/open-nebula-3-cloud-computing/book
+

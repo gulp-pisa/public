@@ -1,0 +1,804 @@
+-- *******************************************************************
+-- *****    MODIFY THE CODE IMMEDIATELY BELOW THIS HEADING TO    *****
+-- *****                 SPECIFY SYSTEMS TO TOUR                 *****
+-- *******************************************************************
+
+function tourspecifiedsystems()
+-- NOMINATE SYSTEMS TO TOUR AND OBJECT TYPES TO VIEW
+-- SYSTEMS MAY BE SOLAR SYSTEMS WITH PLANETS OR PLANETARY SYSTEMS WITH MOONS
+-- Syntax is
+--    tour("systemcentre_name","object_types_to_view")
+--
+-- Valid object_types_to_view are:
+--    "planets"
+--    "asteroids"
+--    "comets"
+--    "spacecraft"    (only spacecraft in solar orbits, not planetary orbits)
+--    "planets&moons" or "planet&moons"
+--    "asteroids&comets"
+--    "all"           (excludes spacecraft)
+-- Add as many systems as you would like to tour below this line.
+-- To tour examples given, simply remove -- at the beginning of line.
+--
+-- ********* USER-EDITABLE SECTION BEGINS *********
+--tour("Sol","all")
+tour("Sol","planets")
+--tour("Sol","asteroids")
+--tour("Sol","comets")
+--tour("Sol/Mars","planet&moons")
+--tour("Sol/Jupiter","planet&moons")
+tour("Sol/Saturn","planet&moons")
+--tour("Sol/Uranus","planet&moons")
+--tour("Sol/Neptune","planet&moons")
+--tour("Sol/Pluto","planet&moons")
+--tour("UPS And","all")
+--tour("51 Peg","all")
+--tour("EV Lac","all")
+tour("61 Cyg A","all")
+tour("Sol","spacecraft")
+tour("Katalina","planets&moons")
+tour("RHO CrB","all") --Star Wars system - will show Death Star if you have it loaded
+-- *********  USER-EDITABLE SECTION ENDS  *********
+return
+end
+
+-- *******************************************************************
+-- ***************************** CREDITS *****************************
+-- *******************************************************************
+--         SOLARSYSTEMTOUR for Celestia v1.3.2 by Tim McMahon
+--     Based on Harald Schmidt's script SolarSystemTour_v1.1.celx
+--  This modified script allows specification and touring of multiple 
+--          solar systems or planetary systems and their objects.
+--          Comments, bugreports to: tim.mcmahon@tiscali.co.uk
+--                    This version (c) 2 April 2004
+-- 
+--            Based on Solar system tour Version II, v1.1
+--                       (c) 2003 Harald Schmidt
+--                 http://www.h-schmidt.net/celestia/
+--
+--      The GetSpeedKey() and SetTourSpeed() functions are slight
+--    modifications of functions in Don Goyette's Run_A_Script.celx                   
+--                        (c) 2004 Don Goyette                                     
+--                 http://www.donandcarla.com/Celestia/                               
+--                                                                    
+--     You are free to use, copy, modify, redistribute this script,
+--             but keep a credit to the original authors
+-- *******************************************************************
+-- ************ EDIT BELOW THIS LINE AT YOUR OWN RISK! ***************
+-- *******************************************************************
+
+-- There are some workarounds needed for Windows - 
+-- the assumption that a simple wait(0) forces a rendering phase
+-- seems is wrong.
+-- table.getn() seems to not work on win (or works differently).
+-- Replaced by old explicit length-counting until further investigation.
+function workaroundwindowsbug()
+-- temporary workaround against a bug on windows:
+   wait(0.1)
+   celestia:flash("")
+   wait(0.5)
+return
+end
+
+-- This function is called automatically when the script ends, 
+-- be it because it reached it's end, or the user pressed ESC:
+function celestia_cleanup_callback()
+   celestia:setrenderflags(orig_renderflags)
+   celestia:setlabelflags(orig_labelflags)
+   celestia:getobserver():singleview()
+   celestia:settimescale(1.0)
+   celestia:settime(orig_time + (celestia:getscripttime() / 24 / 3600) )
+end
+
+function get_users_orig_settings()
+   orig_renderflags = celestia:getrenderflags()
+   orig_labelflags = celestia:getlabelflags()
+   orig_fov = celestia:getobserver():getfov()
+   orig_time = celestia:gettime()
+   return
+end
+
+function setrenderflagsandfov()
+   -- Improve performance by disabling all unnecessary rendering
+   celestia:setrenderflags{stars=true, planets=true, cloudmaps=true, nightmaps=true, atmospheres=true, eclipseshadows=true, comettails=true}
+   celestia:setrenderflags{orbits=false, galaxies=false, labels=false, automag=false,constellations=false, markers=false, grid=false,boundaries=false}
+
+   -- disable ALL labelflags:
+   labelflags = celestia:getlabelflags()
+   for k,v in pairs(labelflags) do
+      labelflags[k]=false
+   end
+   celestia:setlabelflags(labelflags)
+
+   return
+end
+
+function setBlackBackground()
+   -- set black space background for next tour selection
+   -- i.e. set observer position near the Sun but looking into space 
+   offset = celestia:newvector(object_offset_factor * celestia:find("Sol"):radius(), 0, 0)
+   observer_pos = celestia:find("Sol"):getposition():addvector(offset)
+   obs = celestia:getobserver()
+
+   -- look in direction of black space      
+   obs:setposition(observer_pos)
+   obs:lookat(observer_pos, UP)
+   wait(0.1)
+end
+
+-- CONSTANT DEFINITIONS
+function defineconstants()
+   INTRO = "SolarSystemTour for Celestia 1.3.2 by Tim McMahon\nBased on SolarSystemTour v1.1 by Harald Schmidt\n"
+
+   -- CONVERSION CONSTANT, do not change
+   KM_PER_MLY=9466411.842
+
+   -- keep camera locked within this distance to object:
+   CAMLOCKD = 0.03
+
+   -- up-vector for observer 
+   UP = celestia:newvector( 0, 1, 0)
+
+   -- set FOV
+   FOVindeg = 25
+   celestia:getobserver():setfov(math.rad(FOVindeg))
+
+   -- The object_offset_factor multiplies the object radius to set an offset distance  
+   -- from which the observer views the object.
+   -- With FOV set to Celestia default of 25 degrees, an object will fill the screen when 
+   --    object_radii_multiplier ~= 4.5
+   -- i.e. when the observer is positioned 4.5 object radii from the object. 
+   -- Larger values locate the observer proportionately further from the object
+   -- and result in the object filling less of the screen when viewed.
+   --
+   -- The object_offset_factor affects how close fly-bys of objects occur. 
+   -- It is only an influence, not an exact control, as fly-by closeness depends
+   -- upon direction of travel to the next object as well as upon offset distance.
+   --
+   -- 4.5 / 6 = 75% This is a nice proportion of the field of view to be filled by the object, hence
+   object_radii_multiplier_for_viewing = 6
+   object_offset_factor = object_radii_multiplier_for_viewing / KM_PER_MLY
+
+   -- Fly-by closeness and overshooting of objects at high tour speeds
+   -- are very sensitive to these factors. Change at your own risk!
+   object_radii_multiplier_for_const_speed = 0.5 * object_radii_multiplier_for_viewing
+   object_radii_multiplier_for_trigger_dist = 0.5 * object_radii_multiplier_for_viewing
+
+   return
+end
+
+--***************************************************************************
+--                         Keyboard Input Callback                          
+--                                                                          
+-- This function is called automatically by Celestia when          
+-- celestia:requestkeyboard() is set to true.                                        
+--                                                                          
+--***************************************************************************
+function celestia_keyboard_callback(keypress)
+   rtnKeypress = keypress
+   return true  -- Tell Celestia we will handle this keypress
+end
+    
+
+--***************************************************************************
+--                        GetKeypress to continue script
+--***************************************************************************
+function GetKeypressToContinue()
+   rtnKeypress = ""
+   celestia:requestkeyboard(true)  --Enable keyboard input
+
+   while rtnKeypress == "" do  --Loop until we get a keypress
+      wait(0.1)
+   end--while
+
+   -- Disable keyboard input
+   celestia:requestkeyboard(false)
+   return
+end
+
+
+--***************************************************************************
+--         display System Not Found message, continue on keypress
+--***************************************************************************
+function displaySystemNotFoundmessage(systemselected)
+   rtnKeypress = ""
+   celestia:requestkeyboard(true)  --Enable keyboard input
+
+   while rtnKeypress == "" do  --Loop until we get a keypress
+      celestia:print(INTRO .. "\n" .. systemselected .. " system NOT FOUND\n\nPress any key to continue...", 55, -1, -1, 1, 21)
+      wait(0.1)
+   end--while
+
+   -- Disable keyboard input
+   celestia:requestkeyboard(false)
+   return
+end
+
+
+--***************************************************************************
+--                          Get SetTourSpeed keypress
+--***************************************************************************
+function displaySetTourSpeedmenu(systemselected)
+   rtnKeypress = ""
+   celestia:requestkeyboard(true)  --Enable keyboard input
+    
+   while rtnKeypress == "" do  --Loop until we get a keypress
+      celestia:print(INTRO .. "\nTour of " .. systemselected .. " system - " .. objectstotour .. "\n\nPress a number key to select speed of tour:\n\n"
+                .."     1    Extremely slow   \n"
+                .."     2    Very slow        \n"
+                .."     3    Slow             \n"
+                .."     4    Moderately slow  \n"
+                .."     5    Moderate         \n"
+                .."     6    Moderately fast  \n"
+                .."     7    Fast             \n"
+                .."     8    Very fast        \n"
+                .."     9    Extremely fast   \n"
+                .."     0    Stupendously fast\n"
+                .."                           \n"
+                .."Space  SKIP tour         \n"
+      , 1, -1, -1, 1, 21)
+      wait(0.1)
+   end--while
+
+   -- Disable keyboard input
+   celestia:requestkeyboard(false)
+   return
+end--function
+  
+
+--***************************************************************************
+--        Set speed of tour. Range 0-9. Skip tour=[any other key].
+--***************************************************************************
+function settourspeed()
+   setBlackBackground()
+
+   displaySetTourSpeedmenu(systemcentre:name())
+   wait(0.1)
+
+   -- Check the key value (this is where you match a keypress to a tour speed)
+   if rtnKeypress == "1" then
+      selection = 1
+      speed_name = "extremely slow"
+   elseif rtnKeypress == "2" then
+      selection = 2
+      speed_name = "very slow"
+   elseif rtnKeypress == "3" then
+      selection = 3
+      speed_name = "slow"
+   elseif rtnKeypress == "4" then
+      selection = 4
+      speed_name = "moderately slow"
+   elseif rtnKeypress == "5" then
+      selection = 5
+      speed_name = "moderate"
+   elseif rtnKeypress == "6" then
+      selection = 6
+      speed_name = "moderately fast"
+   elseif rtnKeypress == "7" then
+      selection = 7
+      speed_name = "fast"
+   elseif rtnKeypress == "8" then
+      selection = 8
+      speed_name = "very fast"
+   elseif rtnKeypress == "9" then
+      selection = 9
+      speed_name = "extremely fast"
+   elseif rtnKeypress == "0" then
+      selection = 10
+      speed_name = "stupendously fast!"
+   else -- any key other than 0-9 treated as an exit code
+      selection = 0
+      speed_name = ""
+   end--if
+   wait(0.1)
+
+  rtnKeypress = ""  -- Clear the last keypress
+
+  users_selected_speed = selection
+
+   -- base_speed_timestep is the amount of time we would need (at current speed)
+   -- to reach next object: it is dependant on users_selected_speed
+   -- base_inertia is (very!) roughly how much of the current direction will be 
+   -- retained in a second. Lower values result in viewing object close-up for longer
+   if users_selected_speed > 9 then
+      base_speed_timestep = 0.125
+      base_inertia = 0.0025
+   end
+   if users_selected_speed <= 9 and users_selected_speed > 8 then
+      base_speed_timestep = 0.1875
+      base_inertia = 0.00375
+   end
+   if users_selected_speed <= 8 and users_selected_speed > 7 then
+      base_speed_timestep = 0.25
+      base_inertia = 0.005
+   end
+   if users_selected_speed <= 7 and users_selected_speed > 6 then
+      base_speed_timestep = 0.375
+      base_inertia = 0.0075
+   end
+   if users_selected_speed <= 6 and users_selected_speed > 5 then
+      base_speed_timestep = 0.50
+      base_inertia = 0.01
+   end
+   if users_selected_speed <= 5 and users_selected_speed > 4 then
+      base_speed_timestep = 0.625
+      base_inertia = 0.02
+   end
+   if users_selected_speed <= 4 and users_selected_speed > 3 then
+      base_speed_timestep = 0.750
+      base_inertia = 0.04
+   end
+   if users_selected_speed <= 3 and users_selected_speed > 2 then
+      base_speed_timestep = 1.0
+      base_inertia = 0.08
+   end
+   if users_selected_speed <= 2 and users_selected_speed > 1 then
+      base_speed_timestep = 1.5
+      base_inertia = 0.16
+   end
+   if users_selected_speed <= 1  then
+      base_speed_timestep = 2.0
+      base_inertia = 0.32
+   end
+
+   return selection
+end--function
+
+function specify(objectstovisit)
+   viewplanetsonly          = false
+   viewasteroidsonly        = false
+   viewcometsonly           = false
+   viewspacecraftonly       = false
+   viewplanetsandmoons      = false
+   viewasteroidsandcomets   = false
+   viewall                  = false
+   if objectstovisit == "planets" then
+      viewplanetsonly = true
+   end
+   if objectstovisit == "asteroids" then
+      viewasteroidsonly = true
+   end
+   if objectstovisit == "comets" then
+      viewcometsonly = true
+   end
+   if objectstovisit == "spacecraft" then
+      viewspacecraftonly = true
+   end
+   if objectstovisit == "planets&moons" or objectstovisit == "planet&moons" then
+      viewplanetsandmoons = true
+   end
+   if objectstovisit == "asteroids&comets" then
+      viewasteroidsandcomets = true
+   end
+   if objectstovisit == "all" then
+      viewall = true
+   end
+   return
+end
+
+function notspecifiedtype(obj)
+   wrongtype = true
+   if viewplanetsonly and obj:type() == "planet" then
+      wrongtype = false
+   end
+   if viewasteroidsonly and obj:type() == "asteroid" then
+      wrongtype = false
+   end
+   if viewcometsonly and obj:type() == "comet" then
+      wrongtype = false
+   end
+   if viewspacecraftonly and obj:type() == "spacecraft" then
+      wrongtype = false
+   end
+   if viewplanetsandmoons and (obj:type() == "planet" or obj:type() == "moon") then
+      wrongtype = false
+   end
+   if viewasteroidsandcomets and (obj:type() == "asteroid" or obj:type() == "comet") then
+      wrongtype = false
+   end
+   if viewall and not (obj:type() == "spacecraft" or obj:type() == "invisible") then
+      wrongtype = false
+   end
+   return wrongtype
+end
+
+
+function loadchildren(parent,depth)
+   local i, v
+   local children = parent:getchildren()
+   for i, v in ipairs(children) do
+      if notspecifiedtype(v) then
+         celestia:flash("   Ignoring : " .. v:name())
+         wait(0.15)
+      else  
+         preload(v)
+         celestia:flash("   Including: " .. v:name())
+         wait(0.15)
+         obj_[obj_.len] = v
+         obj_.len = obj_.len + 1
+         if depth <= 2 then
+            loadchildren(v, depth+1)
+         end
+      end
+   end
+   return
+end
+
+obj_ = {}
+obj_.len = 0
+-- fill object-table with specified system objects
+function fillobj_table(obj, depth)
+   if obj:type() == "star" then
+      preload(obj)
+      obj_[obj_.len] = obj
+      obj_.len = obj_.len + 1
+      local i, v
+      local children = obj:getchildren()
+      for i, v in ipairs(children) do
+         if notspecifiedtype(v) then
+            celestia:flash("   Ignoring : " .. v:name())
+            wait(0.15)
+         else  
+            preload(v)
+            celestia:flash("   Including: " .. v:name())
+            wait(0.15)
+            obj_[obj_.len] = v
+            obj_.len = obj_.len + 1
+            if depth <= 2  then
+               loadchildren(v, depth+1)
+            end
+         end
+      end
+   else
+      if notspecifiedtype(obj) then
+         celestia:flash("   Ignoring : " .. obj:name())
+         wait(0.15)
+      else  
+         preload(obj)
+         obj_[obj_.len] = obj
+         obj_.len = obj_.len + 1
+         local i, v
+         local children = obj:getchildren()
+         for i, v in ipairs(children) do
+            if notspecifiedtype(v) then
+               celestia:flash("   Ignoring : " .. v:name())
+               wait(0.15)
+            else  
+               preload(v)
+               celestia:flash("   Including: " .. v:name())
+               wait(0.15)
+               obj_[obj_.len] = v
+               obj_.len = obj_.len + 1
+               if depth <= 2  then
+                  loadchildren(v, depth+1)
+               end
+            end
+         end
+      end
+   end
+   obj_[obj_.len] = obj
+   obj_.len = obj_.len + 1
+end
+
+-- preload textures
+function preload(objct)
+   celestia:select(objct)
+   --celestia:print("Preloading texture for " .. objct:name(), 10, 0, 0, -20, 0)        
+   local p = objct:getposition()
+   local r = objct:radius()
+   local v = celestia:newvector(1,0,0)
+   v = (1.5 * object_offset_factor * r) * v 
+   celestia:getobserver():setfov(math.rad(FOVindeg))
+   celestia:getobserver():setposition(p + v)
+   celestia:getobserver():lookat(p, UP)
+   wait(0.1)
+end
+
+-- return vector with same direction and length == 1
+function normalize(v)
+    local x = v:getx()
+    local y = v:gety()
+    local z = v:getz()
+    local d = math.sqrt(x*x + y*y + z*z)
+    if d > 0.0000001 then
+        d = 1/d
+    else
+        --celestia:flash("underflow",2)
+        --d = 1
+        d = 1e7
+    end
+    return celestia:newvector(d*x, d*y, d*z)
+end
+
+-- return length of vector v
+function length(v)
+    local x = v:getx()
+    local y = v:gety()
+    local z = v:getz()
+    local d = math.sqrt(x*x + y*y + z*z)
+    return d
+end
+
+side_toggle_a = 1
+side_toggle_b = 1
+function getcameratarget(sourcepos, targetpos, obspos, part)
+   src2target = sourcepos:vectorto(targetpos)
+   local lgth = length(src2target)
+   local part2 = (part - CAMLOCKD) / (1 - 2*CAMLOCKD)
+   part2 = math.min(1,math.max(0,part2))
+   local disp = lgth * 0.05 * side_toggle_b * math.pow(math.sin(math.pi*part2),2)
+   local vec = nil
+   if part2 < 0.5 then
+        vec = obspos:vectorto(sourcepos)
+   else
+        vec = obspos:vectorto(targetpos)
+   end
+   local factor1 = math.abs(part2 - 0.5)
+   local displacement =  disp * (sourcepos:vectorto(targetpos) ^ UP):normalize()
+   return obspos + factor1 * vec + displacement
+end
+
+function visit(system,objecttypes)
+   -- clear SetTourSpeed menu from screen
+   celestia:print("", 6000, -1, -1, 1, 4)
+   wait(0.1)
+
+   specify(objecttypes)
+
+   -- GET OBJECTS TO TOUR
+   obj_ = {}
+   obj_.len = 0
+   counter = 1
+   fillobj_table(system,1)
+   num_objects = (obj_.len - 1)
+
+   -- INITIALIZE BEFORE TOURING OBJECTS
+   -- initialize time
+   t = 0
+   time = celestia:getscripttime()
+   touringtime = celestia:getscripttime()
+   date = celestia:gettime()
+
+   -- initialize the current_object_pos which the camera will point to
+   current_object_pos = obj_[0]:getposition()
+
+   -- initialize the offset for the current_object, from which we will initially observe it 
+   offset = celestia:newvector(1.5 * object_offset_factor * obj_[0]:radius(), 0, 0)
+
+   -- initialize the current observer position (= pos)
+   pos = obj_[0]:getposition():addvector(offset)
+   obs = celestia:getobserver()
+
+   -- look in direction of the current_object      
+   obs:setposition(pos)
+   obs:lookat(current_object_pos, UP)
+   wait(0.1)
+
+   -- display tour introduction with the initial object in the background
+   celestia:print("Tour of " .. system:name() .. " system - " .. objecttypes .. "\nTour speed: " .. users_selected_speed .. "  " .. speed_name, 6000, -1, -1, 1, 4)
+   wait(2)
+
+   -- initialize velocity to get away from the initial object 
+   velocity = celestia:newvector(1e-7, 0, 0)
+
+   -- select initial object
+   celestia:select(obj_[0])
+
+   -- initialize const_speed_distance for the first object of the tour
+   const_speed_distance = obj_[1]:radius() * object_radii_multiplier_for_const_speed
+
+   -- TOUR OBJECTS!
+   if num_objects > 1 then
+      -- walk the object-table:
+      while t < num_objects do --MAIN_LOOP   
+         past_midpoint = false
+
+         -- get next_object, but dont select yet  
+         next_object = obj_[t+1]
+ 
+         -- define offset vector for next_object
+         -- slightly further away than usual for the last object (= systemcentre)
+         if t == num_objects-1 then 
+            offset = celestia:newvector(1.5 * object_offset_factor * obj_[t+1]:radius(), 0, 0)
+         else
+            offset = celestia:newvector(object_offset_factor * obj_[t+1]:radius(), 0, 0)
+         end
+
+         -- get position where we should be heading
+         next_object_offset_pos = next_object:getposition():addvector(offset)
+
+         -- get the overall distance from the observer position (pos) when the next_object 
+         -- is first selected to the next_object_offset_pos
+         dist = pos:distanceto(next_object_offset_pos)
+ 
+         -- convert this dist to microly instead of km
+         dist_mly = length(pos:vectorto(next_object_offset_pos))
+  
+         -- set trigger_dist used to select next_object when approaching the current_object
+         if dist < object_radii_multiplier_for_trigger_dist * next_object:radius() then
+            trigger_dist = 0.4 * dist
+         else
+            trigger_dist = object_radii_multiplier_for_trigger_dist * next_object:radius()
+         end
+  
+         -- set emergency trigger if first trigger fails, initialize check distance
+         emergency_trigger_dist = 0.3 * dist
+         last_dist_to_current_object = dist
+  
+         -- d = distance from the current observer position (pos) to the next_object_offset_pos
+         -- initialize d to dist (see above)
+         d = dist
+  
+         -- INNER LOOP: travel to next_object, exit loop when inside trigger_dist
+         while d > trigger_dist do
+            local time2 = celestia:getscripttime()
+            local dt = math.max(0.005, math.min(0.2, time2 - time))
+            time = time2
+      
+            -- use this to correct for moving bodies while in flight
+            celestia:settime(date)
+      
+            -- the distance still to be travelled by the observer to the next_object_offset_pos
+            -- compared to the total distance from the initial pos to the next_object_offset_pos
+            -- (this is a proportion - it should vary between 0 and ~1)
+            a = d / dist
+
+            -- *** COMPUTE VELOCITY ENVELOPE: go slow when near objects, go really fast between
+            -- Speed will be constant for viewing when near an object, and changing when far away
+            -- Speed depends on the distance still to be travelled by the observer to the next_object_offset_pos
+            -- compared to the total distance from the initial pos to the next_object_offset_pos
+            if a > 0.5 then
+            -- we are closer to the current_object than to the next_object, so ...
+               -- speed is determined by how close we are to the current_object
+               ref_distance_km = dist - d
+
+               -- leave const_speed_distance intact, suitable for the current_object
+               const_speed_distance = const_speed_distance
+            else
+            -- we are closer to the next_object than to the current_object, so ...
+               -- speed is determined by how close we are to the next_object
+               ref_distance_km = d
+
+               -- reset the const_speed_distance to be suitable for the next_object
+               const_speed_distance = obj_[t+1]:radius() * object_radii_multiplier_for_const_speed
+
+               -- select the next_object and notify the user that this is where we are headed
+               -- For the next iteration of t, the position of this next_object will become 
+               -- the current_object_pos at which the camera will point
+               if not past_midpoint then
+                  celestia:select(next_object)
+                  past_midpoint = true
+                  celestia:print(systemcentre:name() .. " system - object " .. counter .." of " .. num_objects .. ": ".. next_object:name(), 12, 0, 0, -20, -10)
+               end
+            end
+
+            -- set the reference distance which determines whether speed is
+            -- constant (for viewing the current_object) or changing (for rapid travel to the next_object)
+            ref_distance_km = math.max(const_speed_distance, ref_distance_km)
+            ref_distance_mly = ref_distance_km / KM_PER_MLY
+        
+            -- speed is (obviously) distance_to_object / time_to_reach_object
+            speed = ref_distance_mly / base_speed_timestep
+      
+            -- inertia controls how quick the direction of view changes.
+            -- 
+            -- To make the script behave mostly identical for different FPS, 
+            -- we must change inertia depending on the time between two frames. 
+            -- inertia doesn't have a linear influence, but this first-order
+            -- approximation should suffice.
+            -- 
+            -- if dt == 0, inertia = 1, for dt >= 0.1, inertia = 0.1*base_inertia
+            inertia = 1 - (math.min(0.1, dt)*(1-base_inertia))
+            -- camera must change quicker when getting near object, 
+            -- otherwise we could oveershot the object,
+            -- therefore adjust inertia proportionally to distance to object 
+            -- (but don't set to >= 1)
+            inertia = math.max(0.5, math.min(a,1)*inertia)
+      
+            direction = pos:vectorto(next_object_offset_pos)      
+            -- normalized direction 
+            dir_norm = normalize(direction)
+      
+            -- normalized velocity
+            -- cant use vector:normalize because length may be to small
+            vel_norm = normalize(velocity)
+
+            -- This is the most important part:
+            -- compute the new velocity, by choosing a direction
+            -- between the former velocity and the direction we have to go.
+       
+            new_velocity_direction = (inertia * vel_norm + (1-inertia)*dir_norm) 
+      
+            velocity = speed * dt * new_velocity_direction:normalize()
+      
+            newpos = pos + velocity
+      
+            -- look in direction of movement      
+            obs:setposition(pos)
+            obs:lookat(getcameratarget(current_object_pos, next_object:getposition(), pos, 1-a), UP)      
+      
+            pos = newpos
+            d = pos:distanceto(next_object_offset_pos)
+      
+            -- check emergency trigger
+            if d < emergency_trigger_dist then  --and d > trigger_dist
+               -- real check: have we overshot and are going away again?
+               if d > last_dist_from_current_object then
+                  -- we have overshot, print message
+                  celestia:flash("    OVERSHOT object " .. counter .. " of " .. num_objects .. ": ".. next_object:name() .. " - continuing to next object ...",2)
+                  wait(2)
+                  break
+               end
+            end
+
+            last_dist_from_current_object = d
+            wait(0.01)
+         end--whileINNER_LOOP
+  
+         current_object_pos = next_object:getposition()
+         t = t + 1
+         counter = counter + 1
+      end--whileMAIN_LOOP
+
+   end--if num_objects>1
+
+   -- set the final object to look at (=the systemcentre object) at the end of the tour
+   current_object_pos = obj_[num_objects]:getposition()
+
+   -- set the offset for the final object, from which to look at it 
+   offset = celestia:newvector(1.5 * object_offset_factor * obj_[num_objects]:radius(), 0, 0)
+
+   -- set final observer position from which to look at the systemcentre object
+   pos = obj_[num_objects]:getposition():addvector(offset)
+   obs = celestia:getobserver()
+
+   -- look in direction of systemcentre object      
+   obs:setposition(pos)
+   obs:lookat(current_object_pos, UP)
+   wait(0.1)
+
+   touringtime = celestia:getscripttime() - touringtime 
+
+   if num_objects == 1 then
+      celestia:print("Completed tour of single object in " .. system:name() .. " system\nPress any key to continue ...", 6000, -1, -1, 1, 4)
+   else
+      if math.floor(touringtime/60) <= 1 then
+         celestia:print("Completed tour of " .. num_objects .. " objects in " .. system:name() .. " system in under 1 minute\nPress any key to continue ...", 6000, -1, -1, 1, 4)
+   else
+         celestia:print("Completed tour of " .. num_objects .. " objects in " .. system:name() .. " system in " .. math.floor(touringtime/60) .. " minutes\nPress any key to continue ...", 6000, -1, -1, 1, 4)
+      end
+   end
+   wait(0.1)
+   GetKeypressToContinue()
+
+   return
+end
+
+function tour(systemcentrename,objecttypestoview)
+   defineconstants()
+   systemcentre = celestia:find(systemcentrename)
+   objectstotour = objecttypestoview
+   setBlackBackground()
+   if systemcentre:name() == "?" then
+      displaySystemNotFoundmessage(systemcentrename)
+   else
+      if settourspeed() ~= 0 then
+         visit(systemcentre,objecttypestoview)
+      end
+   end
+   return
+end
+
+
+-- *************** MAIN PROGRAM **************
+
+workaroundwindowsbug()
+get_users_orig_settings()
+setrenderflagsandfov()
+tourspecifiedsystems()
+celestia:flash("ALL TOURS COMPLETE",15)
+wait(2.0)
+
+--EOP
+
+
