@@ -1,0 +1,117 @@
+From 31bf11ab60769e5f886d5813b46ed845fcb9ae71 Mon Sep 17 00:00:00 2001
+From: Giovanni Mascellani <mascellani@poisson.phc.unipi.it>
+Date: Fri, 10 Feb 2012 17:31:05 +0100
+Subject: [PATCH] Do things so that the output stream can be sent to a FIFO
+ and read by avconv.
+
+---
+ livethread.cpp |    5 ++++-
+ mainwnd.cpp    |    5 -----
+ mjpegwrt.c     |   39 ++++++++++++++++++++++++++++++---------
+ mjpegwrt.h     |    1 +
+ 4 files changed, 35 insertions(+), 15 deletions(-)
+
+diff --git a/livethread.cpp b/livethread.cpp
+index 84b17c9..9820daa 100644
+--- a/livethread.cpp
++++ b/livethread.cpp
+@@ -911,7 +911,10 @@ void GMyLiveThread::run()
+ 				if (mjpeg)
+ 				{
+ 					max_frame_size = 0;
+-					mjpegSetup(mjpeg, 0, 0, StableFPS, 10000);
++					mjpegSetup(mjpeg, live_buffer::frame_width, live_buffer::frame_height, StableFPS, 10000);
++					mjpegSetMaxChunkSize(mjpeg, 500000);
++					mjpegSetInfo(mjpeg, software, MovieInfo, date);
++					mjpegWriteHeader(mjpeg);
+ 					if (!mjpegSetCache(mjpeg, BufferSize))
+ 					{
+ 						QApplication::postEvent(Owner, new GCameraEvent(CAMERA_EVENT_SHOWMSG, tr("Can't alloc buffer with size %1 MB").arg(BufferSize/(1024*1024))));
+diff --git a/mainwnd.cpp b/mainwnd.cpp
+index aa8aa97..c806c79 100644
+--- a/mainwnd.cpp
++++ b/mainwnd.cpp
+@@ -1003,11 +1003,6 @@ void GEOSRecWnd::slotStart()
+ 	if (LiveThread && LiveThread->isInit())
+ 	{
+ 		QFileInfo fi(CurrSettings.Path);
+-		while (fi.exists())
+-		{
+-			CurrSettings.Path = giveNextName(CurrSettings.Path);
+-			fi.setFile(CurrSettings.Path);
+-		}
+ 		//QMessageBox::information(this, tr("path"), Path);
+ 		static QTextCodec* tcodec = QTextCodec::codecForLocale();
+ 		LiveThread->setFileName(tcodec->fromUnicode(CurrSettings.Path).data());
+diff --git a/mjpegwrt.c b/mjpegwrt.c
+index 15ead2f..37f84b1 100644
+--- a/mjpegwrt.c
++++ b/mjpegwrt.c
+@@ -301,15 +301,6 @@ void* mjpegCreateFile(const char* fname)
+ 		return 0;
+ 	}
+ 
+-	if (!write(riff->fd, riff->header, HEADERBYTES))
+-	{
+-		close(riff->fd);
+-		free(riff->header);
+-		free(riff->index);
+-		free(riff);
+-		return 0;
+-	}
+-
+ 	return (void*)riff;
+ }
+ 
+@@ -388,6 +379,36 @@ int mjpegSetup(void* p, int fwidth, int fheight, double fps, int quality)
+ 	rf->avistreamformat->biBitCount = 24;
+ 	rf->avistreamformat->biCompression = 0x47504A4D;			// 'MJPG'
+ 	rf->avistreamformat->biSizeImage = fwidth*fheight*3;
++	rf->aviheader->dwTotalFrames = 2000000000;
++	rf->avistreamheader->dwLength = 2000000000;
++
++	return 1;
++}
++
++int mjpegWriteHeader(void* p)
++{
++	RIFFFILE* rf = (RIFFFILE*)p;
++	if (!rf)
++		return 0;
++
++	unsigned char tmp[4096];
++
++	// Fix header for streaming
++	memcpy(tmp, rf->header, HEADERBYTES);
++	tmp[4] = 255;
++	tmp[5] = 255;
++	tmp[6] = 255;
++	tmp[7] = 255;
++
++	if (!write(rf->fd, tmp, HEADERBYTES))
++	  {
++	    close(rf->fd);
++	    free(rf->header);
++	    free(rf->index);
++	    free(rf);
++	    return 0;
++	  }
++
+ 	return 1;
+ }
+ 
+diff --git a/mjpegwrt.h b/mjpegwrt.h
+index 97fa97d..7989592 100644
+--- a/mjpegwrt.h
++++ b/mjpegwrt.h
+@@ -30,6 +30,7 @@ extern "C" {
+ 
+ void* mjpegCreateFile(const char* fname);
+ int mjpegSetup(void* rf, int fwidth, int fheight, double fps, int quality);
++int mjpegWriteHeader(void* rf);
+ int mjpegSetInfo(void* rf, const char* software, const char* comment, const char* date);
+ int mjpegSetCache(void* rf, int sz);
+ int mjpegSetMaxChunkSize(void* rf, unsigned int sz);
+-- 
+1.7.9
+

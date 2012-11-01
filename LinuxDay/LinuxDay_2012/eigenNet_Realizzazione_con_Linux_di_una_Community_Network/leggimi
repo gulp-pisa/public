@@ -1,0 +1,25 @@
+=====================================
+Titolo:eigenNet - Realizzazione con 
+       Linux di una Community Network
+=====================================
+Vi siete mai chiesti quali sono le potenzialità del vostro 
+router wireless? Verrà brevemente descritto cos'è una 
+Community Network, dunque verranno trattati aspetti più tecnici: 
+vantaggi e svantaggi di una rete mesh contro una punto-punto, 
+come funziona il routing in una rete wireless mesh, cos'è OpenWrt. 
+Verrà illustrato qualitativamente come funzionano i protocolli da 
+noi usati, i vantaggi che danno e perché. Racconteremo cosa abbiamo 
+aggiunto ad OpenWrt per semplificarne la gestione. Infine dal 
+lato pratico indicheremo come si crea una immagine personalizzata 
+di OpenWrt (imagebuilder e cross-compiling) e come scegliere 
+l'hardware nell'ottica di una rete low cost ma funzionante . 
+
+=============================
+Relatore: Gioacchino Mazzurco
+=============================
+Sviluppatore di KDE e del software eigenNet, studia informatica 
+presso l'Università di Pisa. Partecipa al laboratorio autogestito 
+eigenLab che tra gli altri progetti ha lanciato la rete mesh 
+cittadina eigenNet.
+
+
