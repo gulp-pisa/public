@@ -27,3 +27,37 @@ N O T E
 =======
 fonte delle slides: 
 http://eigenlab.org/~ilario/eigenNet-presentazione-linuxday2012.pdf
+
+sorgenti:
+http://gitorious.org/eigennet/notcode/trees/master/eigennet_presentations
+
+Il sorgente (la presentazione è fatta con LaTeX ed il pacchetto Beamer)
+e le immagini li trovate qui:
+http://gitorious.org/eigennet/notcode
+potete scaricarlo col comando (da terminale)
+git clone git://gitorious.org/eigennet/notcode.git
+e poi nella cartella compilare il file .tex lanciando
+due volte il comando "pdflatex eigenNet-presentazione-linuxday2012.tex"
+
+
+Ecco un po' di link sul progetto:
+* pagina sul wiki https://wiki.eigenlab.org/index.php/EigenNet
+* mappa http://pisa.ninux.org (i nodi blu sono anche hotspot per i
+clients wireless, i nodi verdi sono solo per clients via cavo (il
+proprietario del nodo) e per il backbone, i nodi arancioni sono nodi
+potenziali)
+* articolo con le nostre motivazioni
+https://eigenlab.org/articoli-e-comunicati/approfondimenti/102-eigennet-la-nuova-frontiera-delle-reti
+* firmware eigenNet https://gitorious.org/eigennet/packages
+* la rete nazionale delle community wireless http://ninux.org
+* molte risposte e guide http://wiki.ninux.org/Guide
+
+Se volete saperne di più contattateci:
+* scrivete a info@eigenlab.org
+* la nostra sede https://eigenlab.org/contatti (aperta ad orari random)
+* se avete un tetto a disposizione aggiungete un segnaposto tra i nodi
+potenziali sulla mappa http://pisa.ninux.org
+* mailing list eventi (bassissimo traffico)
+https://www.autistici.org/mailman/listinfo/eigenlab
+* venite a cercarci in uno degli eventi che organizziamo
+https://eigenlab.org/eventi
