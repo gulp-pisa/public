@@ -1,0 +1,25 @@
+==============================================
+Titolo:File system Linux di ultima generazione
+==============================================
+I file system Linux di ultima generazione offrono funzionalità 
+ulteriori rispetto a quelle "classiche", e anche tra le classiche 
+si possono trovare alcune perle nascoste. In questo incontro verranno 
+ricordate brevemente alcune funzionalità dei file-system, tra cui 
+journaling e file sparsi, per poi passare alle novità: pre-allocazione, 
+conversione tra file system e supporto per i dischi a stato solido (SSD). 
+Vedremo principalmente come usare e combinare le funzionalità disponibili, 
+ottenendo risultati nuovi e, a volte, sorprendenti. 
+===============================
+Relatore: Massimiliano Ghilardi
+===============================
+Laureato in fisica all'Università ed alla Scuola Normale Superiore di Pisa, 
+appassionato di informatica fin da tenera età, scopre Linux nel 1995: 
+prima con MCC Interim, poi Slackware, Redhat, SuSE, Mandrake, e 
+finalmente Debian. Dopo un'esperienza come insegnante e un'altra nello 
+sviluppo software di simulazione per componenti dei satelliti di 
+telecomunicazioni, attualmente lavora in un'azienda pisana di informatica 
+come analista programmatore, e all'occorrenza come sistemista Linux. 
+Non ha mai perso la voglia di "giocare" con i computer, scrivendo tra 
+l'altro alcuni programmi Open Source. Dopo assembler, C, C++, Java e python, 
+l'ultima sua scoperta in ordine di tempo è un linguaggio ormai antico: il Lisp.
+
