@@ -1,0 +1,34 @@
+Titolo
+======
+Monitoraggio del Traffico di Rete con ntopng
+
+Relatore
+========
+Luca Deri
+È il fondatore del progetto ntop finalizzato alla realizzazione 
+di strumenti aperti per il monitoraggio del traffico di rete. 
+Dopo essersi laureato nel 1993 presso l'Università di Pisa, ha 
+prima lavorato all'University College of London e poi ha conseguito 
+il dottorato di ricerca all'Università di Berna mentre lavorava come 
+ricercatore al laboratorio di ricerca IBM di Zurigo. 
+Tornato in Italia nel 1997, ha iniziato a lavorare al progetto ntop. 
+Docente presso il Dipartimento di Informatica dell'Università di Pisa, 
+attualmente si occupa della gestione del traffico di rete del Registro.it, 
+l'anagrafe italiana dei nomi al dominio.
+Sito Internet: http://www.ntop.org
+E-mail: deri "at" ntop.org 
+
+Abstract
+========
+ntop è un tool open-source per il monitoraggio del traffico di 
+rete rilasciato nel 1998. Quest'anno abbiamo riscritto da zero ntop 
+(adesso si chiama ntopng) in modo da:
+
+  - renderlo aperto agli sviluppatori tramite linguaggio scripting basato su Lua;
+    capace di riconoscere i principali protocolli applicativi (es. Facebook, 
+  - Whatsapp, Skype...) e non solo il traffico a livello di protocollo/porta;
+  - interfaccia grafica basata su HTML5 e grafica vettoriale;
+  - gestione delle reti multi-gigabit;
+  - supporto per sistemi con quantità limitata di risorse quali 
+    router e sistemi basati su VM.
+

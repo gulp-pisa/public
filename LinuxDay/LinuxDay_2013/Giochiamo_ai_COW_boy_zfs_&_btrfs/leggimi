@@ -1,0 +1,22 @@
+Titolo
+======
+Giochiamo ai COW-boy : zfs & btrfs
+
+Relatore
+========
+Alberto Maria Fiaschi
+Sviluppatore software da oltre 16 anni, attualmente si occupa degli 
+aspetti sistemistici inerenti la gestione documentale e la condivisione 
+di storage dell'Azienda Ospedaliero Universitaria Pisana. Nemico giurato 
+dell'entropia e strenuo sostenitore della filosofia KISS, è un vecchio (e fedele) 
+utente Slackware. Da diversi anni è membro del GULP.
+Sito Internet: http://www.linkedin.com/pub/alberto-fiaschi/38/783/a5
+E-mail: alberto.fiaschi "at" estav-nordovest.toscana.it 
+    
+Abstract
+========
+I file system di tipo Copy On Write (spesso indicati tramite l'acronimo COW) 
+offrono potenzialità come snapshot volumi e cloni. Nel seminario vedremo come 
+usare queste nuove funzionalità e come sostituirne molte altre finora gestite da 
+più strumenti. Compareremo ZFS con la futura promessa del mondo GNU/Linux BTRFS, 
+evidenziandone pregi e difetti. 

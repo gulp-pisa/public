@@ -1,0 +1,33 @@
+Titolo
+======
+Memoria transazionale - alla ricerca del Graal 
+della programmazione concorrente
+
+Relatore
+========
+Massimiliano Ghilardi
+Laureato in fisica all'Università ed alla Scuola Normale Superiore di Pisa, 
+appassionato di informatica fin da tenera età, scopre Linux nel 1995: 
+prima con MCC Interim, poi Slackware, Redhat, SuSE, Mandrake, e finalmente 
+Debian. Dopo un'esperienza come insegnante e un'altra nello sviluppo software 
+di simulazione per componenti dei satelliti di telecomunicazioni, attualmente 
+lavora in un'azienda pisana di informatica come analista programmatore, 
+e all'occorrenza come sistemista Linux. Non ha mai perso la voglia di "giocare" 
+con i computer, scrivendo tra l'altro alcuni programmi Open Source. 
+Dopo assembler, C, C++, Java e python, l'ultima sua scoperta in ordine di 
+tempo è un linguaggio ormai antico: il Lisp. 
+
+Abstract
+========
+Cos'è la memoria transazionale software? Un paradigma di 
+programmazione concorrente che promette di risolvere in un 
+colpo solo tutte le difficoltà classiche dei mutex: deadlock, 
+corse critiche, inversioni di priorità, mancanza di componibilità,
+difficoltà nel debugging e nel mostrare la correttezza di un algoritmo. 
+Mantenere una promessa del genere è, usando un eufemismo, estremamente 
+arduo. Una volta introdotti i concetti di base, passeremo ad una 
+dimostrazione dal vivo con la libreria STMX scritta dal relatore, 
+da cui prendere spunto per le considerazioni pratiche, individuando 
+vantaggi e svantaggi. La sorpresa finale? La memoria transazionale hardware, 
+ultima arrivata che si sta già facendo spazio nel kernel Linux, 
+nei compilatori e nelle librerie di programmazione concorrente. 

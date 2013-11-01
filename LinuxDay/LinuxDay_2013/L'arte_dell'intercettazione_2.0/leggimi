@@ -1,0 +1,27 @@
+Titolo
+======
+L'arte dell'intercettazione 2.0
+
+Relatore
+========
+Giuseppe Augiero
+Attualmente si occupa di Network Design e Sicurezza Informatica 
+nel mondo della Sanità. In passato ha progettato e curato la sicurezza 
+perimetrale di una parte del core business di un Isp Italiano e di un Asp Provider. 
+Utilizza Gnu/Linux dai suoi albori, quando la versione del kernel era 0.99, 
+attualmente è Debian-dipendente. Sensibile alle tematiche legate all'Open 
+Source e alla Neutralità della rete, da quindici anni tiene corsi e seminari 
+in giro per l'Italia su argomenti tecnici e socio-economici relativi al 
+mondo della sicurezza informatica, di Internet e di Gnu/Linux.
+Sito Internet: www.augiero.it
+E-mail: ld "at" augiero.it
+
+Abstract
+========
+Dopo gli avvenimenti che hanno contraddistinto il 2013 e lo 
+scandalo DataGate, è chiaro a tutti quanto sia difficile proteggere 
+i propri dati da occhi indiscreti, nel momento in cui, per esempio, 
+viaggiano in rete. "Big Data" e Privacy diventano ossimori l'uno dell'altro. 
+Non bastano le soluzioni di cifratura per aver garantita la confidenzialità 
+dell'informazione. Nel talk si presenteranno alcune soluzioni per "attaccare" 
+traffico di rete cifrato. 

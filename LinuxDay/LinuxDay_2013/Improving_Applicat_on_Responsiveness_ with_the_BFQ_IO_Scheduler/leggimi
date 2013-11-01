@@ -1,0 +1,44 @@
+Titolo
+======
+Improving Application Responsiveness with 
+the BFQ I/O Scheduler
+
+Relatore
+========
+Paolo Valente
+I am an assistant professor of Computer Science at the University 
+of Modena and Reggio Emilia, Italy. The main focus of my research 
+and development activity is the design and analysis of real-time and 
+proportional-share scheduling algorithms for CPU, disk and network. 
+Some of my main results follow. Budget Fair Queueing (BFQ): disk scheduler 
+providing low response times for soft real-time and interactive applications, 
+and at the same time a high throughput. Adopted by various Linux distributions 
+and kernel variants, on both desktops and smartphones (estimated user base 
+in the order of a few hundreds of thousands of users). Quick Fair Queueuing 
+(QFQ): packet scheduler providing near-optim al fairness and packet-delay 
+guarrantees, at very low computational cost. Upstreamed in Linux mainline up
+to 3.6 (then replaced by QFQ+, see below) and in FreeBSD: Quick Fair 
+Queueuing Plus (QFQ+): faster version of QFQ, with execution time comparable 
+to just a round robin. Replaced QFQ in Linux mainline from 3.8: Efficient 
+Proportional-Share Process Scheduler (EPS2): process scheduler providing 
+strong guarantees on job completion times and CPU-bandwidth distribution. 
+Implemented under FreeBSD.
+Sito Internet: http://algogroup.unimore.it/people/paolo/
+E-mail: paolo dot valente "at" unimore dot it 
+
+Abstract
+========
+BFQ (Budget Fair Queueing) is a production-quality, proportional-share 
+disk scheduler with a relatively large user base. Part of its success is 
+due to a set of simple heuristics that we added to the original algorithm 
+about two years ago. The first heuristic enriches BFQ with one of the most 
+desirable properties for a desktop or handheld system: responsiveness. 
+A companion heuristic also reduces latency for soft real-time applications, 
+such as audio or video players. As a result of our heuristics: 1) whatever 
+the disk load is, interactive applications are virtually as responsive as 
+if the disk was idle; 2) soft real-time applications enjoy lower latencies 
+than CFQ; 3) a high throughput is achieved also in the presence of many 
+concurrent requests and sudden increases of the workload. In this presentation 
+I will first show these results through a demo of the performance of BFQ, 
+as compared to CFQ. Then I will provide a few details both on how the 
+low-latency heuristics of BFQ work, and on why they fit the BFQ service scheme. 
