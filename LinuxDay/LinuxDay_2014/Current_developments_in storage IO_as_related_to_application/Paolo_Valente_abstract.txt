@@ -1,0 +1,12 @@
+Paolo Valente
+
+This presentation is about two related topics: the current state of affairs 
+of the BFQ (Budget Fair Queueing) I/O scheduler, and its relation with the 
+ongoing work in the Linux kernel for keeping pace with the growing speed of 
+modern, solid-state devices. As for BFQ, it seems to be on the right track to 
+be merged into mainline, and replace the current default I/O scheduler. In this 
+presentation we will also see BFQ in action with an SSD, and briefly discuss 
+some of the inner workings of BFQ related to high-speed devices. Finally, as 
+for the ongoing kernel work for achieving high I/O rates, we will highlight 
+and question possible misconceptions about the ability of the current multi-queue 
+I/O infrastructure to make I/O-related latencies negligible for applications. 

@@ -1,0 +1,10 @@
+Giovanni Mascellani
+
+Già da alcuni anni la possibilità di avviare un computer 
+recuperando un sistema operativo dalla rete apre molti scenari per 
+offrire soluzioni adatte alle proprie esigenze nell'ambito dell'amministrazione 
+di una rete di computer. In particolare utilizzando sistemi operativi liberi 
+si possono elaborare soluzioni flessibili e personalizzabili. Vedremo come 
+funziona il meccanismo del boot via rete con Linux e come è possibile 
+modificarlo, per esempio per installare aule computer, chioschi di accesso 
+a Internet o sistemi operativi di emergenza. 
