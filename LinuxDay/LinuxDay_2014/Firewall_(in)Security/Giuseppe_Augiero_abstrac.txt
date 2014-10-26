@@ -1,0 +1,14 @@
+Giuseppe Augiero
+
+La semplice installazione e messa in produzione di un firewall non è sinonimo 
+di sicurezza informatica. C'è chi crede che il firewall, da solo, possa fare 
+miracoli e non si accorge che la definizione di security policy farraginose o un 
+design di sicurezza errato portano alla “non sicurezza” dell'intero sistema o 
+della rete da proteggere. Utilizzare il vecchio paradigma (definito nel 1995), 
+in cui i flussi di rete sono riconosciuti ed eventualmente bloccati dalla 
+ennupla “protocollo, source / destination address e porta” non basta più. 
+Oramai una buona parte del traffico di rete è rappresentato da uno stream 
+http e filtrarlo richiede un'analisi a livello applicativo. La presentazione 
+si concentrerà sul descrivere scenari in cui il firewall diventa un “oggetto 
+di insicurezza” e permette, all'insaputa di chi dovrebbe amministrarlo, di 
+far passare traffico che, invece, andrebbe bloccato. 

@@ -1,0 +1,7 @@
+Giulio Pasqualetti
+
+Perché nella galiassia delle distribuzioni esistenti un utente desktop 
+dovrebbe scegliere proprio Arch Linux? Nel corso del talk verranno illustrate 
+le idee alla base del “Metodo Arch” e della filosofia KISS, la potenza di pacman 
+(il gestore di pacchetti di Arch), e di ABS. Verrà infine fatto qualche paragone 
+con alcune delle maggiori distribuzioni disponibili. 

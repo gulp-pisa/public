@@ -1,0 +1,8 @@
+Nicola Corti
+
+Il Raspberry PI è un piccolo computer, grosso quanto una carta di credito 
+e dal prezzo ridotto, che ha una marea di potenzialità. Può essere utilizzato 
+per trasformare un qualsiasi televisore in un media center senza dover acquistare 
+grossi e costosi dispositivi. Può essere utilizzato come computer domestico, 
+per lavorare e navigare su internet, permettendo di risparmiare in energia e 
+spazio occupati. In questo talk vedremo come poterlo utilizzare al meglio. 

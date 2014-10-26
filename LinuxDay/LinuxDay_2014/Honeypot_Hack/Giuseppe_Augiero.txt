@@ -1,0 +1,8 @@
+Giuseppe Augiero
+
+Occorrono nuovi strumenti di difesa per raggiungere livelli di sicurezza maggiori. 
+Da cosa ci dobbiamo difendere, da chi e come possiamo incatenarli? Questi sono 
+gli interrogativi che possono trovare una difficile risposta. Uno strumento che 
+offre alcune tecniche di difesa e che può aiutare ad effettuare l'analisi dei 
+possibili attacchi è un HoneyPot, una sorta di cavallo di troia che permette 
+di monitorare e capire cosa fanno gli attaccanti. 

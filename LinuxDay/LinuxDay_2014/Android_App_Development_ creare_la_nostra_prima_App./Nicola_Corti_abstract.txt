@@ -1,0 +1,7 @@
+Nicola Corti
+
+In questo talk vedremo come creare un'applicazione per Android, il famoso ed 
+ormai diffuso sistema operativo di Google. Vedremo come scaricare e configurare 
+l'SDK insieme a tutti gli strumenti che ci permetteranno di scrivere un'applicazione 
+da zero. Vedremo inoltre qualche piccolo principio da tenere sempre in considerazione 
+quando si sviluppa un'app per smartphone. 

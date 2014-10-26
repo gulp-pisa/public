@@ -1,0 +1,10 @@
+Giulio Masetti
+
+L'avanzare delle tecnologie "Web 2.0" porta ad una semplice domanda: 
+quanto software non-libero incontriamo nella nostra vita quotidiana sulla Rete?
+Social networks, motori di ricerca, apps, ed altri fenomeni del Web contemporaneo 
+fanno un gran uso di codice "non libero", ma in maniera sottile, che scavalca 
+le tradizionali definizioni.
+In questa breve presentazione (guidata da un curioso, non da un esperto) vedremo 
+alcuni esempi concreti e rifletteremo -da semplici osservatori- sulle nostre 
+libertà all'interno dell'attuale scenario. 

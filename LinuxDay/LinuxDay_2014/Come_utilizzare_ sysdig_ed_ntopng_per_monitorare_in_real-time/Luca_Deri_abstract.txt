@@ -1,0 +1,12 @@
+Luca Deri
+
+Alcuni mesi fa è stato rilasciato sotto licenza GPL il tool sysdig (www.sysdig.org) 
+che permette di monitorare le chiamate di sistema di un host Linux. Utilizzando 
+questo strumento è possibile raccogliere informazioni in maniera molto accurata 
+sulle azioni eseguite su una macchina. ntopng è un tool open source che permette 
+di visualizzare su una interfaccia web statistiche di traffico di rete. In questo 
+talk viene presentata l'integrazione di ntopng con sysdig per poter combinare il 
+monitoraggio di rete e di sistema. In questo modo è possibile ad esempio associare 
+un processo con una comunicazione di rete o visualizzare graficamente le interazioni 
+tra processi (es. la catena HTTP server, interprete PHP e database) per capire 
+dove sono i colli di bottiglia e le risorse utilizzate per erogare i servizi di rete. 
