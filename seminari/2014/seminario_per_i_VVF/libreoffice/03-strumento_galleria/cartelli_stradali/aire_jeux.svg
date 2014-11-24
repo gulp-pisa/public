@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   width="70"
+   height="70"
+   sodipodi:docname="aire_jeux.png">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="489"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="3.3714286"
+     inkscape:cx="35"
+     inkscape:cy="35"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <path
+     style="fill:#000000"
+     d="M 35.209558,50.75 C 35.480342,43.058392 35.652289,42.478372 37.75,42.180449 39.933154,41.870392 40,42.115492 40,50.430449 40,58.941016 39.982514,59 37.459558,59 c -2.538772,0 -2.540252,-0.0054 -2.25,-8.25 z M 15.5,50 l 0.687676,-5 -3.012051,0 c -5.5607419,0 -7.3620657,-0.998349 -7.3620657,-7.344582 0,-3.208697 1.6525972,-5.825485 2.222344,-6.177607 1.0544314,-0.651675 9.8871867,4.519665 11.9357927,6.988084 1.819124,2.191911 -0.589311,2.830759 -3.494797,0.927012 -1.819396,-1.192114 -2.892418,-1.377388 -3.641113,-0.628693 -1.479762,1.479762 -0.146167,3.232792 2.473231,3.251099 4.430683,0.03097 5.00938,1.202864 3.632403,7.355847 C 18.127369,53.008721 17.174193,55 16.247032,55 15.100359,55 14.950383,53.99619 15.5,50 z M 23,43.235437 c 0,-0.494636 4.6125,-2.746753 10.25,-5.004703 5.6375,-2.257951 11.983407,-4.833793 14.102015,-5.724094 2.505231,-1.052771 3.717127,-1.214066 3.466214,-0.461328 -0.21219,0.636571 -5.770597,3.363543 -12.352015,6.059939 C 23.909592,44.069075 23,44.370789 23,43.235437 z M 57.727844,33.927196 C 53.485029,30.42991 53.167188,29.063659 56,26.5 c 2.405787,-2.177207 2.510295,-3.090204 0.444468,-3.882936 -1.092528,-0.419242 -1.86577,0.293036 -2.597825,2.393011 -1.021236,2.929521 -1.902633,3.600601 -3.124383,2.378852 -0.788922,-0.788923 3.229536,-11.652594 4.67638,-12.642327 0.648728,-0.443771 2.430915,0.789154 4.336483,3 2.39931,2.783687 3.238967,4.727157 3.25,7.522452 0.01391,3.523457 -0.148025,3.728166 -2.485123,3.141592 -1.638777,-0.411307 -2.5,-0.209082 -2.5,0.587028 0,0.667968 1.125,2.099413 2.5,3.180988 C 62.856071,34.031946 63.919745,37 62.227844,37 c -0.424686,0 -2.449686,-1.382762 -4.5,-3.072804 z M 7.5,29 C 6.5766954,27.506062 7.8613745,26 10.059017,26 11.333333,26 12,26.686937 12,28 12,30.121059 8.6525887,30.864928 7.5,29 z M 50.650663,13.532025 c -0.759973,-1.980459 0.715535,-2.729203 3.835266,-1.946201 2.401535,0.602747 2.455994,0.739497 0.795988,1.998791 -2.340442,1.77548 -3.936714,1.757353 -4.631254,-0.05259 z"
+     id="path2818"
+     sodipodi:nodetypes="csssccccssssssssccssssccsssssssssssccssccssc" />
+</svg>
