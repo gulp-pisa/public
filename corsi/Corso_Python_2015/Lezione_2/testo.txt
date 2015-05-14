@@ -1,0 +1,314 @@
+Python è un linguaggio di programmazione ad alto livello, orientato agli oggetti, adatto, tra gli altri usi, per sviluppare applicazioni distribuite, scripting, computazione numerica e system testing. Python è spesso paragonato a Ruby, Tcl, Perl, Java, JavaScript, Visual Basic o Scheme[1]. Fu ideato da Guido van Rossum all'inizio degli anni novanta. Il nome fu scelto per via della passione di van Rossum per i Monty Python e per la loro serie televisiva Monty Python's Flying Circus[2].
+
+Indice
+
+    1 Filosofia
+    2 Tipi di dati e strutture
+        2.1 Tipi numerici
+        2.2 Contenitori
+        2.3 Organizzazione ad oggetti
+    3 Sintassi
+        3.1 Indentazione
+    4 Programmazione funzionale e sintassi avanzate
+        4.1 Decoratori
+        4.2 Gestione delle eccezioni
+    5 Libreria standard
+    6 Altre caratteristiche
+    7 Prestazioni
+    8 Altre implementazioni
+    9 Esempio di programma
+        9.1 Hello, world!
+        9.2 Definizione di una classe
+    10 Note
+    11 Voci correlate
+    12 Altri progetti
+    13 Collegamenti esterni
+
+Filosofia
+
+Python è un linguaggio multi-paradigma, che fa della dinamicità, semplicità e flessibilità i suoi principali obiettivi. Supporta il paradigma object oriented, la programmazione strutturata e molte caratteristiche di programmazione funzionale e riflessione. Le caratteristiche più immediatamente riconoscibili di Python sono le variabili non tipizzate e l'uso dell'indentazione per la definizione dei blocchi. Altre caratteristiche distintive sono l'overloading di operatori e funzioni tramite delegation, la presenza di un ricco assortimento di tipi e funzioni di base e librerie standard, sintassi avanzate quali slicing e list comprehension.
+
+Il controllo dei tipi è comunque forte (strong typing) e viene eseguito al runtime (dynamic typing). In altre parole una variabile è un contenitore al quale viene associata un'etichetta (il nome) che può essere associata a diversi contenitori anche di tipo diverso durante il suo tempo di vita. Usa un garbage collector per la liberazione automatica della memoria.
+
+Python ha qualche similarità con Perl, ma i suoi progettisti hanno scelto la via di una sintassi più essenziale e uniforme, con l'obiettivo di aumentare la leggibilità del codice. Come Perl spesso è classificato come linguaggio di scripting, ma pur essendo utile per scrivere script di sistema (in alternativa ad esempio a bash), la grande quantità di librerie disponibili e la facilità con cui questo linguaggio permette di scrivere software modulare favoriscono anche lo sviluppo di applicazioni molto complesse.
+Tipi di dati e strutture
+
+Essendo Python a tipizzazione dinamica, tutte le variabili sono in realtà puntatori ad oggetto (reference). Gli oggetti sono invece dotati di tipo. Ad esempio ad una variabile a cui è stato assegnato un intero, un istante dopo può essere assegnata una stringa o una lista.
+
+In Python c'è un moderato controllo dei tipi al momento del runtime. Si ha conversione implicita per i tipi numerici, che permette ad esempio di moltiplicare un numero complesso per un intero, ma non c'è, ad esempio, conversione implicita tra numeri e stringhe, per cui un numero è un argomento non valido per le operazioni su stringa (come avviene in PHP).
+
+Python mette a disposizione un gran numero di tipi base, essenzialmente tipi numerici e contenitori. Caratteristica distintiva è il supporto nativo, oltre che ai classici tipi quali interi, floating point, stringhe, anche a tipi più evoluti quali interi a grandezza arbitraria, numeri complessi, liste, insiemi, dizionari, con delle comode sintassi per la costruzione degli stessi (letterali). Non è invece previsto un tipo specifico per i caratteri.
+
+Molti altri tipi sono importabili da librerie standard, e nuovi tipi possono essere creati attraverso il costrutto di classe.
+Tipi numerici
+
+I tipi interi (int) e floating point (float) hanno una precisione dipendente dalla macchina e dall'implementazione dell'interprete (in genere 32 e 64 bit). Sono supportati nativamente numeri interi arbitrariamente grandi (long, che diventano l'opzione di default per gli interi a partire da 3.0) e numeri complessi (complex). Sono definiti tutti i principali operatori logici e aritmetici fra numeri, compreso l'elevamento a potenza. Il tipo booleano (bool) appartiene anch'esso alla categoria dei numeri.
+
+Dalla versione 2.4 sono disponibili come libreria anche i numeri decimali (decimal), ossia numeri con la virgola a precisione illimitata come quelli disponibili in REXX o in Cobol, che non soffrono di problemi di arrotondamento e stabilità tipici dei numeri floating point classici.
+Contenitori
+
+Python considera in generale come contenitori gli oggetti che prevedono la possibilità di iterare su un insieme di elementi, e dunque utilizzabili all'interno di contesti di iterazione quali il ciclo for e funzioni quali somma, ricerca e ordinamento. I contenitori in genere permettono di contenere dati di tipo eterogeneo.
+
+Per quanto riguarda i contenitori standard propriamente detti, essi classificabili come sequenze, insiemi e dizionari. I contenitori seguono una filosofia comune e condividono gran parte dei metodi.
+
+Le sequenze sono contenitori ordinati, che condividono dei metodi basati sull'ordinamento, l'indicizzazione intera e la creazione di sottosequenze tramite slicing. Le liste (list) sono sequenze estendibili, invece le tuple (tuple) sono sequenze immutabili. Anche le stringhe (str e unicode) sono considerate sequenze. A partire da Python 3.0, i tipi str e unicode sono unificati e compare il tipo byte, equivalente grosso modo a una stringa binaria. Sono supportate tutte le operazioni classiche sulle stringhe, come concatenamento, formattazione, ricerca, sostituzione, ecc. Le stringhe in Python sono sequenze immutabili, cosicché qualsiasi operazione che in qualche modo potrebbe alterare una stringa (come ad esempio la sostituzione di un carattere) restituirà invece una nuova stringa (come avviene in Java).
+
+Altri contenitori di grande utilità sono i dizionari (dict), conosciuti in altri contesti con il nome di hash table oppure array associativi. Esiste una sintassi per la creazione di dizionari, i cui elementi sono specificati da una coppia di dati separati da due punti ':'. Il primo elemento della coppia rappresenta l'indice, detto "chiave", mentre il secondo è il suo valore corrispondente. Ogni elemento è detto coppia chiave-valore.
+
+Per esempio l'istruzione seguente crea un dizionario A, composto da due elementi, le cui chiavi sono "wikipedia" e "wikiquote":
+
+A = {'wikipedia': '400000', 'wikiquote': '6000'}
+
+Le chiavi sono immutabili, mentre il valore corrispondente è variabile tramite un'assegnazione. La seguente istruzione modifica il valore corrispondente a "wikipedia", portandolo a 450000:
+
+A['wikipedia'] = '450000'
+
+A partire dalla versione 2.5 sono inoltre supportati gli insiemi (set e frozenset).
+Organizzazione ad oggetti
+
+Il sistema dei tipi Python è ben integrato con il sistema delle classi. Anche se i tipi base non sono precisamente classi, una classe può ereditare da essi. In questo modo è possibile estendere stringhe, dizionari e perfino gli interi. È inoltre supportata l'ereditarietà multipla.
+
+Vengono supportate anche funzionalità estensive di introspezione sui tipi e sulle classi. I tipi e le classi sono a loro volta oggetti che possono essere esplorati e confrontati. Gli attributi sono gestiti in un dizionario.
+Sintassi
+
+Python è stato progettato in modo da essere altamente leggibile. Visivamente si presenta in modo molto semplice e ha pochi costrutti sintattici rispetto a molti altri linguaggi strutturati come C, Perl o Pascal.
+
+Per esempio, Python ha solo due forme di ciclo: for che "cicla" (gira) sugli elementi di una lista o su di un iteratore (equivalente al foreach del Perl) e while che cicla fin tanto che l'espressione booleana indicata risulterà vera. In sostanza manca dei cicli in stile C for, do…while, oppure di until in stile Perl, ma tutti questi possono essere espressi con dei semplici equivalenti. Allo stesso modo ha solamente il costrutto if…elif…else per le scelte condizionate, ma non switch oppure goto (salto incondizionato).
+Indentazione
+
+Un aspetto inusuale del Python è il metodo che usa per delimitare i blocchi di programma, che lo rende unico fra i linguaggi più diffusi.
+
+Nei linguaggi derivati dall'ALGOL – come Pascal, C e Perl – i blocchi di codice sono indicati con le parentesi oppure con parole chiave (il C ed il Perl usano { }; il Pascal usa begin ed end). In questi linguaggi è solo una convenzione degli sviluppatori il fatto di indentare il codice interno ad un blocco, per metterlo in evidenza rispetto al codice circostante.
+
+Python, invece, deriva il suo sistema di indentazione dal meno noto linguaggio di programmazione Occam: invece di usare parentesi o parole chiave, usa l'indentazione stessa per indicare i blocchi nidificati (si può usare sia una tabulazione, sia un numero arbitrario di spazi bianchi, ma lo standard Python è di 4 spazi bianchi). L'esempio che segue chiarisce questo aspetto; sono mostrate la versione C e Python di funzioni per il calcolo del fattoriale di un intero.
+
+Fattoriale in C:
+
+int fattoriale(int x) {
+    if (x == 0)
+        return 1;
+    else
+        return x * fattoriale(x-1);
+}
+
+Fattoriale in Python:
+
+def fattoriale(x):
+    if x == 0:
+        return 1
+    else:
+        return x * fattoriale(x-1)
+
+All'inizio questo modo di indicare i blocchi può confondere le idee a chi viene da altri linguaggi, ma poi si rivela molto vantaggioso, perché risulta molto conciso e obbliga a scrivere sorgenti indentati correttamente, aumentando alquanto la leggibilità del codice. Lo svantaggio è che la gestione degli spazi e dei caratteri di tabulazione può essere diversa da un editor all'altro, il che costringe a fare attenzione nell'indentare il codice oppure ad affidarsi alle funzioni di indentazione automatica ormai presenti nella maggior parte degli editor di programmi.
+Programmazione funzionale e sintassi avanzate
+Voce da controllare
+	Questa voce o sezione sull'argomento informatica è ritenuta da controllare.
+Motivo: Troppe cose e poco chiare. Perché la sintassi avanzata deve stare qui?
+Partecipa alla discussione e/o correggi la voce. Segui i suggerimenti del progetto di riferimento.
+
+Come detto sopra, un altro punto di forza di Python è la disponibilità di elementi che facilitano la programmazione funzionale. Le funzioni sono considerate degli oggetti e sono dunque utilizzabili alla stregua di qualsiasi altro oggetto, ad esempio inserendole in collezioni, o utilizzandole direttamente come parametri per altre funzioni. Gli elementi di programmazione funzionale, insieme a costrutti specifici per la manipolazione di contenitori, rendono ancora più comodo operare con liste o altri tipi contenitore.
+
+Le slicing sono un costrutto simile all'indicizzazione in grado di ottenere sottosequenze specificando gli indici di inizio, di fine, e lo 'step'.
+
+numeri = [1, 2, 3, 4, 5]
+numeri_pari = numeri[1::2] #esempio di slicing
+
+La list comprehension è un costrutto preso dal linguaggio funzionale Haskell e consente il "riempimento" di una lista, come possiamo vedere nel seguente esempio in cui vengono calcolate le prime cinque potenze di due:
+
+numeri = [1, 2, 3, 4, 5]
+potenze_di_due = [2 ** n for n in numeri] #esempio di list comprehension
+
+I generatori sono invece dei particolari oggetti in grado di costruire delle collezioni in maniera dinamica, utili per aumentare l'efficienza in particolare presenza di iterazioni su un gran numero di elementi. Le generator expression, simili alle list comprehension, sono uno strumento rapido ed efficace per creare generatori. La parola chiave yield permette di creare generatori con una sintassi del tutto simile a quella di definizione di funzione.
+
+Passiamo a qualche esempio; generator expression:
+
+numeri = [1, 2, 3, 4, 5]
+potenze_di_due = (2 ** n for n in numeri) #generatore
+
+Oppure, per avere un maggiore controllo, come una normale funzione, con la parola chiave yield al posto di return. In questo modo la funzione 'salva' il suo stato, per poi riprendere l'esecuzione del codice quando viene richiamata.
+
+numeri = [1, 2, 3, 4, 5]
+def potenza_di_due(numeri):
+    for n in numeri:
+        yield 2 ** n
+gen = potenza_di_due(numeri)
+
+L'uso è identico. Si chiama il metodo next() del generatore che restituisce un nuovo valore ogni volta, riprendendo l'esecuzione del codice dalla parola chiave yield. Quando i valori sono finiti, viene alzato un StopIterationError In ogni caso, non è il modo corretto di interagire con i generatori, e si usa la sintassi
+
+gen = (2 ** n for n in range(1, 6))
+for x in gen:
+    print x
+
+Per creare una lista da un generatore, si usa semplicemente la chiamata list(gen)
+
+gen = (2 ** n for n in range(1, 6))
+print list(gen)
+
+I generatori sono preferiti alle liste in quanto non occupano memoria, dato che i valori sono semplicemente calcolati di volta in volta, e non permangono in memoria. Per questo è consigliabile usare, per esempio, xrange (che è un generatore) al posto di range (che ritorna una lista) con numeri molto grandi, per garantire una maggiore velocità
+
+È anche possibile scrivere espressioni if...else su una sola riga, cosa che risulta utile in combinazione con le lambda (vedi sotto).
+
+import random
+l = [1,2]
+a = random.choice(l)
+print 'Giusto!' if a == 1 else 'Sbagliato!'
+
+Dal momento che Python permette di avere funzioni come argomenti, è anche possibile avere costrutti funzionali più sottili, come ad esempio la continuation[3].
+
+In Python esiste la parola chiave lambda, particolarmente utile in contesti dove è necessario svolgere piccole operazioni che probabilmente saranno effettuate solo in quella zona del codice:
+
+>>> l = [1,2,3,4,5] #oppure range(1,6)
+>>> print map(lambda x:x+10, l)
+[11, 12, 13, 14, 15]
+
+Questo uso di map però è contestato e si preferisce usare le list-comprehension:
+
+>>> l = [1,2,3,4,5] #oppure range(1,6)
+>>> print [x+10 for x in l]
+[11, 12, 13, 14, 15]
+
+Tuttavia, i blocchi lambda possono contenere solo espressioni, non statement. Non sono quindi il modo più generale per restituire una funzione. Si può usare invece la seguente tecnica, che restituisce una funzione il cui nome è definito in uno scope locale, ovvero una closure:
+
+def multiple_adder(x, y):
+    def adder(z):
+        return z + x + y
+    return x + y + adder(x + y)  # sarebbe (x + y) * 3
+
+Decoratori
+
+Un decoratore è qualsiasi oggetto di Python chiamabile usato per modificare una funzione, un metodo o una definizione di classe. Un decoratore è passato all'oggetto e ritorna l'oggetto modificato. Sono ispirati in parte dalla notazione Java, e hanno una sintassi simile; viene considerato zucchero sintattico. Usa @ come parola chiave:
+
+@viking_chorus
+def menu_item():
+    print("spam")
+
+I Decoratori possono essere a catena posizionandone diversi in linee adiacenti:
+
+@invincible
+@favorite_color("Blue")
+def black_knight():
+    pass
+
+ed è equivalente a:
+
+def black_knight():
+    pass
+black_knight = invincible(favorite_color("Blue")(black_knight))
+
+La struttura standard del decoratore è:
+
+def favorite_color(color):
+    def decorator(func):
+        def wrapper():
+            print(color)
+            func()
+        return wrapper
+    return decorator
+
+Gestione delle eccezioni
+
+Python supporta e usa estensivamente la gestione delle eccezioni come mezzo per segnalare e controllare eventuali condizioni di errore, incluse le eccezioni generate dagli errori di sintassi.
+
+Le eccezioni permettono un controllo degli errori più conciso ed affidabile rispetto a molti altri modi possibili usati in genere per segnalare errori o situazioni anomale. Le eccezioni sono thread-safe; non sovraccaricano il codice sorgente come fanno invece i controlli sui valori di errore restituiti e, inoltre, possono facilmente propagarsi verso l'alto nello stack delle chiamate a funzione quando un errore deve venire segnalato ad un livello più alto del programma.
+
+Con la gestione delle eccezioni i controlli preventivi sono sostituiti da un più agevole meccanismo che permette di eseguire direttamente l'azione desiderata e catturare separatamente le eventuali eccezioni che si possono verificare. Oltre che per la gestione degli errori, in alcune occasioni le eccezioni sono usate in Python anche per il controllo di flusso: l'operazione di iterazione (e di conseguenza il ciclo for) è ad esempio basata su una segnalazione tramite eccezione.
+Libreria standard
+
+Python ha una vasta libreria standard, il che lo rende adatto a molti impieghi. Oltre ai moduli della libreria standard se ne possono aggiungere altri scritti in C oppure Python per soddisfare le proprie esigenze particolari. Tra i moduli già disponibili ve ne sono per scrivere applicazioni web (sono supportati MIME, HTTP e tutti gli altri standard Internet). Sono disponibili anche moduli per creare applicazioni con interfaccia grafica, per connettersi a database relazionali, per usare le espressioni regolari.
+
+La libreria standard è uno dei punti forti di Python. Essa infatti è compatibile con tutte le piattaforme, ad eccezione di poche funzioni, segnalate chiaramente nella documentazione come specifiche di una piattaforma particolare.
+Altre caratteristiche
+
+Sebbene Python venga in genere considerato un linguaggio interpretato, in realtà il codice sorgente non viene convertito direttamente in linguaggio macchina poiché, invece, passa prima da una fase di pre-compilazione in bytecode. Lo stesso bytecode viene quasi sempre riutilizzato dopo la prima esecuzione del programma, evitando così di dover ogni volta interpretare il sorgente ed incrementando di conseguenza le prestazioni. Inoltre è possibile distribuire programmi Python direttamente in bytecode, saltando a piè pari la fase di interpretazione da parte dell'utilizzatore finale, e permettendo anche di avere programmi Python a sorgente chiuso.
+
+Come il Lisp e a differenza del Perl, l'interprete Python supporta anche un modo d'uso interattivo attraverso il quale è possibile inserire codice direttamente da un terminale, visualizzando immediatamente il risultato.
+
+L'interprete è inoltre contenuto nella libreria standard e come in molti altri linguaggi interpretati è possibile far valutare stringhe arbitrarie nel contesto corrente. È però possibile passare all'interprete anche un contesto completamente diverso, sotto forma di liste che contengono l'elenco dei simboli definiti.
+
+Python dispone anche di un framework per lo unit testing che supporta lo sviluppo di test unitari automatici.
+Prestazioni
+Niente fonti!
+	Questa voce o sezione sull'argomento programmazione non cita le fonti necessarie o quelle presenti sono insufficienti.
+Puoi migliorare questa voce aggiungendo citazioni da fonti attendibili secondo le linee guida sull'uso delle fonti.
+
+Se paragonato ai linguaggi compilati statically typed, come ad esempio il C, la velocità di esecuzione non è uno dei punti di forza di Python, specie nel calcolo matematico. Esiste un'estensione, Psyco, che è una sorta di compilatore JIT e permette di velocizzare in modo notevole alcuni tipi di codice, specialmente l'implementazione di algoritmi, pur pagando un prezzo in termini di memoria utilizzata. Comunque, anche in questo modo un qualunque compito che preveda numerosi calcoli puri non è adatto ad un programma Python.
+
+Le performance di Python sono invece allineate o addirittura superiori ad altri linguaggi interpretati, quali PHP e Ruby, e in certe condizioni può rivaleggiare anche con Java. Non va inoltre dimenticato che Python permette di aggirare in modo facile l'ostacolo delle performance pure: è infatti relativamente semplice scrivere un'estensione in C o C++ e poi utilizzarla all'interno di Python, sfruttando così l'elevata velocità di un linguaggio compilato solo nelle parti in cui effettivamente serve e sfruttando invece la potenza e versatilità di Python per tutto il resto del software. Con opportune accortezze e utilizzando solo moduli standard, in alcuni casi può raggiungere una velocità di esecuzione pari ad un codice equivalente in C, grazie ad una serie di ottimizzazioni interne della PVM.
+Altre implementazioni
+
+Sono attualmente disponibili le seguenti implementazioni di Python:
+
+    Jython, in linguaggio Java[4];
+    IronPython, per la piattaforma Microsoft .NET[5];
+    Python for S60, per i dispositivi con sistema operativo Symbian[6];
+    PyPy: scritta in Python stesso. Ha tra i principali obiettivi la semplificazione dello sviluppo del linguaggio e la sua ottimizzazione in termini prestazionali[7];
+    Lo Scripting Layer for Android (SL4A) per il sistema operativo Android include l'interprete Python 2.6.2.[8].
+
+Esempio di programma
+Hello, world!
+
+Il seguente esempio di programma Python (versione 3.0) stampa il testo "Hello, world!":
+
+print("Hello, world!")
+
+Il seguente è lo stesso programma funzionante con la versione 2.7 o precedenti:
+
+print "Hello, world!"
+
+Python include al suo interno 2 moduli Easter egg che riproducono lo stesso output:
+
+import __hello__
+ 
+import __phello__
+
+Definizione di una classe
+
+In Python è possibile creare classi attraverso un'istruzione specifica (class), che rappresenta l'alternativa più semplice ma non esclusiva per definire nuovi tipi di dato. Caratteristiche peculiari in Python sono la possibilità di eredità multipla, la definizione di attributi tramite inizializzazione e non tramite dichiarazione, la dichiarazione esplicita del parametro riflessivo nei metodi d'istanza, e l'overloading di funzioni e operatori. Il parametro riflessivo è per convenzione chiamato self, ma il linguaggio non impone alcuna restrizione in merito alla scelta. Nessuna restrizione è posta anche alla definizione degli attributi: gli attributi esistono dal momento in cui vengono assegnati, e questo può avvenire al momento della costruzione (metodo __init__, da preferire), ma anche all'interno di altri metodi, e possono anche essere aggiunti esternamente alla classe o direttamente a un oggetto. Python fa distinzione tra metodi d'istanza, di classe o statici. Gli attributi possono essere invece d'istanza o di classe. Il supporto all'information hiding è parziale, ma integrato dallo strumento delle property che permettono di definire degli attributi virtuali con le caratteristiche di accesso volute. Sono inoltre previsti dei metodi "speciali" associati a operatori e funzioni di built-in. Ad esempio, ridefinendo il metodo __add__ si ridefinisce l'operatore di addizione quando il primo operando sia del tipo definito, mentre __str__ ridefinisce la conversione a stringa. Non è invece permesso l'overloading dei metodi. Attraverso l'uso della riflessione e delle metaclassi è inoltre possibile personalizzare ulteriormente la definizione delle classi.
+
+Ad esempio, una classe Persona, avente solo un semplice costruttore e un metodo che restituisce il nome completo. È caldamente consigliato creare solo classi "new style", ovverosia classi che ereditano (direttamente o indirettamente) da object[9]
+
+class Persona(object):
+    # Inizializzatore della classe
+    def __init__(self, nome, cognome):
+        self.name = nome
+        self.surname = cognome
+ 
+    def fullname(self):
+        full = "Sig. " + self.surname + " " + self.name
+        return full
+ 
+persona = Persona('Mario', 'Rossi')
+print(persona.fullname())
+
+L'output presentato sarà il seguente: Sig. Rossi Mario
+Note
+
+    ^ Dal file README della distribuzione 2.6.4: "What is Python anyway? Python is an interpreted, interactive object-oriented programming language suitable (amongst other uses) for distributed application development, scripting, numeric computing and system testing. Python is often compared to Tcl, Perl, Java, JavaScript, Visual Basic or Scheme."
+    ^ Fonte: http://www.python.org/search/hypermail/python-1992/0001.html
+    ^ Continuations Made Simple and Illustrated
+    ^ Jython: Python for the Java Platform
+    ^ IronPython: the Python programming language for the .NET Framework
+    ^ The Python programming language for S60 mobile phones
+    ^ PyPy
+    ^ SL4A su Google Code
+    ^ Un nuovo stile per le classi | Python-it.org # il punto di riferimento italiano per gli appassionati di Python
+
+Voci correlate
+
+    VPython
+    Linguaggio di scripting
+
+Altri progetti
+
+    Collabora a Wikibooks Wikibooks contiene testi o manuali su Python
+    Collabora a Wikimedia Commons Wikimedia Commons contiene immagini o altri file su Python
+
+Collegamenti esterni
+
+    (EN) Sito ufficiale
+    (EN) Documentazione ufficiale
+    Documentazione italiana
+    Python.it - Sito italiano dedicato alla programmazione in Python
+    Pensare da informatico Introduzione alla programmazione attraverso Python
+    Guida di Python
+
