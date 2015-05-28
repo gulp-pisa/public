@@ -1,0 +1,1 @@
+../Lezione_2/testo.txt
