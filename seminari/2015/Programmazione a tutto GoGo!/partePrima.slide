@@ -1,0 +1,102 @@
+Introduzione a GO
+
+Vincenzo Di Somma
+vincenzo.disomma@gmail.com
+
+* Prima parte
+.image gopherbw.png 300 300
+
+
+* Introduzione
+Go e` un linguaggio di programmazione orientato alla concorrenza sviluppato da Google.
+
+Unisce compilazione nativa e static typing alla leggerezza tipica dei linguaggi dinamici.
+
+Il motto e`: fast, fun, and productive.
+
+* Funzionalita`
+
+- Generazione di codice nativo (compilato)
+- Staticamente tipato
+- Composizione di tipi tramite interfacce
+- Memory safe
+- Garbage collected
+- Supporto nativo della concorrenza
+
+* Storia di Go
+Iniziato come progetto Google 20%  nel tardo 2007.
+
+Rilasciato in open source nel Novembre 2009.
+
+Go 1 rilasciato nel Marzo 2012.
+
+* Peculiarita` di Go
+
+La principale peculiarita` di go e` il supporto nativo alla programmazione concorrente
+
+Sviluppato sul modello CSP di C.A.R. Hoare
+https://en.wikipedia.org/wiki/Communicating_sequential_processes
+
+* Types
+
+Go's basic types are
+
+     bool
+
+     string
+
+     int  int8  int16  int32  int64
+     uint uint8 uint16 uint32 uint64 uintptr
+
+     byte // alias for uint8
+
+     rune // alias for int32
+          // rappresenta un code point Unicode
+
+     float32 float64
+
+     complex64 complex128
+
+* Struct
+.code struct.go /^type /,/^}/
+.code struct.go /^func \(r rect\) area/,/^}/
+.code struct.go /^func \(r rect\) perim/,/^}/
+
+* Pointers and Values
+.code struct.go /^func \(r \*rect\) SetColor/,/^}/
+.code struct.go /^func \(r rect\) Color/,/^}/
+
+* Struct
+.code struct.go /^func main/,/^}/
+
+* Interfacce (no generics, spiacente...)
+.code interfaces.go /^type geometry /,/^}/
+
+* Interfacce
+.code interfaces.go /^type rect /,/^}/
+.code interfaces.go /^func \(r rect\) area/,/^}/
+.code interfaces.go /^func \(r rect\) perim/,/^}/
+
+* Interfacce
+.code interfaces.go /^type circle /,/^}/
+.code interfaces.go /^func \(c circle\) area/,/^}/
+.code interfaces.go /^func \(c circle\) perim/,/^}/
+
+* Interfacce
+.code interfaces.go /^func measure/,/^}/
+.code interfaces.go /^func main/,/^}/
+
+* Interface checks
+.code interfacesCheck.go
+
+* Go routines
+.code goroutine.go
+
+* Channels
+.code channel.go
+
+* Errors
+.code error.go
+
+* Panic
+.code panic.go
