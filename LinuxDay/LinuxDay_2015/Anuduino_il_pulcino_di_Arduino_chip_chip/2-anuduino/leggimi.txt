@@ -1,0 +1,4 @@
+scaricare il manuale su http://anuduino.os-hardware.in/download
+
+un IDE, deli esempi e lo schema sono scaricabili su http://anuduino.os-hardware.in/downloads
+

@@ -1,0 +1,108 @@
+ *************************************
+|GUIDA PER SCHEDINA DigisparkAttini85 |
+ *************************************
+
+
+======================================
+Collegare e lanciare da terminale dmsg
+======================================
+
+Viene rilevata la scheda
+
+
+New USB device found, idVendor=16d0, idProduct=0753
+
+
+========================================================
+creare un file in /etc/udev/rule.d/49-micronucleus.rules
+========================================================
+
+
+# UDEV Rules for Micronucleus boards including the Digispark.
+# This file must be placed at:
+#
+# /etc/udev/rules.d/49-micronucleus.rules    (preferred location)
+#   or
+# /lib/udev/rules.d/49-micronucleus.rules    (req'd on some broken systems)
+#
+# After this file is copied, physically unplug and reconnect the board.
+#
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", MODE:="0666"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", MODE:="0666", ENV{ID_MM_DEVIC$
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="0753", MODE:="0666"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="0753", MODE:="0666", ENV{ID_MM_DEVIC$
+#
+# If you share your linux system with other users, or just don't like the
+# idea of write permission for everybody, you can replace MODE:="0666" with
+# OWNER:="yourusername" to create the device owned by you, or with
+# GROUP:="somegroupname" and mange access using standard unix groups.
+
+
+
+==========================================
+aggiungere in file /etc/udev/99-key4.rules
+==========================================
+
+ATTRS{idVendor}=="072f", ATTRS{idProduct}=="100d", RUN+="$
+
+===========================
+potrebbe servire rilanciare
+===========================
+
+udevadm control --reload-rules
+
+===============
+scaricare l'IDE
+===============
+
+https://digistump.com/wiki/digispark/tutorials/connecting#software
+
+===============
+impostare l'IDE
+===============
+
+Strumenti -> Scheda -> Digispark(Default - 16.5mhz)
+
+
+===================
+Trucco per caricare 
+===================
+
+Collegando il cavetto alla USB, la porta non viene rilevata.
+Non collegare fino a che non viene indicato sul terminale in basso all'IDE
+Precedere con:
+1 - creare il programma
+2 - compilare
+3 - lanciare l'upload, quando esce la scritta 
+    Plug in device now ... (will timeout in 60 seconds)
+    collegare il cavetto della USB e verrà completato l'upload sulla scheda
+    
+================
+Scketch di prova
+================
+
+int led = 1;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(led, OUTPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(led, HIGH);
+  delay(2000);
+  digitalWrite(led, LOW);
+  delay(1000);
+  digitalWrite(led, HIGH);
+  delay(500);
+  digitalWrite(led, LOW);
+  delay(500);
+}
+
+----------------------
+FINE :)
+
+
+
