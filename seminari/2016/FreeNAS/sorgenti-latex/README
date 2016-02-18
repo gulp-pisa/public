@@ -1,0 +1,27 @@
+------------------------------
+ Beamer-laughlin, version 1.0 
+------------------------------
+
+
+beamer-laughlin is a LaTeX Beamer theme inspired by the Laughlin Fedora 14 theme
+(http://fedoraproject.org/wiki/F14_Artwork) and the Anaconda GUI layout
+(http://fedoraproject.org/wiki/Anaconda).
+
+This package requires the comfortaa and cantarell ones, available at
+http://melmorabity.fedorapeople.org/latex/.
+
+To install it, once the archive extracted:
+1. Copy doc/, fonts/, source/, and tex/ directories to your texmf/ directory
+   (either your local or global texmf/ directory).
+2. Run mktexlsr to refresh the file name database and make TeX aware of the new
+   files.
+
+Documentation is available in doc/latex/beamer-laughlin/example.tex
+
+This package is released under the LaTeX Project Public License, either version
+1.3c or above, with the exception of the .png/.eps images, taken from the
+generic-logos rpm package for Fedora 14, and licensed under the GNU Public
+License, version 2.
+
+If you have comments about the package, please contact Mohamed El Morabity
+(melmorabity AT fedoraproject DOT org).

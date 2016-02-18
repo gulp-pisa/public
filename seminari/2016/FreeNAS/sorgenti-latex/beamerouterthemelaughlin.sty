@@ -1,0 +1,384 @@
+%% beamerouterthemelaughlin.tex
+%% Copyright 2010 Mohamed El Morabity
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version. The latest version of this license is in
+% http://www.latex-project.org/lppl.txt and version 1.3 or later is part of all
+% distributions of LaTeX version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Mohamed El Morabity
+%
+% This work consists of all files listed in manifest.txt.
+
+\mode<presentation>
+
+%%% Available options
+
+% Language for button labels
+\def\laughlin@french{french}
+\def\laughlin@italian{italian}
+\def\laughlin@german{german}
+\def\laughlin@portuguese{portuguese}
+\def\laughlin@spanish{spanish}
+
+\def\laughlin@back{Back}
+\def\laughlin@forward{Forward}
+
+\DeclareOptionBeamer{language}{%
+  \def\laughlin@language{#1}
+
+  \ifx\laughlin@language\laughlin@french%
+    \def\laughlin@back{Pr\'ec\'edent}%
+    \def\laughlin@forward{Suivant}%
+  \fi
+
+  \ifx\laughlin@language\laughlin@german%
+    \def\laughlin@back{Zur\"uck}%
+    \def\laughlin@forward{Vor}%
+  \fi
+
+  \ifx\laughlin@language\laughlin@italian%
+    \def\laughlin@back{Indietro}%
+    \def\laughlin@forward{Avanti}%
+  \fi
+
+  \ifx\laughlin@language\laughlin@portuguese%
+    \def\laughlin@back{Voltar}%
+    \def\laughlin@forward{Avan\c car}%
+  \fi
+  
+  \ifx\laughlin@language\laughlin@spanish%
+    \def\laughlin@back{Atr\'as}%
+    \def\laughlin@forward{Adelante}%
+  \fi
+}
+
+
+% Process options by default...
+\ExecuteOptionsBeamer{language=english}
+\ProcessOptionsBeamer
+
+
+% Use the "sidebar" theme, with no header and a left sidebar as base
+\useoutertheme[width=2.56cm,height=0pt,left]{sidebar}
+
+% Load the side bar image if enabled
+\pgfdeclareimage[height=\paperheight]{laughlin@sidebarimage}{laughlin-sidebar}
+
+
+%%% Mandatory packages
+\@ifpackageloaded{tikz}{}{%
+  \RequirePackage{tikz}
+}
+\@ifpackageloaded{calc}{}{%
+  \RequirePackage{calc}
+}
+\@ifpackageloaded{multido}{}{%
+  \RequirePackage{multido}
+}
+
+
+%%% Some variables
+
+%%% Progressbar dimensions
+%
+% ┊                   ┊                                                         ┊
+% │                   │      ←────────────────────(D)────────────────────→      │
+% │      sidebar      │     ╭─────────────────────────────────────────────╮ ↑   │  ↑
+% │                   │←(B)→│                progress bar                 │(E)  │  │
+% │     ┌───────────┐ │     ╰─────────────────────────────────────────────╯ ↓   │  │
+% │     │           │ │                            ↑                            │  │
+% │←(K)→│    logo   │ │                           (F)                     ┊←(C)→│  │
+% │     │           │ │                            ↓                            │  │
+% │     └───────────┘ │                         ╭─────────╮     ╭─────────╮ ↑   │ (M)
+% │           ↑       │                         │  button │←(I)→│  button │(H)  │  │
+% │           │       │                         ╰─────────╯     ╰─────────╯ ↓   │  │
+% │          (L)      │                              ↑           ←──(G)──→      │  │
+% │           │       │                             (J)                         │  │
+% │           ↓       │                              ↓                          │  ↓
+% └───────────────────┴─────────────────────────────────────────────────────────┘
+%                      ←──────────────────────────(A)──────────────────────────→
+
+% (A)
+\newdimen\laughlin@panelwidth
+\laughlin@panelwidth=\paperwidth
+\advance\laughlin@panelwidth by -\beamer@sidebarwidth
+
+% (B)
+\newdimen\laughlin@barleftspace
+\laughlin@barleftspace=\laughlin@panelwidth
+\advance\laughlin@barleftspace by -\textwidth
+\advance\laughlin@barleftspace by -8bp
+\divide\laughlin@barleftspace by 2
+
+% (C)
+\newdimen\laughlin@barrightspace
+\laughlin@barrightspace=\laughlin@barleftspace
+
+% (D)
+\newdimen\laughlin@barwidth
+\laughlin@barwidth=\laughlin@panelwidth
+\advance\laughlin@barwidth by -\laughlin@barleftspace
+\advance\laughlin@barwidth by -\laughlin@barrightspace
+
+% (E)
+\newdimen\laughlin@barheight
+\laughlin@barheight=1.5mm
+\settototalheight{\laughlin@barheight}{\usebeamerfont{sidebar}X}
+\multiply\laughlin@barheight by 2
+
+% (F)
+\newdimen\laughlin@barbuttonsdistance
+\laughlin@barbuttonsdistance=\laughlin@barrightspace
+\divide\laughlin@barbuttonsdistance by 2
+
+% (G)
+\newdimen\laughlin@buttonwidth
+\laughlin@buttonwidth=1.25cm
+
+% (H)
+\newdimen\laughlin@buttonheight
+\laughlin@buttonheight=\laughlin@barheight
+
+% (I)
+\newdimen\laughlin@buttonspace
+\laughlin@buttonspace=\laughlin@barbuttonsdistance
+
+% (J)
+\newdimen\laughlin@barbottomspace
+\laughlin@barbottomspace=\laughlin@barbuttonsdistance
+
+% (K)
+\newdimen\laughlin@logoleftspace
+\laughlin@logoleftspace=\laughlin@barbottomspace
+
+% (L)
+\newdimen\laughlin@logobottomspace
+\laughlin@logobottomspace=\laughlin@logoleftspace
+
+% (M)
+\newdimen\laughlin@panelheight
+\laughlin@panelheight=\laughlin@barheight
+\advance\laughlin@panelheight by \laughlin@barbuttonsdistance
+\advance\laughlin@panelheight by \laughlin@buttonheight
+\advance\laughlin@panelheight by \laughlin@barbottomspace  
+
+
+%%% Rounding corners for the progress bar
+\newdimen\laughlin@barroundedcorners
+\laughlin@barroundedcorners=0.5mm
+
+
+%%% Rounding corners for the buttons
+\newdimen\laughlin@buttonroundedcorners
+\laughlin@buttonroundedcorners=\laughlin@barroundedcorners
+
+
+% Some temporary variables
+\newdimen\laughlin@temp@dimen@a
+\newcount\laughlin@temp@count@a
+\newcount\laughlin@temp@count@b
+
+
+
+
+
+%%% Arrow
+\def\laughlin@arrow#1{%
+  \settototalheight{\laughlin@temp@dimen@a}{X}
+  \tikzstyle{laughlin@arrow} = [%
+    draw=sidebar.bg,%
+    top color=sidebar.bg!50,%
+    bottom color=sidebar.bg,%
+    rotate around={#1:(\laughlin@temp@dimen@a,0.5\laughlin@temp@dimen@a)},%
+    rounded corners=0cm,%
+    very thin%
+  ]
+  \begin{tikzpicture}[baseline,very thin]
+    \draw[laughlin@arrow] (0.25\laughlin@temp@dimen@a, 0.5\laughlin@temp@dimen@a) %
+      circle (0.2\laughlin@temp@dimen@a);
+    \draw[laughlin@arrow] (0.875\laughlin@temp@dimen@a, 0.5\laughlin@temp@dimen@a) %
+      circle (0.2\laughlin@temp@dimen@a);
+    \draw[laughlin@arrow] (\laughlin@temp@dimen@a, -0.5\laughlin@temp@dimen@a) -- %
+      (2\laughlin@temp@dimen@a, 0.5\laughlin@temp@dimen@a) [rounded corners=0.2\laughlin@temp@dimen@a] -- %
+      (\laughlin@temp@dimen@a, 1.5\laughlin@temp@dimen@a) -- %
+      (0.75\laughlin@temp@dimen@a, 1.25\laughlin@temp@dimen@a) [sharp corners] -- %
+      (1.5\laughlin@temp@dimen@a, 0.5\laughlin@temp@dimen@a) [rounded corners=0.2\laughlin@temp@dimen@a] -- %
+      (0.75\laughlin@temp@dimen@a, -0.25\laughlin@temp@dimen@a) -- cycle;
+  \end{tikzpicture}%
+}
+
+%%% Right and left arrows
+\def\laughlin@forwardarrow{\laughlin@arrow{0}}
+\def\laughlin@backarrow{\laughlin@arrow{180}}
+
+
+
+%%% Buttons
+
+% Draw a button at the position (#1, #2) containing the label #3
+\def\laughlin@button#1#2#3{%
+  \draw (#1, #2) %
+    node[%
+      below left,%
+      draw=normal text.fg!50,%
+      shading=axis,%
+      top color=normal text.fg!5,%
+      bottom color=normal text.fg!20,%
+      minimum width=\laughlin@buttonwidth,%
+      minimum height=\laughlin@buttonheight,%
+      inner sep=0pt%
+    ] {#3};%
+}
+
+% Draw a "Forward" button at the position (#1, #2)
+\def\laughlin@forwardbutton#1#2{%
+  \laughlin@button{#1}{#2}{\hyperlinkslidenext{\laughlin@forwardarrow~\textnormal{\laughlin@forward}}}%
+}
+
+% Draw a "Back" button at the position (#1, #2)
+\def\laughlin@backbutton#1#2{%
+  \laughlin@button{#1}{#2}{\hyperlinkslideprev{\laughlin@backarrow~\textnormal{\laughlin@back}}}%
+}
+
+
+%%% Progress bar
+\def\laughlin@progressbar{%
+  % No draw if there is only one slide
+  \ifnum\inserttotalframenumber=1
+  \else
+    % Compute the width of the filled part of the progress bar
+    \laughlin@temp@count@a=\insertframenumber
+    \advance\laughlin@temp@count@a by -1
+    \laughlin@temp@count@b=\inserttotalframenumber
+    \advance\laughlin@temp@count@b by -1
+    \laughlin@temp@dimen@a=\laughlin@barwidth
+    \multiply\laughlin@temp@dimen@a by \laughlin@temp@count@a
+    \divide\laughlin@temp@dimen@a by \laughlin@temp@count@b
+
+    % Compute the number of strips in the filled part of the progress bar
+    \laughlin@temp@count@a=\laughlin@temp@dimen@a
+    \divide\laughlin@temp@count@a by 2
+    \divide\laughlin@temp@count@a by \laughlin@barheight
+    \advance\laughlin@temp@count@a by 1
+  \fi
+
+  \begin{tikzpicture}[rounded corners=\laughlin@barroundedcorners,very thin]
+    \usebeamercolor{sidebar}
+    \usebeamerfont{sidebar}
+
+    % Draw the background
+    \shade[%
+        top color=normal text.fg!25,%
+        bottom color=normal text.fg!15%
+        ]
+      (0pt, 0pt) rectangle ++ %
+      (\laughlin@barwidth, \laughlin@barheight) %
+      node[ %
+        midway,%
+        color=normal text.fg%
+      ] {\textnormal{\insertframenumber/\inserttotalframenumber}};
+
+    % Fill the bar according to the page number
+    \ifnum\insertframenumber=1
+    \else
+      \shade[%
+          draw=sidebar.bg,%
+          top color=sidebar.bg!50,%
+          bottom color=sidebar.bg%
+        ] %
+        (0pt, 0pt) rectangle ++ %
+        (\laughlin@temp@dimen@a, \laughlin@barheight);
+
+      % Draw the strips
+      \begin{scope}
+        \clip %
+          (0pt, 0pt) rectangle %
+          (\laughlin@temp@dimen@a, \laughlin@barheight);
+          \multido{\i=0+2}{\laughlin@temp@count@a}{%
+            \shade[top color=sidebar.bg!50,%
+                bottom color=sidebar.bg!90,%
+                xshift=\i\laughlin@barheight%
+              ] (0pt, 0pt) (0pt, 0pt) -- %
+              (\laughlin@barheight, 0pt) -- %
+              (2\laughlin@barheight, \laughlin@barheight) -- %
+              (\laughlin@barheight, \laughlin@barheight) -- cycle;%
+        }
+
+        \node[%
+            color=-normal text.fg%
+          ] %
+          at (0.5\laughlin@barwidth, 0.5\laughlin@barheight) %
+          {\textnormal{\insertframenumber/\inserttotalframenumber}};
+      \end{scope}
+    \fi
+
+    % Draw the edge of the bar
+    \draw[%
+        color=normal text.fg!50%
+      ] %
+      (0pt, 0pt) rectangle %
+      (\laughlin@barwidth, \laughlin@barheight);
+
+    % Insert the title of the presentation
+    \draw (0pt, -\laughlin@barbuttonsdistance) %
+      node[%
+        below right, %
+        minimum height=\laughlin@buttonheight, %
+        color=sidebar.bg%
+      ] {\usebeamerfont{footline}\insertshorttitle};
+
+    % Insert the buttons
+    \laughlin@temp@dimen@a=\laughlin@barwidth
+    \ifnum\insertframenumber=\inserttotalframenumber
+      % No "Forward" button in the last slide
+    \else
+      \advance\laughlin@temp@dimen@a by -\laughlin@buttonspace
+      \advance\laughlin@temp@dimen@a by -\laughlin@buttonwidth
+      \laughlin@forwardbutton{\laughlin@barwidth}{-\laughlin@barbuttonsdistance};
+    \fi
+    
+    \ifnum\insertframenumber=1
+      % No "Back" button in the first slide
+    \else
+      \laughlin@backbutton{\laughlin@temp@dimen@a}{-\laughlin@barbuttonsdistance}
+    \fi
+  \end{tikzpicture}%
+}
+
+
+
+
+%%% The background color of the frametitle is the same than the
+%%% presentation one
+\setbeamercolor*{frametitle}{parent=structure}
+
+
+%%% Set the background in the sidebar
+\setbeamercolor*{frametitle}{parent=structure}
+\defbeamertemplate*{sidebar canvas left}{laughlin theme}{\pgfuseimage{laughlin@sidebarimage}}
+
+
+%%% Set the progress bar in the footlines of the slides
+\defbeamertemplate*{footline}{laughlin theme}{%
+  \leavevmode%
+  \begin{beamercolorbox}[wd=\beamer@sidebarwidth,ht=\laughlin@panelheight,leftskip=\laughlin@logoleftspace,ignorebg]{logo}
+    \insertlogo
+    \vskip \laughlin@logobottomspace
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\laughlin@panelwidth,ht=\laughlin@panelheight,center,ignorebg]{footline}
+    \laughlin@progressbar
+    \vskip \laughlin@barbottomspace
+  \end{beamercolorbox}
+  \vskip0pt%
+}
+
+
+%%% Disable navigation symbols (useless with the progress bar buttons)
+\setbeamertemplate{navigation symbols}{}
+
+
+\mode<all>
