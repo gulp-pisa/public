@@ -1,0 +1,3 @@
+vedi :
+https://github.com/PisaCoderDojo/LinuxDay2016-Slides
+https://pisacoderdojo.github.io/LinuxDay2016-Slides/
