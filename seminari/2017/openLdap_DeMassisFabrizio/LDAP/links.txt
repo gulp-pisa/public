@@ -1,0 +1,8 @@
+Samba+LDAP
+
+http://help.ubuntu-it.org/10.04/ubuntu/serverguide/it/samba-ldap.html
+http://help.ubuntu-it.org/10.04/ubuntu/serverguide/it/openldap-server.html#openldap-configuration
+
+Multimaster
+https://www.barryodonovan.com/2013/01/28/multi-master-ldap-replication
+http://www.openldap.org/doc/admin24/replication.html#N-Way%20Multi-Master

@@ -1,0 +1,22 @@
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 3b1e1a41
+dn: olcDatabase={0}config
+objectClass: olcDatabaseConfig
+olcDatabase: {0}config
+olcAccess: {0}to * by dn.exact=gidNumber=0+uidNumber=0,cn=peercred,cn=external
+ ,cn=auth manage by * break
+structuralObjectClass: olcDatabaseConfig
+entryUUID: 3f9ac3ea-53b7-1035-8978-1d54a7d41b7f
+creatorsName: cn=config
+createTimestamp: 20160120114655Z
+olcRootPW:: e1NTSEF9Qnp3d0RUV1p4Qkl6RUE2TGJCWm02c29SL1hoRmhyVC8=
+olcSyncrepl: {0}rid=001 provider=ldap://Ldap-1/ binddn="cn=config"  bindmethod
+ =simple credentials=_SerVic3_ searchbase="cn=config" type=refreshAndPersist r
+ etry="5 5 300 5" timeout=1
+olcSyncrepl: {1}rid=002 provider=ldap://Ldap-2/ binddn="cn=config"  bindmethod
+ =simple credentials=_SerVic3_ searchbase="cn=config" type=refreshAndPersist r
+ etry="5 5 300 5" timeout=1
+olcMirrorMode: TRUE
+entryCSN: 20160211155333.783490Z#000000#001#000000
+modifiersName: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+modifyTimestamp: 20160211155333Z

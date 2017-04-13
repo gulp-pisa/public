@@ -1,0 +1,49 @@
+version: 1
+
+dn: olcDatabase={1}hdb,cn=config
+objectClass: olcHdbConfig
+objectClass: olcDatabaseConfig
+olcDatabase: {1}hdb
+olcDbDirectory: /var/lib/ldap
+olcAccess: {0}to attrs=userPassword,shadowLastChange by self write by anonym
+ ous auth by dn="uid=admin,ou=users,dc=adf,dc=local" write by * none
+olcAccess: {1}to dn.base="" by * read
+olcAccess: {2}to * by self write by dn="uid=admin,ou=users,dc=adf,dc=local" 
+ write by * read
+olcDbCheckpoint: 512 30
+olcDbConfig: {0}set_cachesize 0 2097152 0
+olcDbConfig: {1}set_lk_max_objects 1500
+olcDbConfig: {2}set_lk_max_locks 1500
+olcDbConfig: {3}set_lk_max_lockers 1500
+olcDbIndex: objectClass eq
+olcDbIndex: uidNumber eq
+olcDbIndex: gidNumber eq
+olcDbIndex: loginShell eq
+olcDbIndex: uid eq,pres,sub
+olcDbIndex: memberUid eq,pres,sub
+olcDbIndex: uniqueMember eq,pres
+olcDbIndex: displayName  eq
+olcDbIndex: cn eq
+olcDbIndex: sambaSID eq
+olcDbIndex: sambaPrimaryGroupSID eq
+olcDbIndex: sambaGroupType eq
+olcDbIndex: sambaSIDList eq
+olcDbIndex: sambaDomainName eq
+olcDbIndex: default sub
+olcLastMod: TRUE
+olcMirrorMode: TRUE
+olcRootDN: cn=manager,dc=adf,dc=local
+olcRootPW: {SSHA}TIcB1XmxU8E8Cx2ROtnLrM6CPr75TIvn
+olcSuffix: dc=adf,dc=local
+olcSyncrepl: {0}rid=003 provider=ldap://Ldap-1/ binddn="cn=manager,dc=adf,dc
+ =local"  bindmethod=simple credentials=_SerVic3_ searchbase="dc=adf,dc=loca
+ l" type=refreshAndPersist retry="5 5 300 5" timeout=1
+olcSyncrepl: {1}rid=004 provider=ldap://Ldap-2/ binddn="cn=manager,dc=adf,dc
+ =local"  bindmethod=simple credentials=_SerVic3_ searchbase="dc=adf,dc=loca
+ l" type=refreshAndPersist retry="5 5 300 5" timeout=1
+
+dn: olcOverlay={0}syncprov,olcDatabase={1}hdb,cn=config
+objectClass: olcSyncProvConfig
+objectClass: olcOverlayConfig
+olcOverlay: {0}syncprov
+

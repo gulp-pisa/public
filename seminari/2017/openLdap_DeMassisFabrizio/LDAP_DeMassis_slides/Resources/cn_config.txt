@@ -1,0 +1,32 @@
+cn=config.ldif   << file .ldif
+
+cn=config
+./cn=config:     << cartella
+
+
+olcDatabase={-1}frontend.ldif
+
+
+olcDatabase={0}config.ldif
+./cn=config/olcDatabase={0}config
+  olcOverlay={0}syncprov.ldif
+
+ 
+olcDatabase={1}hdb.ldif
+./cn=config/olcDatabase={1}hdb
+ olcOverlay={0}syncprov.ldif
+
+olcDatabase={2}monitor.ldif
+
+cn=module{0}.ldif
+
+
+cn=schema.ldif
+cn=schema
+./cn=config/cn=schema
+ cn={0}core.ldif
+ cn={1}cosine.ldif
+ cn={2}nis.ldif
+ cn={3}inetorgperson.ldif
+ cn={4}samba.ldif
+

@@ -1,0 +1,131 @@
+##### ---------------------------------------------------------------------------------------------------
+###     #N.B. La password si ottiene con il comando slappasswd
+##### ---------------------------------------------------------------------------------------------------
+#LDAP1
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=config
+changetype: modify
+add: olcServerID
+olcServerID: 1
+EOF
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=module{0},cn=config
+changetype: modify
+add: olcModuleLoad
+olcModuleLoad: {1}syncprov.la
+EOF
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+add: olcRootPW
+olcRootPW:{SSHA}BzwwDTWZxBIzEA6LbBZm6soR/XhFhrT/
+EOF
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=config
+changetype: modify
+replace: olcServerID
+olcServerID: 1 ldap://Ldap-1/
+olcServerID: 2 ldap://Ldap-2/
+EOF
+
+
+#LDAP2
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=config
+changetype: modify
+add: olcServerID
+olcServerID: 2
+EOF
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=module{0},cn=config
+changetype: modify
+add: olcModuleLoad
+olcModuleLoad: {1}syncprov.la
+EOF
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+replace: olcRootPW
+olcRootPW:{SSHA}BzwwDTWZxBIzEA6LbBZm6soR/XhFhrT/
+EOF
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=config
+changetype: modify
+replace: olcServerID
+olcServerID: 1 ldap://ldap1/
+olcServerID: 2 ldap://ldap2/
+
+##### ---------------------------------------------------------------------------------------------------
+
+
+### START REPLICA OF CONFIG DB (LDAP-1/2)
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcOverlay=syncprov,olcDatabase={0}config,cn=config
+changetype: add
+objectClass: olcOverlayConfig
+objectClass: olcSyncProvConfig
+olcOverlay: syncprov
+EOF
+
+
+### LDAP-1/LDAP-2
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+replace: olcSyncRepl
+olcSyncRepl: rid=001 provider=ldap://Ldap-1/ binddn="cn=config" 
+             bindmethod=simple credentials=password
+             searchbase="cn=config" type=refreshAndPersist
+             retry="5 5 300 5" timeout=1
+olcSyncRepl: rid=002 provider=ldap://Ldap-2/ binddn="cn=config" 
+             bindmethod=simple credentials=password
+             searchbase="cn=config" type=refreshAndPersist
+             retry="5 5 300 5" timeout=1
+-
+replace: olcMirrorMode
+olcMirrorMode: TRUE
+EOF
+
+
+##### ---------------------------------------------------------------------------------------------------
+
+
+### START REPLICA OF DATA DB (LDAP-1/2)
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcOverlay=syncprov,olcDatabase={1}hdb,cn=config
+changetype: add
+objectClass: olcOverlayConfig
+objectClass: olcSyncProvConfig
+olcOverlay: syncprov
+EOF
+
+
+### LDAP-1/LDAP-2
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+replace: olcSyncRepl
+olcSyncRepl: rid=003 provider=ldap://Ldap-1/ binddn"cn=manager,dc=acme,dc=tld"
+             bindmethod=simple credentials=password searchbase="dc=acme,dc=tld" 
+             searchbase="dc=acme,dc=tld" type=refreshAndPersist
+             retry="5 5 300 5" timeout=1
+olcSyncRepl: rid=004 provider=ldap://Ldap-2/ binddn"cn=manager,dc=acme,dc=tld"
+             bindmethod=simple credentials=password searchbase="dc=acme,dc=tld" 
+             searchbase="dc=acme,dc=tld" type=refreshAndPersist
+             retry="5 5 300 5" timeout=1
+-
+replace: olcMirrorMode
+olcMirrorMode: TRUE
+EOF

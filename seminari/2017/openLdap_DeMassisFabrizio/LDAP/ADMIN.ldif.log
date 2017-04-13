@@ -1,0 +1,12 @@
+version: 1
+
+#!RESULT OK
+#!CONNECTION ldap://52.16.193.103:389
+#!DATE 2017-04-12T19:52:22.700
+dn: cn=admin,dc=gulp,dc=local
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+userPassword:: e1NTSEF9U01mT2VORlFzWTJSV0F2RVE4VzhOYUJLSVBWMkQvWWY=
+description: LDAP administrator
+

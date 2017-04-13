@@ -1,0 +1,38 @@
+Nelle cartelle da 1) a 4) sono raccolte le immagini di oggetti realizzati 
+con openscad e poi stampati con una stampate 3D.
+1) si tratta dei tappi con feritoie di ingresso del flusso di acqua 
+   di un filtro per un acquario;
+2) si tratta della ruota e degli alloggiamenti per ruote in metallo di un 
+   motore per finestre;
+3) si tratta di una staffa dove fissare una piccola macchina fotografica 
+   e da posizionare sopra ad un oculare di un microscopio. E' stato preso spunto 
+   da una realizzazione fatta, per analogo uso, ma per un telescopio;
+4) si tratta del fronte e del retro di una ventola, recuperata da un vecchio computer, 
+   da montare (rispetto all'uso originario)  alla rovescia, con la funzione di 
+   aspirazione. Lo scopo e quello di realizzare un sistemino di aspirazione per 
+   esempio dei fumi di saldatura.
+
+Nella cartella 5) sono raccolte delle immagini di strumenti per fare i 
+rilievi degli oggetti da replicare.
+
+Nella cartella 6) sono raccolte le foto di una macchina per fare la pasta! 
+a titolo di esempio del concetto di estrusione.
+
+il file esercitazione.scad raccoglie degli esempi commentati. Per l'uso, in openscad 
+decommentare il codice a pezzi e premere F5, appariranno magicamente 
+delle anteprime degli oggetti disegnati in 3D. Openscad è nei repo 
+delle principali distribuzioni di Linux, è comunque scaricabile dal 
+sito ufficiale per tutti i sistemi operativi.
+
+Infine, ma non da ultimo in termini di importanza, trovate uno sheet 
+per imparare i comandi e la sintassi.
+
+Consigli: provare a scrivere delle righe di codice, fare attenzione 
+a chiudere sempre con il ";" e lanciare F5.
+All'inizio sembra difficile, ma basta un pò di ragionamento e diventa 
+tutto facile. 
+Openscad è piuttosto leggero e gira anche su macchine più datate. 
+Per la stampa: renderizzare con F6 e creare un STL da apposito comando.
+
+La documentazione in questa cartella viene rilasciata da Alessandra Santi santi.info@gmail.com 
+sotto licenza Creative Common

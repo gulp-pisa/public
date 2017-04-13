@@ -1,0 +1,326 @@
+Comandi BASE (uso locale bash)
+
+Cercare nella DIT:
+
+DB0: config
+ldapsearch -LLL -Y EXTERNAL -H ldapi:/// -b cn=config
+
+Lo trovo anche in /etc/ldap/slap.d sotto forma sia di file .ldif che di struttura di cartelle.
+NON E' il backend, i veri file del database di backend (nel caso più comune Berkley) sono in:
+
+/var/lib/ldap (un tempo /var/lib/slapd)
+
+http://www.openldap.org/doc/admin24/backends.html
+
+
+DB1: 1° database utente
+ldapsearch -LLL -Y EXTERNAL -H ldapi:/// -b cn=admin,dc=nodomain
+
+-LLL output in formato LDIF senza commenti
+-Y metodo di autenticazione EXTERNAL--> valido in locale dalla SHELL (no autenticazione l'equivalente di sqlplus / as sysdba in oracle)
+-H URL Ldap(s) in genere ldap(s)://<IP Server LDAP>[:porta, se non standard]
+-b nodo root da cui inizia la ricerca. Nel primo caso la root del database di configurazione, nel secondo il database utente reato nell'intallazione.
+
+
+Configurare LDAP Server con gli schema SAMBA:
+
+http://help.ubuntu-it.org/10.04/ubuntu/serverguide/it/samba-ldap.html
+https://help.ubuntu.com/lts/serverguide/samba-ldap.html
+
+
+Copiare ed installare gli schema del SAMBA:
+
+cd /usr/share/doc/samba/examples/LDAP
+
+cp samba.ldif.gz samba.schema.gz /etc/ldap/schema/
+
+cd /etc/ldap/schema
+
+gzip -d samba.ldif.gz
+gzip -d samba.schema.gz
+
+creaiamo un file schema_convert.conf così fatto, ovvero che contiene le righe che avremmo scritto nel vecchio file di configurazione '/etc/ldap/slapd.conf':
+-----------------------------------------------
+include /etc/ldap/schema/core.schema
+include /etc/ldap/schema/collective.schema
+include /etc/ldap/schema/corba.schema
+include /etc/ldap/schema/cosine.schema
+include /etc/ldap/schema/duaconf.schema
+include /etc/ldap/schema/dyngroup.schema
+include /etc/ldap/schema/inetorgperson.schema
+include /etc/ldap/schema/java.schema
+include /etc/ldap/schema/misc.schema
+include /etc/ldap/schema/nis.schema
+include /etc/ldap/schema/openldap.schema
+include /etc/ldap/schema/ppolicy.schema
+include /etc/ldap/schema/ldapns.schema
+include /etc/ldap/schema/pmi.schema
+include /etc/ldap/schema/samba.schema
+-----------------------------------------------
+che punta agli schema presenti nella cartella '/etc/ldap/schema' a cui abbiamo aggiunto quelli del SAMBA.
+Ne ricaviamo il relativo file di configurazione per il database dinamico con il comando, avendo preventivamente identificato l'INDICE dello schema ed avendo preventivamente creato la cartella 'ldif_output' nella medesima del file: 'schema_convert.conf'.
+
+slapcat -f schema_convert.conf -F ldif_output -n 0 | grep samba,cn=schema
+
+ottenendo:
+
+dn: cn={14}samba,cn=schema,cn=config
+
+Quindi indice nr. 14 (si può curiosare nella cartella ldif_output scoprendo che contiene un sotto-ramo di /etc/ldap/slap.d)
+
+Il comando successivo genera il file cn=samba.ldif che ha lo stesso contenuto della precedente struttura di directory e serve ad aggiungere lo schema:
+
+slapcat -f schema_convert.conf -F ldif_output -n0 -H > ldap:///cn={14}samba,cn=schema,cn=config -l cn=samba.ldif
+
+Ripuliamo il file eliminando l'indice (che dipende da quanti schema vengono aggiunti nel file 'cn=samba.ldif'
+
+ed in fondo la componente:
+
+---------------------------------------------------
+structuralObjectClass: olcSchemaConfig
+entryUUID: 026ebcee-b3e5-1036-9887-3b19476c202b
+creatorsName: cn=config
+createTimestamp: 20170412160118Z
+entryCSN: 20170412160118.704451Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20170412160118Z
+---------------------------------------------------
+
+Applichiamo finalemnte la modifica:
+
+ldapadd -Q -Y EXTERNAL -H ldapi:/// -f cn\=samba.ldif
+
+Verifichiamola effettuando una ricerca sul database di configurazione:
+
+ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=schema,cn=config 'cn=*samba*'
+
+e troviamo tutto ciò che in LDIF c'è nel file 'cn={14}samba.ldif' nella struttura ldif_output applicato con l'indice corretto ai soli schema presenti sul server.
+
+Per ottimizzare l'accesso allo schema SAMBA aggiungiamo degli indici creando il seguente file: 'samba_indices.ldif':
+
+---------------------------------------------------
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+add: olcDbIndex
+olcDbIndex: uidNumber eq
+olcDbIndex: gidNumber eq
+olcDbIndex: loginShell eq
+olcDbIndex: uid eq,pres,sub
+olcDbIndex: memberUid eq,pres,sub
+olcDbIndex: uniqueMember eq,pres
+olcDbIndex: sambaSID eq
+olcDbIndex: sambaPrimaryGroupSID eq
+olcDbIndex: sambaGroupType eq
+olcDbIndex: sambaSIDList eq
+olcDbIndex: sambaDomainName eq
+olcDbIndex: default sub
+---------------------------------------------------
+
+LDIF che utilizzato con ldapmodify/add sul percorso DIT: dn:olcDatabase={1}hdb,cn=config
+
+conigura gli indici sulle proprietà elencate eseguendo il comando:
+
+ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f samba_indices.ldif
+
+e la successiva ricerca per verifica:
+
+ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config olcDatabase={1}mdb olcDbIndex
+
+Effettuando i comandi scopriamo che ci sono già alcuni indici. Per cui occorre prima eliminarli:
+
+ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config olcDatabase={1}mdb olcDbIndex
+
+dn: olcDatabase={1}mdb,cn=config
+olcDbIndex: objectClass eq
+olcDbIndex: cn,uid eq
+olcDbIndex: uidNumber,gidNumber eq
+olcDbIndex: member,memberUid eq
+
+Quindi aggiungendo all'intestazione del risultato dell'interrogazione le righe:
+
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+delete: olcDbIndex
+olcDbIndex: uidNumber,gidNumber eq
+olcDbIndex: member,memberUid eq
+
+si ottiene remove_indices.ldif
+
+Si applica con:
+
+ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f remove_indices.ldif
+
+ed un successivo:
+
+ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f samba_indices.ldif
+
+
+Per ottenere la configurazione definitiva:
+
+ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config olcDatabase={1}mdb olcDbIndex
+dn: olcDatabase={1}mdb,cn=config
+olcDbIndex: objectClass eq
+olcDbIndex: cn,uid eq
+olcDbIndex: loginShell eq
+olcDbIndex: memberUid eq,pres,sub
+olcDbIndex: uniqueMember eq,pres
+olcDbIndex: sambaSID eq
+olcDbIndex: sambaPrimaryGroupSID eq
+olcDbIndex: sambaGroupType eq
+olcDbIndex: sambaSIDList eq
+olcDbIndex: sambaDomainName eq
+olcDbIndex: default sub
+
+Ora popoliamo con apposito script il database con i gruppi standard presenti nel SAMBA/CIFS.
+
+
+Per sicurezza effettuiamo un backup pre-popolamento:
+
+slapcat -l backup-prepopulate.ldif
+
+Ci accorgiamo che occorre configurare i tools eseguendo lo script:
+
+smbldap-config
+
+che rispondendo ad alcune domande non fa altro che creare dei file di testo nella cartella: '/etc/smbldap-tools/'
+
+Questi servono per integrare LDAP con SAMBA il quale richiede ulteriori configurazioni, come spiegato nell'URL indicato per recuperare le password e gli utenti, oltre che i range degli uid,gid Linux. (questo però è un aspetto di configurazione SAMBA)
+
+Cambiamo il default per la DIT da 'dc=nodomain' a dc=gulp,dc=local.
+
+A tale scopo creiamo i files: gulp_domain.ldif e gulp_rootDN.ldif con il seguente contenuto:
+
+---------------------------------------------  gulp_domain.ldif
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+replace: olcSuffix: dc=gulp,dc=local
+replace: olcRootDN: cn=admin,dc=gulp,dc=local
+---------------------------------------------  gulp_domain.ldif
+
+---------------------------------------------  gulp_rootDN.ldif
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+replace: olcRootDN
+olcRootDN: cn=admin,dc=gulp,dc=local
+---------------------------------------------  gulp_rootDN.ldif
+
+ed applichiamoli:
+
+ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f gulp_domain.ldif
+ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f gulp_rootDN.ldif
+
+Questo in effetti Spiana l'oggetto ADMIN.
+
+----------------------------------------------------------------- REPLICA ---------------------------------------------
+
+Modificare il file '/etc/hosts' e '/etc/default/slapd' inserendo rispettivamente i nomi degli hosts con i relativi IP e le stringhe del servizio LDAP:
+
+
+/etc/hosts
+
+172.30.0.164  LDAP-1  LDAP-1.gulp.local
+172-30.0.143  LDAP-2  LDAP-2.gulp.local
+
+/etc/default/slapd
+
+# SLAPD_SERVICES="ldap://127.0.0.1:389/ ldaps:/// ldapi:///"
+SLAPD_SERVICES="ldap:/// ldapi:/// ldap://LDAP-1:389 ldap://LDAP-2:389"
+
+LDAP-01:
+Gli assegno l'ID:1 per la sincronizzazione:
+
+cat &lt;&lt;EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=config
+changetype: modify
+add: olcServerID
+olcServerID: 1
+EOF
+
+LDAP-02:
+Gli assegno l'ID:2 per la sincronizzazione:
+cat &lt;&lt;EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=config
+changetype: modify
+add: olcServerID
+olcServerID: 2
+EOF
+
+Su entrambi accendo il modulo di sincronizzazione:
+
+cat &lt;&lt;EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=module{0},cn=config
+changetype: modify
+add: olcModuleLoad
+olcModuleLoad: {1}syncprov.la
+EOF
+
+Verifico:
+ldapsearch -Y EXTERNAL -H ldapi:/// -b cn=module{0},cn=config
+
+Configuro la password per il database 0(quello di configurazione):
+
+cat &lt;&lt;EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+add: olcRootPW
+olcRootPW:&nbsp;h.TDVyELBjm0g
+EOF
+
+N.B. hash ottenuto con ldappasswd
+
+Cambio gli ID dei server con quelli degli URL LDAP degli hosts su entrambi i nodi:
+	
+cat &lt;&lt;EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: cn=config
+changetype: modify
+replace: olcServerID
+olcServerID: 1 ldap://ldap1/
+olcServerID: 2 ldap://ldap2/
+EOF
+
+
+Configuro su entrambi i nodi gli Overlay per la replicazione:
+cat &lt;&lt;EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcOverlay=syncprov,olcDatabase={0}config,cn=config
+changetype: add
+objectClass: olcOverlayConfig
+objectClass: olcSyncProvConfig
+olcOverlay: syncprov
+EOF
+
+Accendo su entrambi i nodi la replica:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+	
+cat &lt;&lt;EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+add: olcSyncRepl
+olcSyncRepl: rid=001 provider=ldap://ldap1/ binddn="cn=config" 
+  bindmethod=simple credentials=h.TDVyELBjm0g 
+  searchbase="cn=config" type=refreshAndPersist
+  retry="5 5 300 5" timeout=1
+olcSyncRepl: rid=002 provider=ldap://ldap2/ binddn="cn=config" 
+  bindmethod=simple credentials=h.TDVyELBjm0g 
+  searchbase="cn=config" type=refreshAndPersist
+  retry="5 5 300 5" timeout=1
+-
+add: olcMirrorMode
+olcMirrorMode: TRUE
+EOF
+
+N.B. hash ottenuto con ldappasswd

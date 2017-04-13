@@ -1,0 +1,50 @@
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 adbc7ba4
+dn: olcDatabase={1}hdb
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {1}hdb
+olcDbDirectory: /var/lib/ldap
+olcLastMod: TRUE
+olcDbCheckpoint: 512 30
+olcDbConfig: {0}set_cachesize 0 2097152 0
+olcDbConfig: {1}set_lk_max_objects 1500
+olcDbConfig: {2}set_lk_max_locks 1500
+olcDbConfig: {3}set_lk_max_lockers 1500
+olcDbIndex: objectClass eq
+olcDbIndex: uidNumber eq
+olcDbIndex: gidNumber eq
+olcDbIndex: loginShell eq
+olcDbIndex: uid eq,pres,sub
+olcDbIndex: memberUid eq,pres,sub
+olcDbIndex: uniqueMember eq,pres
+olcDbIndex: displayName  eq
+olcDbIndex: cn eq
+olcDbIndex: sambaSID eq
+olcDbIndex: sambaPrimaryGroupSID eq
+olcDbIndex: sambaGroupType eq
+olcDbIndex: sambaSIDList eq
+olcDbIndex: sambaDomainName eq
+olcDbIndex: default sub
+structuralObjectClass: olcHdbConfig
+entryUUID: 3f9d1d48-53b7-1035-8980-1d54a7d41b7f
+creatorsName: cn=config
+createTimestamp: 20160120114655Z
+olcSuffix: dc=adf,dc=local
+olcMirrorMode: TRUE
+olcRootPW:: e1NTSEF9VEljQjFYbXhVOEU4Q3gyUk90bkxyTTZDUHI3NVRJdm4=
+olcSyncrepl: {0}rid=003 provider=ldap://Ldap-1/ binddn="cn=manager,dc=adf,dc=l
+ ocal"  bindmethod=simple credentials=_SerVic3_ searchbase="dc=adf,dc=local" t
+ ype=refreshAndPersist retry="5 5 300 5" timeout=1
+olcSyncrepl: {1}rid=004 provider=ldap://Ldap-2/ binddn="cn=manager,dc=adf,dc=l
+ ocal"  bindmethod=simple credentials=_SerVic3_ searchbase="dc=adf,dc=local" t
+ ype=refreshAndPersist retry="5 5 300 5" timeout=1
+olcRootDN: cn=manager,dc=adf,dc=local
+olcAccess: {0}to attrs=userPassword,shadowLastChange by self write by anonymou
+ s auth by dn="uid=admin,ou=users,dc=adf,dc=local" write by * none
+olcAccess: {1}to dn.base="" by * read
+olcAccess: {2}to * by self write by dn="uid=admin,ou=users,dc=adf,dc=local" wr
+ ite by * read
+entryCSN: 20160225095916.522176Z#000000#001#000000
+modifiersName: cn=config
+modifyTimestamp: 20160225095916Z

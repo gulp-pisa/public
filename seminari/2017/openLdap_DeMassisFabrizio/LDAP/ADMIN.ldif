@@ -1,0 +1,9 @@
+version: 1
+
+dn: cn=admin,dc=gulp,dc=local
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+userPassword:: e1NTSEF9U01mT2VORlFzWTJSV0F2RVE4VzhOYUJLSVBWMkQvWWY=
+description: LDAP administrator
+
